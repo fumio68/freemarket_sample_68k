@@ -136,3 +136,15 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|<!-- カラム名とデータ型を変更しました。comment→text, string→text -->
+|user_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :item
+
+
+
