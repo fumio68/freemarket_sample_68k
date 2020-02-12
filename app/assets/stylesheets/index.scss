@@ -1,46 +1,56 @@
 .header {
   height: 100px;
-  background-color: red;
+
 }
 
 .main {
-  background-color: yellow;
   &__top-banner {
     height: 560px;
-    background-color: cornflowerblue;
-
-  }
+    background-image: url(/assets/bg-mainVisual-pict_pc.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
   &__introduction {
     height: 640px ;
-    background-color: pink;
+ 
   }
   &__middle-banner {
     height: 400px;
-    background-color: darkgrey;
+    background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   &__feature {
     height: 600px;
-    background-color: coral;
+   
   }
   
   &__picup-category {
     height: 425px;
-    background-color: darksalmon;
+    background-color: #f8f8f8;
 
   }
   &__picup-bland {
     height: 425px;
-    background-color: darkslateblue;
+    background-color: #f8f8f8;
 
   }
   &__bottom-banner {
     height: 360px;
-    background-color: green;
+    background-image: url(/assets/bg-appBanner-pict.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
 .footer {
   height: 350px;
-  background-color: blue;
+  background-color: #272727;
 
 }
