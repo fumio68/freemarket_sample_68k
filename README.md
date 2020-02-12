@@ -108,5 +108,16 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :items
 
+## creditsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|month|integer|null: false|
+|year|integer|null: false|
+|security|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+
 
 
