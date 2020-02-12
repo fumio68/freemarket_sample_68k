@@ -69,6 +69,13 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :purchase
 
+## items_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+- belongs_to :user
+- belongs_to :group
 
 
 ## item_imagesテーブル
