@@ -80,7 +80,7 @@ Things you may want to cover:
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|kind|string|null: false|<!-- テーブル名とカラム名が重複するため、カラム名を変更してみました -->
+|kind|string|null: false|<!-- テーブル名とカラム名が重複していたため、カラム名を変更してみました -->
 ### Association
 - has_many :items_categories
 - has_many :items,  through:  :items_categories
@@ -92,4 +92,21 @@ Things you may want to cover:
 |item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
+
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+|postcode|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|block|string|null: false|
+|building|string||
+|phone_number|string||
+### Association
+- belongs_to :user
+- belongs_to :items
+
+
 
