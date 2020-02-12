@@ -146,5 +146,13 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-
+## favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :item
 
