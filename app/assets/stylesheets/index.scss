@@ -1,0 +1,46 @@
+.header {
+  height: 100px;
+  background-color: red;
+}
+
+.main {
+  background-color: yellow;
+  &__top-banner {
+    height: 560px;
+    background-color: cornflowerblue;
+
+  }
+  &__introduction {
+    height: 640px ;
+    background-color: pink;
+  }
+  &__middle-banner {
+    height: 400px;
+    background-color: darkgrey;
+  }
+  &__feature {
+    height: 600px;
+    background-color: coral;
+  }
+  
+  &__picup-category {
+    height: 425px;
+    background-color: darksalmon;
+
+  }
+  &__picup-bland {
+    height: 425px;
+    background-color: darkslateblue;
+
+  }
+  &__bottom-banner {
+    height: 360px;
+    background-color: green;
+  }
+}
+
+.footer {
+  height: 350px;
+  background-color: blue;
+
+}
