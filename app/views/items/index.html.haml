@@ -20,6 +20,29 @@
   
   .main__introduction
     introduction
+
+  .main__middle-banner
+    .main__middle-banner--content
+      %h2.title
+        %br
+        会員数日本一位
+      %p.sub-title
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+   
+       
+      .app-btns
+        = link_to "#" do
+          = image_tag '/assets/app-store.svg', class: "app-btn"
+        = link_to "#" do
+          = image_tag '/assets/google-play.svg', class: "app-btn"
+    
+
+  .main__feature
+    feature
    
 
   .main__picup-category
