@@ -3,16 +3,24 @@
   
 .main
   .main__top-banner
+    .main__top-banner--content
+      %h2.title
+        %br
+        人生を変えるフリマアプリ
+      %p.sub-title
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br
+        フリマアプリです
+      .app-btns
+        = link_to "#" do
+          = image_tag '/assets/app-store.svg', class: "app-btn"
+        = link_to "#" do
+          = image_tag '/assets/google-play.svg', class: "app-btn"
     
   
   .main__introduction
     introduction
-  
-  .main__middle-banner
-
-  
-  .main__feature
-    feature
+   
 
   .main__picup-category
     picup-category
