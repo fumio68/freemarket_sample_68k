@@ -58,12 +58,12 @@ Things you may want to cover:
 |shipping_area|string|null: false|
 |days_to_ship|string|null: false|
 |shipping_method|string|null: false|
-|status|string|null: false|
-|user_id|references|null: false, foreign_key: true|
+|status|string|null: false| <!-- コメント同上 -->
+|user_id|references|null: false, foreign_key: true|<!-- 外部キーはreferences型に統一しています -->
 ### Association
 - has_many :items_image
-- has_many :item_categories
-- has_many :categories,  through:  :item_categories
+- has_many :items_categories
+- has_many :categories,  through:  :items_categories
 - has_many :comments
 - has_many :favorites
 - belongs_to :user
@@ -77,6 +77,13 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|kind|string|null: false|<!-- テーブル名とカラム名が重複するため、カラム名を変更してみました -->
+### Association
+- has_many :items_categories
+- has_many :items,  through:  :items_categories
 
 ## item_imagesテーブル
 |Column|Type|Options|
