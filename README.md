@@ -54,12 +54,12 @@ Things you may want to cover:
 |content|text|null: false|
 |brand|string||
 |condition|string|null: false|
-|shipping|string|null: false|
+|shipping|string|null: false| <!-- stringの方がわかりやすいと思い、integer型から変更しています -->
 |shipping_area|string|null: false|
 |days_to_ship|string|null: false|
 |shipping_method|string|null: false|
 |status|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items_image
 - has_many :item_categories
@@ -68,3 +68,14 @@ Things you may want to cover:
 - has_many :favorites
 - belongs_to :user
 - belongs_to :purchase
+
+
+
+## item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :item
+
