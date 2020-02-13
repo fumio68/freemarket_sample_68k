@@ -11,12 +11,9 @@
         .mypage__header__mask__menu__nav-box
           %ul.mypage__header__mask__menu__nav-box__left
             %a{:href => "#", class: 'mypage__header__mask__menu__nav-box__left__item'}
-              -# = icon("fa", "list", class: 'mypage__header__mask__menu__nav-box__left__icon')
               = image_tag("material/icon/icon_category.png", class: 'mypage__header__mask__menu__nav-box__left__item__icon')
               %li.mypage__header__mask__menu__nav-box__left__item__list カテゴリーから探す
-               
             %a{:href => "#", class: 'mypage__header__mask__menu__nav-box__left__item'}
-              -# = icon("fa", "tag", class: 'mypage__header__mask__menu__nav-box__left__item__icon')
               = image_tag("material/icon/icon_brand.png", class: 'mypage__header__mask__menu__nav-box__left__item__icon')
               %li.mypage__header__mask__menu__nav-box__left__item__list ブランドから探す
           %ul.mypage__header__mask__menu__nav-box__right
@@ -32,8 +29,6 @@
             %a{:href => "#"}
               = icon("far", "user", class: 'mypage__header__mask__menu__nav-box__right__icon')
               %li.mypage__header__mask__menu__nav-box__right__list マイページ
-
-      
     .mypage__header__nav-mask
       %ul.mypage__header__nav-mask__inner
         %a{:href => "#", class: 'mypage__header__nav-mask__inner__item'}
@@ -124,7 +119,6 @@
         .mypage__main__mask__right__user-box
           %a.mypage__main__mask__right__user-box__inner{:href => "#"}
             = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'mypage__main__mask__right__user-box__inner__icon')
-              
             .mypage__main__mask__right__user-box__inner__name
               #{@user.nickname}
             .mypage__main__mask__right__user-box__inner__count
@@ -147,7 +141,6 @@
             %li.mypage__main__mask__right__records__tab__item
               過去の取引
           .mypage__main__mask__right__records__content
-            -# = image_tag("/material/logo/logo.png", class: 'mypage__main__mask__right__records__content__icon')
             = image_tag("material/logo/logo.png", class: 'mypage__main__mask__right__records__content__icon')
             .mypage__main__mask__right__records__content__text
               取引中の商品がありません
@@ -168,7 +161,6 @@
             公式ブログ
           %li.mypage__footer__wrapper__content__about__item
             メルカリロゴ利用ガイドライン
-
         .mypage__footer__wrapper__content__help-guide
           %ul.mypage__footer__wrapper__content__help-guide__head
             ヘルプ＆ガイド
@@ -190,7 +182,6 @@
             メルカリボックス
           %li.mypage__footer__wrapper__content__help-guide__item
             スマホ出品・売却相場
-          
         .mypage__footer__wrapper__content__privacy
           %ul.mypage__footer__wrapper__content__privacy__head
             プライバシーと利用規約
@@ -210,7 +201,6 @@
             資金決済法に基づく表示
           %li.mypage__footer__wrapper__content__privacy__item
             法令順守と犯罪防止のために
-          
         .mypage__footer__wrapper__content__lang
           %ul.mypage__footer__wrapper__content__lang__head
             国
@@ -218,7 +208,6 @@
             日本
           %li.mypage__footer__wrapper__content__lang__item
             United States
-      
       .mypage__footer__wrapper__bottom
   .mypage__sell-btn
     %p.mypage__sell-btn__text 出品する
