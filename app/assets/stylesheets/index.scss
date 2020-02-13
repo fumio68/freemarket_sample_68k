@@ -10,17 +10,19 @@
 .main {
   margin: 0;
   padding: 0;
+  width: 100%;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   &__top-banner {
     width: 100%;
     height: 560px;
-    background-image: url(/assets/bg-mainVisual-pict_pc.jpg);
+    background-image: url(/assets/bg-mainVisual-pict_pc.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     display: flex;
     padding: 0 60px;
     align-items: center;
+    position: relative;
     &--content {
       max-width: 1280px;
       width: 100%;
@@ -45,22 +47,20 @@
         }
       } 
     }
+    &--picture {
+      position: absolute;
+      top: 0;
+      right: 210px;    
+    }
   }
-  
-  
-  
-  
-  
-  
-  
-  
   &__introduction {
   height: 640px ;
+  background-color: salmon;
 
   }
   &__middle-banner {
     height: 400px;
-    background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+    background-image: url(/assets/bg-topMiddleDl-pict.jpg); 
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -98,26 +98,55 @@
   }
   &__feature {
     height: 600px;
-   
+    background-color: seagreen;
   }
   
   &__picup-category {
     height: 425px;
-    background-color: #f8f8f8;
+    background-color: lightblue;
 
   }
   &__picup-bland {
     height: 425px;
-    background-color: #f8f8f8;
+    background-color: lightyellow;
 
   }
   &__bottom-banner {
-    height: 360px;
-    background-image: url(/assets/bg-appBanner-pict.jpg);
+    background-image: url(/assets/bg-appBanner-pict.jpg); 
     width: 100%;
+    position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding: 100px 40px;
+    &--content {
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.4;
+       
+      }
+      .sub-title {
+        font-size: 35px;
+        line-height: 1.5;
+      }
+      .app-btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px auto 0;
+        .app-btn {
+          margin-right: 10px;
+          width: 180px;
+        }
+      } 
+    }
   }
 }
 
