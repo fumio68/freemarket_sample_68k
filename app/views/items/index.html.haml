@@ -3,20 +3,7 @@
   
 .main
   .main__top-banner
-    .main__top-banner--content
-      %h2.title
-        %br
-        人生を変えるフリマアプリ
-      %p.sub-title
-        FURIMAはだれでもかんたんに出品・購入できる
-        %br
-        フリマアプリです
-      .app-btns
-        = link_to "#" do
-          = image_tag '/assets/app/app-store.svg', class: "app-btn"
-        = link_to "#" do
-          = image_tag '/assets/app/google-play.svg', class: "app-btn"
-    
+    = render partial: "index_banner", locals: {title: "人生を変えるフリマアプリ", sub: "FURIMAはだれでもかんたんに出品・購入できる\nフリマアプリです"}
   
   .main__introduction
     .main__introduction--reason-for-chose
@@ -52,21 +39,8 @@
             最大3%でお得に出品&購入！
 
   .main__middle-banner
-    .main__middle-banner--content
-      %h2.title
-        会員数日本一位
-      %p.sub-title
-        FURIMAは、フリマアプリで最も人気。
-        %br
-        出品・購入回数も業界最多です！
-        %br
-        ほしかったあの商品に出会えるかもしれません。 
-      .app-btns
-        = link_to "#" do
-          = image_tag '/assets/app/app-store.svg', class: "app-btn"
-        = link_to "#" do
-          = image_tag '/assets/app/google-play.svg', class: "app-btn"
-    
+    = render partial: "index_banner", locals: {title: "会員数日本一位", sub: "FURIMAは、フリマアプリで最も人気。\n出品・購入回数も業界最多です！\nほしかったあの商品に出会えるかもしれません。"}
+
   .main__feature
     .main__feature--title
       FURIMAの特徴
@@ -96,7 +70,6 @@
   .main__pic-up
     .main__pic-up--title
       ピックアップ
-
     .main__pic-up--content
       = link_to '商品一覧', "#", class: "item-links"
       .items
@@ -106,22 +79,9 @@
         = render "index_item"
         = render "index_item"
         = render "index_item"
-        
-       
+            
   .main__bottom-banner
-    .main__bottom-banner--content
-      %h2.title
-        だれでもかんたん、人生を変えるフリマアプリ
-      %p.sub-title
-        今すぐ無料ダウンロード！
-      .app-btns
-        = link_to "#" do
-          = image_tag '/assets/app/app-store.svg', class: "app-btn"
-        = link_to "#" do
-          = image_tag '/assets/app/google-play.svg', class: "app-btn"
-    
-    
-
+    = render partial: "index_banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
 
 .footer 
   .footer__contents
