@@ -100,125 +100,14 @@
     .main__pic-up--content
       = link_to '商品一覧', "#", class: "item-links"
       .items
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                100円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                10000円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                1000000円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-02.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                100円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-02.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                10000円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-    
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-02.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                1000000円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-
-        .item 
-          %a.item__link(href = "#")
-          .item__image  
-            = image_tag "/assets/material/pict/pict-reason-03.jpg", class: "item-image"
-          .item__body
-            .item__body--name
-              iPhone 11 pro
-            .item__body--middle
-              .item__body--middle__price
-                100円
-              .item__body--middle__favorite
-                = link_to "#" do
-                  %i.fa.fa-star
-                %p 0
-            .item__body--fee
-              (税込)
-
-          
+        = render "index_item"
+        = render "index_item"
+        = render "index_item"
+        = render "index_item"
+        = render "index_item"
+        = render "index_item"
+        
+       
   .main__bottom-banner
     .main__bottom-banner--content
       %h2.title
