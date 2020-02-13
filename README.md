@@ -76,6 +76,7 @@ Things you may want to cover:
 |ancestry|string|null: false|
 ### Association
 - has_many :items
+- has_ancestry
 
 ## item_imagesテーブル
 |Column|Type|Options|
@@ -131,7 +132,7 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|<!-- カラム名とデータ型を変更しました。comment→text, string→text -->
+|text|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 ### Association
@@ -141,10 +142,8 @@ Things you may want to cover:
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
-
