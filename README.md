@@ -34,9 +34,9 @@ Things you may want to cover:
 |last_name|string|null: false|
 |j_family_name|string|null: false|
 |j_last_name|string|null: false|
-|b_year|string|null: false|
-|b_month|string|null: false|
-|b_date|string|null: false|
+|b_year|integer|null: false|
+|b_month|integer|null: false|
+|b_date|integer|null: false|
 |user_image|string|null: false|
 ### Association
 - has_many :items
@@ -44,7 +44,7 @@ Things you may want to cover:
 - has_many :purchases
 - has_many :comments
 - has_many :favorites
-- belongs_to :favorites
+- belongs_to :residence
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -60,30 +60,22 @@ Things you may want to cover:
 |shipping_method|string|null: false|
 |status|string|null: false| <!-- コメント同上 -->
 |user_id|references|null: false, foreign_key: true|<!-- 外部キーはreferences型に統一しています -->
+|category_id|references|null: false, foreign_key: true|<!-- cotegoryテーブルと1対多になったため追加しました -->
 ### Association
-- has_many :items_image
-- has_many :items_categories
-- has_many :categories,  through:  :items_categories
+- has_many :item_images
 - has_many :comments
 - has_many :favorites
 - belongs_to :user
 - belongs_to :purchase
-
-## items_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-- belongs_to :user
-- belongs_to :group
+- belongs_to :category
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|kind|string|null: false|<!-- テーブル名とカラム名が重複していたため、カラム名を変更してみました -->
+|name|string|null: false|<!-- テーブル名とカラム名が重複していたため、カラム名を変更してみました -->
+|ancestry|integer|null: false|
 ### Association
-- has_many :items_categories
-- has_many :items,  through:  :items_categories
+- has_many :items
 
 ## item_imagesテーブル
 |Column|Type|Options|
@@ -106,7 +98,7 @@ Things you may want to cover:
 |phone_number|string||
 ### Association
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 
 ## creditsテーブル
 |Column|Type|Options|
@@ -119,7 +111,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## residenceテーブル
+## residencesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
@@ -141,7 +133,7 @@ Things you may want to cover:
 |------|----|-------|
 |text|text|null: false|<!-- カラム名とデータ型を変更しました。comment→text, string→text -->
 |user_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
