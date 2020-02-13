@@ -37,14 +37,14 @@ Things you may want to cover:
 |b_year|integer|null: false|
 |b_month|integer|null: false|
 |b_date|integer|null: false|
-|user_image|string|null: false|
+|user_image|string||
 ### Association
 - has_many :items
 - has_many :credits
 - has_many :purchases
 - has_many :comments
 - has_many :favorites
-- belongs_to :residence
+- has_one :residence
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -54,26 +54,26 @@ Things you may want to cover:
 |content|text|null: false|
 |brand|string||
 |condition|string|null: false|
-|shipping|string|null: false| <!-- stringの方がわかりやすいと思い、integer型から変更しています -->
+|shipping|string|null: false|
 |shipping_area|string|null: false|
 |days_to_ship|string|null: false|
 |shipping_method|string|null: false|
-|status|string|null: false| <!-- コメント同上 -->
-|user_id|references|null: false, foreign_key: true|<!-- 外部キーはreferences型に統一しています -->
-|category_id|references|null: false, foreign_key: true|<!-- cotegoryテーブルと1対多になったため追加しました -->
+|status|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :item_images
 - has_many :comments
 - has_many :favorites
 - belongs_to :user
-- belongs_to :purchase
 - belongs_to :category
+- has_one :purchase
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|<!-- テーブル名とカラム名が重複していたため、カラム名を変更してみました -->
-|ancestry|integer|null: false|
+|name|string|null: false|
+|ancestry|string|null: false|
 ### Association
 - has_many :items
 
