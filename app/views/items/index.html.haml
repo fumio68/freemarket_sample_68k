@@ -13,9 +13,9 @@
         フリマアプリです
       .app-btns
         = link_to "#" do
-          = image_tag '/assets/app-store.svg', class: "app-btn"
+          = image_tag '/assets/app/app-store.svg', class: "app-btn"
         = link_to "#" do
-          = image_tag '/assets/google-play.svg', class: "app-btn"
+          = image_tag '/assets/app/google-play.svg', class: "app-btn"
     
   
   .main__introduction
@@ -35,9 +35,9 @@
        
       .app-btns
         = link_to "#" do
-          = image_tag '/assets/app-store.svg', class: "app-btn"
+          = image_tag '/assets/app/app-store.svg', class: "app-btn"
         = link_to "#" do
-          = image_tag '/assets/google-play.svg', class: "app-btn"
+          = image_tag '/assets/app/google-play.svg', class: "app-btn"
     
 
   .main__feature
@@ -58,12 +58,42 @@
         今すぐ無料ダウンロード！
       .app-btns
         = link_to "#" do
-          = image_tag '/assets/app-store.svg', class: "app-btn"
+          = image_tag '/assets/app/app-store.svg', class: "app-btn"
         = link_to "#" do
-          = image_tag '/assets/google-play.svg', class: "app-btn"
+          = image_tag '/assets/app/google-play.svg', class: "app-btn"
     
     
 
 
 .footer 
-  footer  
+  .footer__contents
+    .footer__contents--left
+      .furima-info 
+        .furima-info__title FURIMAについて
+        .furima-info__links
+          = link_to "会社概要（運営会社）", "#", class: "link"
+          = link_to "プライバシーポリシー", "#", class: "link"
+          = link_to "FURIMA利用規約", "#", class: "link"
+          = link_to "ポイントに関する特約", "#", class: "link"
+
+    .footer__contents--middle
+      .view-furima
+        .view-furima__title FURIMAを見る
+
+        .view-furima__links
+          = link_to "カテゴリー一覧", "#", class: "link"
+          = link_to "ブランド一覧", "#", class: "link"
+
+    .footer__contents--right
+      .help-gide
+        .help-gide__title ヘルプ＆ガイド
+        .help-gide__links
+          = link_to "FURIMAガイド", "#", class: "link"
+          = link_to "FURIMAロゴ利用ガイドライン", "#", class: "link"
+          = link_to "お知らせ", "#", class: "link"
+    
+  .footer__logo
+    = link_to "#" do
+      = image_tag '/assets/material/logo/logo-white.png', class: "logo-btn"
+  
+  %p.copyright © FURIMA
