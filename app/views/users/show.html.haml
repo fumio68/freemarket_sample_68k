@@ -1,40 +1,5 @@
 .mypage
-  .mypage__header
-    .mypage__header__mask
-      .mypage__header__mask__menu
-        .mypage__header__mask__menu__top
-          = image_tag("material/logo/logo.png", class: 'mypage__header__mask__menu__top__icon')
-          .mypage__header__mask__menu__top__search
-            = form_with(model: @message, class: 'mypage__header__mask__menu__top__search__form', local: true) do |form|
-              = form.search_field :content, placeholder: '何かお探しですか？', class: 'mypage__header__mask__menu__top__search__form__text-field'
-              = icon("fa", "search", class: 'mypage__header__mask__menu__top__search__form__icon')
-        .mypage__header__mask__menu__nav-box
-          %ul.mypage__header__mask__menu__nav-box__left
-            %a{:href => "#", class: 'mypage__header__mask__menu__nav-box__left__item'}
-              = image_tag("material/icon/icon_category.png", class: 'mypage__header__mask__menu__nav-box__left__item__icon')
-              %li.mypage__header__mask__menu__nav-box__left__item__list カテゴリーから探す
-            %a{:href => "#", class: 'mypage__header__mask__menu__nav-box__left__item'}
-              = image_tag("material/icon/icon_brand.png", class: 'mypage__header__mask__menu__nav-box__left__item__icon')
-              %li.mypage__header__mask__menu__nav-box__left__item__list ブランドから探す
-          %ul.mypage__header__mask__menu__nav-box__right
-            %a{:href => "#"}
-              = icon("far", "heart", class: 'mypage__header__mask__menu__nav-box__right__icon')
-              %li.mypage__header__mask__menu__nav-box__right__list いいね！一覧
-            %a{:href => "#"}
-              = icon("far", "bell", class: 'mypage__header__mask__menu__nav-box__right__icon')
-              %li.mypage__header__mask__menu__nav-box__right__list お知らせ
-            %a{:href => "#"}
-              = icon("fa", "check", class: 'mypage__header__mask__menu__nav-box__right__icon')
-              %li.mypage__header__mask__menu__nav-box__right__list やることリスト
-            %a{:href => "#"}
-              = icon("far", "user", class: 'mypage__header__mask__menu__nav-box__right__icon')
-              %li.mypage__header__mask__menu__nav-box__right__list マイページ
-    .mypage__header__nav-mask
-      %ul.mypage__header__nav-mask__inner
-        %a{:href => "#", class: 'mypage__header__nav-mask__inner__item'}
-          %li メルカリ >
-        %a{class: 'mypage__header__nav-mask__inner__item'}
-          %li マイページ
+  = render partial: "/shared/header"
   .mypage__main
     .mypage__main__mask
       .mypage__main__mask__left
@@ -209,6 +174,4 @@
           %li.mypage__footer__wrapper__content__lang__item
             United States
       .mypage__footer__wrapper__bottom
-  .mypage__sell-btn
-    %p.mypage__sell-btn__text 出品する
-    = image_tag("material/icon/icon_camera.png", class: 'mypage__sell-btn__icon')
+  = render partial: "/shared/sellbtn"

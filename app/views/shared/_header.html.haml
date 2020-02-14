@@ -1,0 +1,56 @@
+.header
+  .header__mask
+    .header__mask__menu
+      .header__mask__menu__top
+        = image_tag("material/logo/logo.png", class: 'header__mask__menu__top__icon')
+        .header__mask__menu__top__search
+          = form_with(model: @message, class: 'header__mask__menu__top__search__form', local: true) do |form|
+            = form.search_field :content, placeholder: '何かお探しですか？', class: 'header__mask__menu__top__search__form__text-field'
+            = icon("fa", "search", class: 'header__mask__menu__top__search__form__icon')
+      .header__mask__menu__nav-box
+        %ul.header__mask__menu__nav-box__left
+          %a{:href => "#", class: 'header__mask__menu__nav-box__left__item'}
+            = image_tag("material/icon/icon_category.png", class: 'header__mask__menu__nav-box__left__item__icon')
+            %li.header__mask__menu__nav-box__left__item__parent.hover-color
+              カテゴリーから探す
+              %ul.header__mask__menu__nav-box__left__item__parent__child
+                %li.hover-color
+                  レディース
+                  %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
+                    %li.hover-color
+                      トップス
+                      %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
+                        %li.hover-color
+                          Tシャツ/カットソー(半袖/袖なし)
+          %a{:href => "#", class: 'header__mask__menu__nav-box__left__item'}
+            = image_tag("material/icon/icon_brand.png", class: 'header__mask__menu__nav-box__left__item__icon')
+            %li.header__mask__menu__nav-box__left__item__parent.hover-color
+              ブランドから探す
+              %ul.header__mask__menu__nav-box__left__item__parent__child
+                %li.hover-color
+                  test1
+                  %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
+                    %li.hover-color
+                      test2
+                      %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
+                        %li.hover-color
+                          test3
+        %ul.header__mask__menu__nav-box__right
+          %a{:href => "#"}
+            = icon("far", "heart", class: 'header__mask__menu__nav-box__right__icon')
+            %li.header__mask__menu__nav-box__right__list いいね！一覧
+          %a{:href => "#"}
+            = icon("far", "bell", class: 'header__mask__menu__nav-box__right__icon')
+            %li.header__mask__menu__nav-box__right__list お知らせ
+          %a{:href => "#"}
+            = icon("fa", "check", class: 'header__mask__menu__nav-box__right__icon')
+            %li.header__mask__menu__nav-box__right__list やることリスト
+          %a{:href => "#"}
+            = icon("far", "user", class: 'header__mask__menu__nav-box__right__icon')
+            %li.header__mask__menu__nav-box__right__list マイページ
+  .header__nav-mask
+    %ul.header__nav-mask__inner
+      %a{:href => "#", class: 'header__nav-mask__inner__item'}
+        %li メルカリ >
+      %a{class: 'header__nav-mask__inner__item'}
+        %li マイページ
