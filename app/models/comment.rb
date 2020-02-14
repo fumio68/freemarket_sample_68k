@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  #asociation
+  #association
   belongs_to :user
   belongs_to :item
   #validation
