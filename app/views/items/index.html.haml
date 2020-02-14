@@ -4,7 +4,6 @@
 .main
   .main__top-banner
     = render partial: "index_banner", locals: {title: "人生を変えるフリマアプリ", sub: "FURIMAはだれでもかんたんに出品・購入できる\nフリマアプリです"}
-  
   .main__introduction
     .main__introduction--reason-for-chose
       FURIMAが選ばれる3つの理由
@@ -70,6 +69,7 @@
   .main__pic-up
     .main__pic-up--title
       ピックアップ
+
     .main__pic-up--content
       = link_to '商品一覧', "#", class: "item-links"
       .items
@@ -79,9 +79,12 @@
         = render "index_item"
         = render "index_item"
         = render "index_item"
-            
+        
+       
   .main__bottom-banner
     = render partial: "index_banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
+    
+
 
 .footer 
   .footer__contents

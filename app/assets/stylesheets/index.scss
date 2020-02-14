@@ -1,3 +1,4 @@
+@import "mixins";
 
 .header {
   height: 100px;
@@ -8,49 +9,9 @@
 }
 
 .main {
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+
   &__top-banner {
-    height: 560px;
-    background-image: url(/assets/material/pict/bg-mainVisual-pict_pc.jpg); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    display: flex;
-    padding: 0 60px;
-    align-items: center;
-    position: relative;
-    &--content {
-      max-width: 1280px;
-      width: 100%;
-      margin: 0 auto;
-      padding-top: 35px;
-      .title {
-        font-size: 60px;
-        color: #fff;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }
-      .sub-title {
-        font-size: 18px;
-        color: #fff;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }
-      .app-btns {
-        display: flex;
-        margin-top: 24px;
-        .app-btn {
-          margin-right: 10px;
-          width: 180px;
-        }
-        .app-btn:hover {
-          opacity: 0.5;
-        }
-      } 
-    }
-    &--picture {
-      position: absolute;
-      top: 0;
-      right: 210px;    
-    }
+    @include banner 
   }
   &__introduction {
     padding: 60px 20px;
@@ -128,43 +89,21 @@
     }
   }
   &__middle-banner {
-    height: 400px;
-    background-image: url(/assets/material/pict/bg-topMiddleDl-pict.jpg); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    padding: 0 60px;
-    align-items: center;
-    &--content {
-      max-width: 1040px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: left;
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      .title {
-        font-size: 27px;
-        font-weight: bold;
-        line-height: 1.4;
-      }
-      .sub-title {
-        font-size: 18px;
-        margin: 20px 0 30px;
-        line-height: 1.5;
-      }
-      .app-btns {
-        display: flex;
-        margin-top: 24px;
-        .app-btn {
-          margin-right: 10px;
-          width: 180px;
-        }
-        .app-btn:hover {
-          opacity: 0.5;
-        }
-      } 
-    }
+    @include banner (
+      url(/assets/material/pict/bg-topMiddleDl-pict.jpg),
+      400px, 
+      27px, 
+      0 60, 
+      1040px, 
+      18px,
+      1.4,
+      1.5,
+      '',
+      '',
+      '',
+      '',
+      bold
+    )
   }
   &__feature {  
     padding: 60px 100px;
@@ -243,54 +182,30 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
-        
+        flex-wrap: wrap; 
       }
     }
   }
   &__bottom-banner {
-    background-image: url(/assets/material/pict/bg-appBanner-pict.jpg); 
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 100px 40px;
-    &--content {
-      max-width: 1040px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      .title {
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 1.4;
-       
-      }
-      .sub-title {
-        font-size: 35px;
-        line-height: 1.5;
-      }
-      .app-btns {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 20px auto 0;
-        .app-btn {
-          margin-right: 10px;
-          width: 180px;
-        }
-        .app-btn:hover {
-          opacity: 0.5;
-        }
-      } 
-    }
+    @include banner (
+      url(/assets/material/pict/bg-appBanner-pict.jpg), 
+      400px,
+      24px,
+      100px 40px,
+      1040px,
+      35px,
+      1.4,
+      1.5,
+      flex,
+      center,
+      center,
+      '',
+      bold
+   )
   }
 }
 
 .footer {
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   background-color: #272727;
   padding: 60px 0;
   color: white;
