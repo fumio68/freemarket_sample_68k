@@ -2,12 +2,12 @@
   header
   
 .main
-  .main__top-banner
+  .top-banner
     = render partial: "index_banner", locals: {title: "人生を変えるフリマアプリ", sub: "FURIMAはだれでもかんたんに出品・購入できる\nフリマアプリです"}
-  .main__introduction
-    .main__introduction--reason-for-chose
+  .introduction
+    .introduction__reason-for-chose
       FURIMAが選ばれる3つの理由
-    .main__introduction--reason-lists
+    .introduction__reason-lists
       .lists
         .lists__list
           .lists__list--picture
@@ -37,13 +37,13 @@
           .lists__list--discription
             最大3%でお得に出品&購入！
 
-  .main__middle-banner
+  .middle-banner
     = render partial: "index_banner", locals: {title: "会員数日本一位", sub: "FURIMAは、フリマアプリで最も人気。\n出品・購入回数も業界最多です！\nほしかったあの商品に出会えるかもしれません。"}
 
-  .main__feature
-    .main__feature--title
+  .feature
+    .feature__title
       FURIMAの特徴
-    .main__feature--feature-lists 
+    .feature__feature-lists 
       .list
         .list__picture
           = image_tag '/assets/material/icon/icon-01.png', class: "feature-picture"
@@ -66,11 +66,11 @@
         .list__discription
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   
-  .main__pic-up
-    .main__pic-up--title
+  .mpic-up
+    .pic-up__title
       ピックアップ
 
-    .main__pic-up--content
+    .pic-up__content
       = link_to '商品一覧', "#", class: "item-links"
       .items
         = render "index_item"
@@ -81,7 +81,7 @@
         = render "index_item"
         
        
-  .main__bottom-banner
+  .bottom-banner
     = render partial: "index_banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
     
 

@@ -10,12 +10,13 @@
 
 .main {
 
-  &__top-banner {
+  .top-banner {
     @include banner 
   }
-  &__introduction {
+  
+  .introduction {
     padding: 60px 20px;
-    &--reason-for-chose {
+    &__reason-for-chose {
       text-align: center;
       font-size: 26px;
       line-height: 1.4;
@@ -24,7 +25,7 @@
       padding-bottom: 15px;
       position: relative; 
     }
-    &--reason-for-chose::after {
+    &__reason-for-chose::after {
       content: "";
       width: 70px;
       height: 4px;
@@ -34,7 +35,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &--reason-lists {
+    &__reason-lists {
       .lists {
         text-align: center;
         display: flex;
@@ -88,7 +89,8 @@
       }
     }
   }
-  &__middle-banner {
+  
+  .middle-banner {
     @include banner (
       url(/assets/material/pict/bg-topMiddleDl-pict.jpg),
       400px, 
@@ -105,10 +107,11 @@
       bold
     )
   }
-  &__feature {  
+  
+  .feature {  
     padding: 60px 100px;
     background-color: #fff;
-    &--title {
+    &__title {
       text-align: center;
       font-size: 26px;
       line-height: 1.4;
@@ -117,7 +120,7 @@
       padding-bottom: 15px;
       position: relative; 
     }
-    &--title::after {
+    &__title::after {
       content: "";
       width: 70px;
       height: 4px;
@@ -127,7 +130,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &--feature-lists {
+    &__feature-lists {
       max-width: 1060px;
       width: 100%;
       margin: 0 auto;
@@ -161,16 +164,16 @@
     }
   }
   
-  &__pic-up {
+  .pic-up {
     padding: 80px;
     background-color: #f8f8f8;
-    &--title{
+    &__title{
       text-align: center;
       font-size: 28px;
       line-height: 1.4;
       font-weight: bold;
     }
-    &--content {
+    &__content {
       text-align: center;
       .item-links {
         font-size: 24px;
@@ -186,7 +189,8 @@
       }
     }
   }
-  &__bottom-banner {
+  
+  .bottom-banner {
     @include banner (
       url(/assets/material/pict/bg-appBanner-pict.jpg), 
       400px,
