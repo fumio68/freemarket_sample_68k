@@ -45,13 +45,17 @@
       justify-content: space-between;
       align-items: center;
       &__price {
-
+        
       }
       &__favorite {
         display: flex;
         .fa.fa-star {
+          
           display: inline-block;
           color: black;  
+        }
+        .favorit-number {
+          padding-left: 5px;
         }
       }
     }
