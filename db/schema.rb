@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_014114) do
     t.string "last_name", null: false
     t.string "j_family_name", null: false
     t.string "j_last_name", null: false
-    t.string "post_code", null: false
+    t.string "postcode", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "block", null: false
