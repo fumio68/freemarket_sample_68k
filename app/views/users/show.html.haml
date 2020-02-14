@@ -1,0 +1,177 @@
+.mypage
+  = render partial: "/shared/header"
+  .mypage__main
+    .mypage__main__mask
+      .mypage__main__mask__left
+        %ul.mypage__main__mask__left__nav-list
+          %a.mypage__main__mask__left__nav-list__item.mypage__main__mask__left__nav-list__item--active{:href => "#"}
+            %li マイページ
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li お知らせ
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li やることリスト
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li いいね！一覧
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 出品する
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 出品した商品-出品中
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 出品した商品-取引中
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 出品した商品-売却済み
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 購入した商品-取引中
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 購入した商品-過去の取引
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li ニュース一覧
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 評価一覧
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li ガイド
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li お問い合わせ
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+        %h3.mypage__main__mask__left__nav-head
+          メルペイ
+        %ul.mypage__main__mask__left__nav-list
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 売上・振り込み申請
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li ポイント
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+        %h3.mypage__main__mask__left__nav-head
+          設定
+        %ul.mypage__main__mask__left__nav-list
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li プロフィール
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 発送元・お届け先情報変更
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 支払い方法
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li メール/パスワード
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 本人情報
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li 電話番号の確認
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          %a.mypage__main__mask__left__nav-list__item{:href => "#"}
+            %li ログアウト
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+        %h3.mypage__main__mask__left__nav-head
+      .mypage__main__mask__right
+        .mypage__main__mask__right__user-box
+          %a.mypage__main__mask__right__user-box__inner{:href => "#"}
+            = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'mypage__main__mask__right__user-box__inner__icon')
+            .mypage__main__mask__right__user-box__inner__name
+              #{@user.nickname}
+            .mypage__main__mask__right__user-box__inner__count
+              評価 0 出品数 0
+        .mypage__main__mask__right__notification
+          %ul.mypage__main__mask__right__notification__tab
+            %li.mypage__main__mask__right__notification__tab__item.mypage__main__mask__right__notification__tab__item--active お知らせ
+            %li.mypage__main__mask__right__notification__tab__item やることリスト
+          %ul.mypage__main__mask__right__notification__content
+            %li.mypage__main__mask__right__notification__content__item-link
+              《新規登録者限》”最大1,000円分のポイントがもらえる”出品キャンペーン開催中！
+            %li.mypage__main__mask__right__notification__content__go-list
+              = link_to "一覧を見る", "#", class: 'mypage__main__mask__right__notification__content__go-list__btn'
+        .mypage__main__mask__right__records
+          .mypage__main__mask__right__records__head
+            購入した商品
+          %ul.mypage__main__mask__right__records__tab
+            %li.mypage__main__mask__right__records__tab__item.mypage__main__mask__right__records__tab__item--active
+              取引中
+            %li.mypage__main__mask__right__records__tab__item
+              過去の取引
+          .mypage__main__mask__right__records__content
+            = image_tag("material/logo/logo.png", class: 'mypage__main__mask__right__records__content__icon')
+            .mypage__main__mask__right__records__content__text
+              取引中の商品がありません
+  .mypage__footer
+    .mypage__footer__banner
+    .mypage__footer__wrapper
+      .mypage__footer__wrapper__content
+        .mypage__footer__wrapper__content__about
+          %ul.mypage__footer__wrapper__content__about__head
+            メルカリについて
+          %li.mypage__footer__wrapper__content__about__item
+            会社概要（運営会社）
+          %li.mypage__footer__wrapper__content__about__item
+            採用情報
+          %li.mypage__footer__wrapper__content__about__item
+            プレリリース
+          %li.mypage__footer__wrapper__content__about__item
+            公式ブログ
+          %li.mypage__footer__wrapper__content__about__item
+            メルカリロゴ利用ガイドライン
+        .mypage__footer__wrapper__content__help-guide
+          %ul.mypage__footer__wrapper__content__help-guide__head
+            ヘルプ＆ガイド
+          %li.mypage__footer__wrapper__content__help-guide__item
+            メルカリガイド
+          %li.mypage__footer__wrapper__content__help-guide__item
+            らくらくメルカリ便
+          %li.mypage__footer__wrapper__content__help-guide__item
+            ゆうゆうメルカリ便
+          %li.mypage__footer__wrapper__content__help-guide__item
+            大型メルカリ便
+          %li.mypage__footer__wrapper__content__help-guide__item
+            単体取引ガイド
+          %li.mypage__footer__wrapper__content__help-guide__item
+            メルカリあんしん・あんぜん宣言！
+          %li.mypage__footer__wrapper__content__help-guide__item
+            偽ブランド品撲滅への取り組み
+          %li.mypage__footer__wrapper__content__help-guide__item
+            メルカリボックス
+          %li.mypage__footer__wrapper__content__help-guide__item
+            スマホ出品・売却相場
+        .mypage__footer__wrapper__content__privacy
+          %ul.mypage__footer__wrapper__content__privacy__head
+            プライバシーと利用規約
+          %li.mypage__footer__wrapper__content__privacy__item
+            プライバシーポリシー
+          %li.mypage__footer__wrapper__content__privacy__item
+            メルカリ利用規約
+          %li.mypage__footer__wrapper__content__privacy__item
+            あんしんスマホサポート制度に関する利用規約
+          %li.mypage__footer__wrapper__content__privacy__item
+            コンプライアンスポリシー
+          %li.mypage__footer__wrapper__content__privacy__item
+            個人データの安全管理に係る基本方針
+          %li.mypage__footer__wrapper__content__privacy__item
+            特定商取引に関する表記
+          %li.mypage__footer__wrapper__content__privacy__item
+            資金決済法に基づく表示
+          %li.mypage__footer__wrapper__content__privacy__item
+            法令順守と犯罪防止のために
+        .mypage__footer__wrapper__content__lang
+          %ul.mypage__footer__wrapper__content__lang__head
+            国
+          %li.mypage__footer__wrapper__content__lang__item
+            日本
+          %li.mypage__footer__wrapper__content__lang__item
+            United States
+      .mypage__footer__wrapper__bottom
+  = render partial: "/shared/sellbtn"
