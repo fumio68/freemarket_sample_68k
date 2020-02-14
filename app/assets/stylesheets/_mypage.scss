@@ -222,7 +222,7 @@
           }
           &__item:hover &__item__arrow{
             transform: translateX(8px);
-            transition: 0.3s;
+            // transition: 0.3s;
           }
           &__item--active{
             background-color: #EEEEEE;
