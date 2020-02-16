@@ -1,0 +1,61 @@
+@mixin banner(
+  $background: url(/assets/material/pict/bg-mainVisual-pict_pc.jpg), 
+  $height: 560px, 
+  $title-font: 60px, 
+  $banner-padding: 0 60, 
+  $maxwidth: 1280px, 
+  $sub-font: 18px,
+  $title-height: 1.2,
+  $sub-height: 1.77778,
+  $display:'',
+  $justyfy-content: '',
+  $content-text: '',
+  $padding-top: 35px,
+  $title-weight: ''
+)  {
+  .banner {
+    height: $height;
+    background-image: $background; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: flex;
+    padding: $banner-padding;
+    align-items: center;
+    position: relative;
+    &__content {
+      max-width: $maxwidth;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: $padding-top;
+  
+      color: #fff;
+      text-align: $content-text;
+      .title {
+        font-size: $title-font;
+        line-height: $title-height;
+        font-weight: $title-weight;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      .sub-title {
+        font-size: $sub-font;
+        line-height: $sub-height;
+        margin: 16px 0 0 0;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      .app-btns {
+        display: flex;
+        margin-top: 24px;
+        display: $display;
+        justify-content: $justyfy-content;
+        .app-btn {
+          margin-right: 10px;
+          width: 180px;
+        }
+        .app-btn:hover {
+          opacity: 0.5;
+        }
+      } 
+    }
+  }
+}
