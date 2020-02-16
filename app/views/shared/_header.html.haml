@@ -51,14 +51,12 @@
           %li.header__mask__menu__nav-box__right__mask.nav-menu.header__mask__menu__nav-box__right__mask--mypage
             = link_to "#" ,class: 'nav-menu' do
               = icon("far", "user", class: 'header__mask__menu__nav-box__right__mask__icon')
-              %p.header__mask__menu__nav-box__right__mask__list
-                マイページ
-            - if true
-              = render partial: 'shared/popup/mypage_popup.html.haml'
+              %p.header__mask__menu__nav-box__right__mask__list マイページ
+            = render partial: 'shared/popup/popup_mypage.html.haml'
 
   .header__nav-mask
     %ul.header__nav-mask__inner
-      %a{:href => "#", class: 'header__nav-mask__inner__item'}
+      = link_to "#", class: 'header__nav-mask__inner__item' do
         %li メルカリ >
-      %a{class: 'header__nav-mask__inner__item'}
+      = link_to "#", class: 'header__nav-mask__inner__item' do
         %li マイページ
