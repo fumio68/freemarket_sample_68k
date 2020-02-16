@@ -11,93 +11,50 @@
         %ul.header__mask__menu__nav-box__left
           %a{:href => "#", class: 'header__mask__menu__nav-box__left__item'}
             = image_tag("material/icon/icon_category.png", class: 'header__mask__menu__nav-box__left__item__icon')
-            %li.header__mask__menu__nav-box__left__item__parent
+            %li.header__mask__menu__nav-box__left__item__parent.nav-search
               カテゴリーから探す
               %ul.header__mask__menu__nav-box__left__item__parent__child
-                %li.hover-color
+                %li.nav-search
                   レディース
                   %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
-                    %li.hover-color
+                    %li.nav-search
                       トップス
                       %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
-                        %li.hover-color
+                        %li.nav-search
                           Tシャツ/カットソー(半袖/袖なし)
           %a{:href => "#", class: 'header__mask__menu__nav-box__left__item'}
             = image_tag("material/icon/icon_brand.png", class: 'header__mask__menu__nav-box__left__item__icon')
-            %li.header__mask__menu__nav-box__left__item__parent
+            %li.header__mask__menu__nav-box__left__item__parent.nav-search
               ブランドから探す
               %ul.header__mask__menu__nav-box__left__item__parent__child
-                %li.hover-color
+                %li.nav-search
                   test1
                   %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
-                    %li.hover-color
+                    %li.nav-search
                       test2
                       %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
-                        %li.hover-color
+                        %li.nav-search
                           test3
         %ul.header__mask__menu__nav-box__right
           %li.header__mask__menu__nav-box__right__mask
-            = link_to "#" do
+            = link_to "#" ,class: 'nav-menu' do
               = icon("far", "heart", class: 'header__mask__menu__nav-box__right__mask__icon')
               %p.header__mask__menu__nav-box__right__mask__list いいね！一覧
           %li.header__mask__menu__nav-box__right__mask
-            = link_to "#" do
+            = link_to "#" ,class: 'nav-menu' do
               = icon("far", "bell", class: 'header__mask__menu__nav-box__right__mask__icon')
               %p.header__mask__menu__nav-box__right__mask__list お知らせ
           %li.header__mask__menu__nav-box__right__mask
-            = link_to "#" do
+            = link_to "#" ,class: 'nav-menu' do
               = icon("fa", "check", class: 'header__mask__menu__nav-box__right__mask__icon')
               %p.header__mask__menu__nav-box__right__mask__list やることリスト
-          %li.header__mask__menu__nav-box__right__mask.header__mask__menu__nav-box__right__mask--mypage
-            = link_to "#" do
+          %li.header__mask__menu__nav-box__right__mask.nav-menu.header__mask__menu__nav-box__right__mask--mypage
+            = link_to "#" ,class: 'nav-menu' do
               = icon("far", "user", class: 'header__mask__menu__nav-box__right__mask__icon')
               %p.header__mask__menu__nav-box__right__mask__list
                 マイページ
             - if true
-              .header__mask__menu__nav-box__right__mask--mypage__popup
-                .header__mask__menu__nav-box__right__mask--mypage__popup__iconimage
-                  .header__mask__menu__nav-box__right__mask--mypage__popup__iconimage__bgimage
-                    = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__iconimage__bgimage__userimage')
-                  .header__mask__menu__nav-box__right__mask--mypage__popup__iconimage__inner
-                    .header__mask__menu__nav-box__right__mask--mypage__popup__iconimage__inner__name
-                      #{@user.nickname}
-                    .header__mask__menu__nav-box__right__mask--mypage__popup__iconimage__inner__count
-                      評価 0 出品数 0
-                .header__mask__menu__nav-box__right__mask--mypage__popup__pointbox
-                  %ul.header__mask__menu__nav-box__right__mask--mypage__popup__pointbox__moneyandpoint
-                    %li
-                      %ul
-                        = link_to "#" ,class: 'header__mask__menu__nav-box__right__mask--mypage__popup__pointbox__moneyandpoint__item--money' do
-                          %li 売上金
-                          %li
-                            ¥0
-                            = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__pointbox__moneyandpoint__item--money__arrow')
-                    %li
-                      %ul
-                        = link_to "#" ,class: 'header__mask__menu__nav-box__right__mask--mypage__popup__pointbox__moneyandpoint__item--point' do
-                          %li ポイント
-                          %li
-                            P0
-                            = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__pointbox__moneyandpoint__item--point__arrow')
-                %ul.header__mask__menu__nav-box__right__mask--mypage__popup__list
-                  = link_to "#", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item--head' do
-                    %li いいね！一覧
-                    = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item--head__arrow')
-                  = link_to "#", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item' do
-                    %li 出品した商品-出品中
-                    = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item__arrow')
-                  = link_to "#", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item' do
-                    %li 出品した商品-取引中
-                    = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item__arrow')
-                  = link_to "#", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item' do
-                    %li 出品した商品-売却済み
-                    = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item__arrow')
-                  = link_to "#", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item' do
-                    %li 購入した商品-取引中
-                    = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item__arrow')
-                  = link_to "#", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item' do
-                    %li 購入した商品-過去の取引
-                    = icon("fa", "angle-right", class: 'header__mask__menu__nav-box__right__mask--mypage__popup__list__item__arrow')
+              = render partial: 'shared/popup/mypage_popup.html.haml'
 
   .header__nav-mask
     %ul.header__nav-mask__inner
