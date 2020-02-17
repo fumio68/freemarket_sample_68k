@@ -12,7 +12,7 @@ describe Residence do
     it "is invalid without family_name " do
       residence = build(:residence, family_name: "" ) 
       residence.valid?
-      expect(residence.errors[:family_name]).to include("is invalid")
+      expect(residence.errors[:family_name]).to include("can't be blank")
     end
 
     it "is invalid without last_name " do
