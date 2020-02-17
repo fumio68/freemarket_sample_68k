@@ -1,5 +1,5 @@
 .header
-  header
+  = render "/shared/header"
   
 .main
   .top-banner
@@ -86,35 +86,8 @@
     
 
 
-.footer 
-  .footer__contents
-    .footer__contents--content
-      .list 
-        .list__title FURIMAについて
-        .list__links
-          = link_to "会社概要（運営会社）", "#", class: "link"
-          = link_to "プライバシーポリシー", "#", class: "link"
-          = link_to "FURIMA利用規約", "#", class: "link"
-          = link_to "ポイントに関する特約", "#", class: "link"
+.footer
+  = render "shared/footer"
 
-    .footer__contents--content
-      .list
-        .list__title FURIMAを見る
-
-        .list__links
-          = link_to "カテゴリー一覧", "#", class: "link"
-          = link_to "ブランド一覧", "#", class: "link"
-
-    .footer__contents--content
-      .list
-        .list__title ヘルプ＆ガイド
-        .list__links
-          = link_to "FURIMAガイド", "#", class: "link"
-          = link_to "FURIMAロゴ利用ガイドライン", "#", class: "link"
-          = link_to "お知らせ", "#", class: "link"
-    
-  .footer__logo
-    = link_to "#" do
-      = image_tag '/assets/material/logo/logo-white.png', class: "logo-btn"
-  
-  %p.copyright © FURIMA
+.sellbtn
+  = render "shared/sellbtn"
