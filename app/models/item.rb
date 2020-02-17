@@ -2,12 +2,12 @@ class Item < ApplicationRecord
   # association
   belongs_to :user
   # validation
-  validates :name, null: false
-  validates :price, null: false
-  validates :content, null: false
-  validates :condition, null: false
-  validates :shipping, null: false
-  validates :shipping_area, null: false
-  validates :days_to_ship, null: false
-  validates :status, null: false
+  validates :name,          presence: true
+  validates :price,         presence: true
+  validates :content,       presence: true
+  validates :condition,     presence: true
+  validates :shipping,      presence: true
+  validates :shipping_area, presence: true
+  validates :days_to_ship,  presence: true
+  validates :status,        presence: true
 end
