@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   # association
   belongs_to :user
+  has_many :item_images
   # validation
   validates :name, null: false
   validates :price, null: false

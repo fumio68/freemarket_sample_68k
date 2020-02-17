@@ -1,7 +1,10 @@
 .item 
   %a.item__link(href = "#")
-  .item__image  
-    = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "item-image"
+  .item__image 
+    - objects =  item.item_images
+    - objects.each do |object| 
+      = image_tag object.image
+    
   .item__body
     .item__body--name
       = item.name
