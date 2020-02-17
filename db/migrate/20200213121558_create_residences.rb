@@ -5,7 +5,7 @@ class CreateResidences < ActiveRecord::Migration[5.2]
       t.string :last_name, null: false
       t.string :j_family_name, null: false
       t.string :j_last_name, null: false
-      t.string :post_code, null: false
+      t.string :postcode, null: false
       t.string :prefecture, null: false
       t.string :city, null: false
       t.string :block, null: false
