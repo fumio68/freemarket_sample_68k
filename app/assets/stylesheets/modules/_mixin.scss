@@ -1,0 +1,6 @@
+// action
+@mixin color($background_color: white, $color: black){
+  // default
+  background-color: $background_color;
+  color: $color;
+}

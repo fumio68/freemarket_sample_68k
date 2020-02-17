@@ -1,0 +1,115 @@
+.mypage
+  = render partial: "/shared/header"
+  .mypage__main
+    .mypage__main__mask
+      .mypage__main__mask__left
+        %ul.mypage__main__mask__left__nav-list
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item mypage__main__mask__left__nav-list__item--active' do 
+            %li マイページ
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li お知らせ
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li やることリスト
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li いいね！一覧
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 出品する
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 出品した商品-出品中
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 出品した商品-取引中
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 出品した商品-売却済み
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 購入した商品-取引中
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 購入した商品-過去の取引
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li ニュース一覧
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 評価一覧
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li ガイド
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li お問い合わせ
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+        %h3.mypage__main__mask__left__nav-head
+          メルペイ
+        %ul.mypage__main__mask__left__nav-list
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 売上・振り込み申請
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li ポイント
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+        %h3.mypage__main__mask__left__nav-head
+          設定
+        %ul.mypage__main__mask__left__nav-list
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li プロフィール
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 発送元・お届け先情報変更
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do 
+            %li 支払い方法
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li メール/パスワード
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 本人情報
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li 電話番号の確認
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+            %li ログアウト
+            = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
+        %h3.mypage__main__mask__left__nav-head
+      .mypage__main__mask__right
+        .mypage__main__mask__right__user-box
+          %a.mypage__main__mask__right__user-box__inner{:href => "#"}
+            = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'mypage__main__mask__right__user-box__inner__icon')
+            .mypage__main__mask__right__user-box__inner__name
+              #{@user.nickname}
+            .mypage__main__mask__right__user-box__inner__count
+              評価 0 出品数 0
+        .mypage__main__mask__right__notification
+          %ul.mypage__main__mask__right__notification__tab
+            %li.mypage__main__mask__right__notification__tab__item.mypage__main__mask__right__notification__tab__item--active お知らせ
+            %li.mypage__main__mask__right__notification__tab__item やることリスト
+          %ul.mypage__main__mask__right__notification__content
+            %li.mypage__main__mask__right__notification__content__item-link
+              《新規登録者限》”最大1,000円分のポイントがもらえる”出品キャンペーン開催中！
+            %li.mypage__main__mask__right__notification__content__go-list
+              = link_to "一覧を見る", "#", class: 'mypage__main__mask__right__notification__content__go-list__btn'
+        .mypage__main__mask__right__records
+          .mypage__main__mask__right__records__head
+            購入した商品
+          %ul.mypage__main__mask__right__records__tab
+            %li.mypage__main__mask__right__records__tab__item.mypage__main__mask__right__records__tab__item--active
+              取引中
+            %li.mypage__main__mask__right__records__tab__item
+              過去の取引
+          .mypage__main__mask__right__records__content
+            = image_tag("material/logo/logo.png", class: 'mypage__main__mask__right__records__content__icon')
+            .mypage__main__mask__right__records__content__text
+              取引中の商品がありません
+  .mypage__footer
+    = render "/shared/footer"
+
+  = render partial: "/shared/sellbtn"

@@ -1,0 +1,168 @@
+@import "modules/mixin";
+
+.popup--mypage{
+  display: none;
+}
+.header__mask__menu__nav-box__right__mask--mypage:hover .popup--mypage{
+  display: block;
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 44px;
+  right: 0px;
+  width: 315px;
+  height: 492px;
+}
+
+.popup--mypage{
+  &__iconimage{
+    width: 315px;
+    height: 155px;
+    &__bgimage{
+      background-image: url("material/pict/awa.jpg");
+      background-size: cover;
+      width: 315px;
+      height: 80px;
+      position: relative;
+      &__userimage{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        bottom: -20px;
+        left: 130px;
+      }
+    }
+    &__inner{
+      height: 75px;
+      background-color: white;
+      text-align: center;
+      
+      &__name{
+        font-size: 16px;
+        padding-top: 19px;
+        margin-bottom: 4px;
+        text-decoration: none;
+      }
+      &__count{
+        font-size: 14px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-around;
+        margin-left: 70px;
+        margin-right: 70px;
+        &__item{
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+  &__pointbox{
+    height: 90px;
+    background-color: white;
+    &__moneyandpoint{
+      &__item--money{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px;
+        padding-left: 15px;
+        margin-right: 10px;
+        padding-right: 30px;
+        line-height: 40px;
+        background-color: #F5F5F5;
+        border: 1px solid;
+        border-color: gray;
+        font-size: 13px;
+        text-decoration: none;
+        color: black;
+      }
+      &__item--money:hover{
+        color: gray;
+      }
+      &__item--point{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px;
+        padding-left: 15px;
+        margin-right: 10px;
+        padding-right: 30px;
+        line-height: 40px;
+        border: 1px solid;
+        border-top: 0px;
+        background-color: #F5F5F5;
+        border-color: gray;
+        font-size: 13px;
+        text-decoration: none;
+        color: black;
+      }
+      &__item--point:hover{
+        color: gray;
+      }
+    }
+  }
+  &__list{
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 40px;
+      padding-left: 25px;
+      padding-right: 25px;
+      border: 1px solid;
+      border-top: 0px;
+      border-right: 0px;
+      border-left: 0px;
+      background-color: white;
+      border-color: gray;
+      text-decoration: none;
+      color: black;
+      &__arrow{
+        color: gray;
+      }
+    }
+    &__item:hover{
+      background-color: #F5F5F5;
+    }
+    &__item:hover &__item__arrow{
+      transform: translateX(5px);
+      transition: 0.3s;
+    }
+    &__item--head{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 40px;
+      padding-left: 25px;
+      padding-right: 25px;
+      border: 1px solid;
+      border-left: 0px;
+      border-right: 0px;
+      background-color: white;
+      border-color: gray;
+      text-decoration: none;
+      color: black;
+      &__arrow{
+        color: gray;
+      }
+    }
+    &__item--head:hover{
+      background-color: #F5F5F5;
+    }
+    &__item--head:hover &__item--head__arrow{
+      transform: translateX(5px);
+      transition: 0.3s;
+    }
+  }
+}
+
+.popup--mypage__list__item--head:hover .popup--mypage__list__item--head__arrow{
+  transform: translateX(8px);
+  transition: 0.3s;
+}
+
+.popup--mypage__list__item:hover .popup--mypage__list__item__arrow{
+  transform: translateX(8px);
+  transition: 0.3s;
+}
