@@ -119,3 +119,17 @@ function input_check(){
   
 	return result;
 }
+
+$(function(){
+	$('#password').on('change', function(){
+		let password = $('#user_password').val();
+		let check = $('#password').prop('checked');
+		if(check){
+		$('.main__box__contents__three__password').html(password);
+		$('.main__box__contents__three__password').addClass("pass-display");
+		}
+		else {
+			$('.main__box__contents__three__password').text('')
+		}
+	});
+});
