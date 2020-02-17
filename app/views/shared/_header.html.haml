@@ -15,14 +15,19 @@
               カテゴリーから探す
               %ul.header__mask__menu__nav-box__left__item__parent__child
                 %li.nav-search
-                  レディース
-                  %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
-                    %li.nav-search
-                      トップス
-                      %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
-                        %li.nav-search
-                          Tシャツ/カットソー(半袖/袖なし)
-          = link_to "#", class: 'header__mask__menu__nav-box__left__item'
+                  - @parents.each do |parent|
+                    #{parent.name}
+                    %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
+                      %li.nav-search
+                        - children = parent.children
+                        - children.each do |child|
+                          #{child.name}
+                          %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
+                            %li.nav-search
+                              - grandchildren = child.children
+                              - grandchildren.each do |grandchild|
+                                #{grandchild.name}
+          = link_to "#", class: 'header__mask__menu__nav-box__left__item' do
             = image_tag("material/icon/icon_brand.png", class: 'header__mask__menu__nav-box__left__item__icon')
             %li.header__mask__menu__nav-box__left__item__parent.nav-search
               ブランドから探す
