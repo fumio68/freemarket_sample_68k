@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   # association
   belongs_to :user
+  belongs_to :category
   # validation
   validates :name, null: false
   validates :price, null: false

@@ -9,7 +9,7 @@
             = icon("fa", "search", class: 'header__mask__menu__top__search__form__icon')
       .header__mask__menu__nav-box
         %ul.header__mask__menu__nav-box__left
-          %a{:href => "#", class: 'header__mask__menu__nav-box__left__item'}
+          = link_to "#", class: 'header__mask__menu__nav-box__left__item' do
             = image_tag("material/icon/icon_category.png", class: 'header__mask__menu__nav-box__left__item__icon')
             %li.header__mask__menu__nav-box__left__item__parent.nav-search
               カテゴリーから探す
@@ -22,7 +22,7 @@
                       %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
                         %li.nav-search
                           Tシャツ/カットソー(半袖/袖なし)
-          %a{:href => "#", class: 'header__mask__menu__nav-box__left__item'}
+          = link_to "#", class: 'header__mask__menu__nav-box__left__item'
             = image_tag("material/icon/icon_brand.png", class: 'header__mask__menu__nav-box__left__item__icon')
             %li.header__mask__menu__nav-box__left__item__parent.nav-search
               ブランドから探す
