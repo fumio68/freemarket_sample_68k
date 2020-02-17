@@ -73,13 +73,8 @@
     .pic-up__content
       = link_to '商品一覧', "#", class: "item-links"
       .items
-        = render "item_index"
-        = render "item_index"
-        = render "item_index"
-        = render "item_index"
-        = render "item_index"
-        = render "item_index"
-        
+        - @items.each do |item|
+          = render partial: "item_index", locals: { item: item }
        
   .bottom-banner
     = render partial: "banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}

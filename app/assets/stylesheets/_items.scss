@@ -1,36 +1,6 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.pic-up {
-  padding: 80px;
-  background-color: #f8f8f8;
-  &__title{
-    text-align: center;
-    font-size: 28px;
-    line-height: 1.4;
-    font-weight: bold;
-  }
-  &__content {
-    text-align: center;
-    .item-links {
-      font-size: 24px;
-      text-decoration: none;
-      color: #3CCACE;
-    }
-    .items {
-      max-width: 780px;
-      margin: 26px auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap; 
-    }
-  }
-}
-
-
-
-
-
 .item {
   width: 220px;
   display: inline-block;

@@ -4,10 +4,10 @@
     = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "item-image"
   .item__body
     .item__body--name
-      iPhone 11 pro
+      = item.name
     .item__body--middle
       .item__body--middle__price
-        100円
+        = item.price
       .item__body--middle__favorite
         = link_to "#" do
           %i.fa.fa-star
