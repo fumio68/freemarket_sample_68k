@@ -2,7 +2,7 @@
 //新規登録時  例外処理
 
 $(function(){
-	$("#btn_submit").on('click',function(e){
+	$(".main__box__contents__eight__middle").on('click',function(e){
     e.preventDefault();                      //エラー文消さない
     if(input_check()){                        //
 			return false;                           //親要素のイベントを発生させない
@@ -15,36 +15,40 @@ function input_check(){
 	let result = true;
 
 	// エラー用装飾のためのクラスリセット
-	$('#nickname').removeClass("inp_error");
-	$('#mailaddress').removeClass("inp_error");
-	$('#password').removeClass("inp_error");
-	$('#namekanzi').removeClass("inp_error");
-	$('#namekana').removeClass("inp_error");
-	$('#b_year').removeClass("inp_error");
-	$('#b_month').removeClass("inp_error");
-	$('#b_day').removeClass("inp_error");
+	$('.main__box__contents__one__form').removeClass("inp_error");
+	$('.main__box__contents__two__form').removeClass("inp_error");
+	$('.main__box__contents__three__form').removeClass("inp_error");
+	$('.main__box__contents__five__form__family').removeClass("inp_error");
+	$('.main__box__contents__five__form__last').removeClass("inp_error");
+	$('.main__box__contents__six__form__j-family').removeClass("inp_error");
+	$('.main__box__contents__six__form__j-last').removeClass("inp_error");
+	$('.main__box__contents__seven__middle__year-box').removeClass("inp_error");
+	$('.main__box__contents__seven__middle__month-box').removeClass("inp_error");
+	$('.main__box__contents__seven__middle__date-box').removeClass("inp_error");
   
 	// 入力エラー文をリセット
 	$("#nickname_error").empty();
-	$("#mailaddress_error").empty();
+	$("#email_error").empty();
 	$("#password_error").empty();
-	$("#namekanzi_error").empty();
-	$("#namekana_error").empty();
+	$(".main__box__contents__five__name-error__family").empty();
+	$(".main__box__contents__five__name-error__last").empty();
+	$(".main__box__contents__six__name-error__j-family").empty();
+	$(".main__box__contents__six__name-error__j-last").empty();
 	$('#b_year_error').empty();
-	$('#b_month_error').empty();
-	$('#b_day_error').empty();
+	// $('#b_month_error').empty();
+	// $('#b_day_error').empty();
 
 	// 入力内容セット
-	let nickname      =$("#nickname").val();
-	let mailaddress   =$("#mailaddress").val();
-	let password      =$("#password").val();
-	let nameseikanzi  =$("#nameseikanzi").val();
-	let namemeikanzi  =$("#namemeikanzi").val();
-	let nameseikana   =$("#nameseikana").val();
-	let namemeikana   =$("#namemeikana").val();
-	let b_year        =$("#b_year").val();
-	let b_month       =$("#b_month").val();
-	let b_day         =$("#b_day").val();
+	let nickname      =$(".main__box__contents__one__form").val();
+	let email         =$(".main__box__contents__two__form").val();
+	let password      =$(".main__box__contents__three__form").val();
+	let nameseikanzi  =$(".main__box__contents__five__form__family").val();
+	let namemeikanzi  =$(".main__box__contents__five__form__last").val();
+	let nameseikana   =$(".main__box__contents__six__form__j-family").val();
+	let namemeikana   =$(".main__box__contents__six__form__j-last").val();
+	let b_year        =$(".main__box__contents__seven__middle__year-box").val();
+	let b_month       =$(".main__box__contents__seven__middle__month-box").val();
+	let b_day         =$(".main__box__contents__seven__middle__date-box").val();
 
 
 	// 入力内容チェック
@@ -52,66 +56,84 @@ function input_check(){
 	//ニックネーム
 	if(nickname == ""){
 		$("#nickname_error").html(" ニックネームを入力してください");
-		$("#nickname").addClass("inp_error");
+		$(".main__box__contents__one__form").addClass("inp_error");
 		result = false;
 	}
 	
 	// メールアドレス
-	if(mailaddress == ""){
-		$("#mailaddress_error").html(" メールアドレスを入力してください。");
-		$("#mailaddress").addClass("inp_error");
+	if(email == ""){
+		$("#email_error").html(" メールアドレスを入力してください。");
+		$(".main__box__contents__two__form").addClass("inp_error");
 		result = false;
-	}else if(!mailaddress.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
-		$('#mailaddress_error').html("フォーマットが不適切です");
-		$("#mailaddress").addClass("inp_error");
+	}else if(!email.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
+		$('#email_error').html("フォーマットが不適切です");
+		$(".main__box__contents__two__form").addClass("inp_error");
 		result = false;
 	}
 
 	// パスワード
   if(password == ""){
 		$("#password_error").html(" パスワードを入力してください");
-		$("#password").addClass("inp_error");
+		$(".main__box__contents__three__form").addClass("inp_error");
 		result = false;
 	}else if(password.length < 7 || password.length > 128 ){
 		$("#password_error").html(" パスワードは7文字以上 128文字以下で入力してください。");
-		$("#password").addClass("inp_error");
+		$("#.main__box__contents__three__form").addClass("inp_error");
 		result = false;
 	}
 
-	//name sei kanzi
+	// name sei kanzi
 	if(nameseikanzi == ""){
-		$("#nameseikanzi_error").html("姓を入力してください");
-		$("#nameseikanzi").addClass("inp_error");
+		$(".main__box__contents__five__name-error__family").html("姓を入力してください");
+		$(".main__box__contents__five__form__family").addClass("inp_error");
 		result = false;
 	}
 
 	//name mei kanzi
 	if(namemeikanzi == ""){
-		$("#namemeikanzi_error").html("名を入力してください");
-		$("#namemeikanzi").addClass("inp_error");
+		$(".main__box__contents__five__name-error__last").html("名を入力してください");
+		$(".main__box__contents__five__form__last").addClass("inp_error");
 		result = false;
 	}
 
-	//name sei kana
+	// name sei kana
 	if(nameseikana == ""){
-		$("#nameseikana_error").html("姓カナを入力してください");
-		$("#nameseikana").addClass("inp_error");
+		$(".main__box__contents__six__name-error__j-family").html("姓カナを入力してください");
+		$(".main__box__contents__six__form__j-family").addClass("inp_error");
 		result = false;
 	}
 
-	//name mei kana
+	// name mei kana
 	if(namemeikana == ""){
-		$("#namemeikana_error").html("名カナを入力してください");
-		$("#namemeikana").addClass("inp_error");
+		$(".main__box__contents__six__name-error__j-last").html("名カナを入力してください");
+		$(".main__box__contents__six__form__j-last").addClass("inp_error");
 		result = false;
 	}
 
 	//b_year, b_month, b_day
-	if(b_year == "" || b_month == "" || b_day == ""){
+	if(b_year == "" && b_month == "" && b_day == ""){
 		$("#b_year_error").html("生年月日を入力してください");
-		$("#b_year").addClass("inp_error");
-		$("#b_month").addClass("inp_error");
-		$("#b_day").addClass("inp_error");
+		$(".main__box__contents__seven__middle__year-box").addClass("inp_error");
+		$(".main__box__contents__seven__middle__month-box").addClass("inp_error");
+		$(".main__box__contents__seven__middle__date-box").addClass("inp_error");
+		result = false;
+	}
+
+	if(b_year == "" ){
+		$("#b_year_error").html("生年月日を入力してください");
+		$(".main__box__contents__seven__middle__year-box").addClass("inp_error");
+		result = false;
+	}
+
+	if(b_month == "" ){
+		$("#b_year_error").html("生年月日を入力してください");
+		$(".main__box__contents__seven__middle__month-box").addClass("inp_error");
+		result = false;
+	}
+
+	if( b_day == ""){
+		$("#b_year_error").html("生年月日を入力してください");
+		$(".main__box__contents__seven__middle__date-box").addClass("inp_error");
 		result = false;
 	}
   

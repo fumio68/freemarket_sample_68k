@@ -161,6 +161,9 @@
         margin: 0 auto;
         width: 350px;
         height: 102px;
+        &__name-error li{
+          display: inline;
+        }
         &__top{
           display: flex;
           &__name{
@@ -204,6 +207,10 @@
         margin: 0 auto;
         width: 350px;
         height: 102px;
+        &__name-error li{
+          display: inline;
+          font-size: 14px;
+        }
         &__top{
           display: flex;
           &__kana{
@@ -473,4 +480,17 @@
       margin: 0 auto;
     }
   }
+}
+
+
+//増井  編集箇所
+.inp_error{border: 1px solid #F88A8A;
+}
+
+.error_m {
+	font-size: 15px;
+	font-weight: normal;
+	color: #FF4040;
+	display: block;
+	margin: 0;
 }
