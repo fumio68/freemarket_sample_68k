@@ -1,0 +1,121 @@
+= render partial: "shared/header"
+.main
+  .main__show
+    .main__show__content
+      .main__show__content__top
+        .main__show__content__top__itemInfo
+          .main__show__content__top__itemInfo__name
+            %h2 product
+          .main__show__content__top__itemInfo__image
+            %ul.main__show__content__top__itemInfo__image__ul
+              %li.main__show__content__top__itemInfo__image__ul__li
+                = image_tag src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "main__show__content__top__itemInfo__image__ul__li__img "
+                %ul.main__show__content__top__itemInfo__image__ul__li__ul
+                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
+                    = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
+                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
+                    = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png", class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
+                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
+                    = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
+          .main__show__content__top__itemInfo__price
+            %span.main__show__content__top__itemInfo__price__span
+              ¥20000
+            .main__show__content__top__itemInfo__price__detail
+              %span.main__show__content__top__itemInfo__price__detail__span
+                (税込み)
+              %span.main__show__content__top__itemInfo__price__detail__span
+                送料込み
+          .main__show__content__top__itemInfo__detail
+            product
+          .main__show__content__top__itemInfo__table
+            %table.main__show__content__top__itemInfo__table__table
+              %tbody.main__show__content__top__itemInfo__table__table__tbody
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    出品者
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    hoge
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    カテゴリー
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    = link_to "メンズ", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                    %br
+                    = link_to "ジャケット/アウター", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                    %br
+                    = link_to "ノーカラージャケット", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    ブランド
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    商品のサイズ
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    M
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    商品の状態
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    新品/未使用
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    配送料の負担
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    送料込み(出品者負担)
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    発送元の地域
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    = link_to "青森県", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                %tr.main__show__content__top__itemInfo__table__table__tbody__tr
+                  %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
+                    発送日の目安
+                  %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    1-2日で発送
+
+          .main__show__content__top__itemInfo__other  
+            %ul.main__show__content__top__itemInfo__other__left
+              %li.main__show__content__top__itemInfo__other__left__btn
+                = icon('fa','star',class: "main__show__content__top__itemInfo__other__left__btn__icon")
+                お気に入り 0
+            %ul.main__show__content__top__itemInfo__other__right
+              %li.main__show__content__top__itemInfo__other__right__list
+                = link_to "#", class: "main__show__content__top__itemInfo__other__right__list__btn" do
+                  = icon('fa','flag', class: "main__show__content__top__itemInfo__other__right__list__btn__icon")
+                  不適切な商品の通報
+        .main__show__content__top__commentArea
+          %form{action: "#", class: "main__show__content__top__commentArea__form"}
+            %textarea.main__show__content__top__commentArea__form__textarea
+            %p.main__show__content__top__commentArea__message
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %br
+            %button{name: "button", type: "submit", class: "main__show__content__top__commentArea__btn"}
+              = icon('fa', 'comment',class: "main__show__content__top__commentArea__btn__icon")
+              コメントする
+        %ul.main__show__content__top__aroundItems
+          %li.main__show__content__top__aroundItems__before
+            = link_to "#", class: "main__show__content__top__aroundItems__before__link" do
+              = icon('fa', 'angle-left', class: "main__show__content__top__aroundItems__before__link__icon")
+              前の商品
+          %li.main__show__content__top__aroundItems__after
+            = link_to  "#", class: "main__show__content__top__aroundItems__after__link"  do
+              後ろの商品
+              = icon('fa', 'angle-right', class: "main__show__content__top__aroundItems__after__link__icon")
+        .main__show__content__top__moreItems
+          = link_to "ベビーキッズをもっと見る", "#", class: "main__show__content__top__moreItems__link"
+  .bottom-banner
+    = render partial: "banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
+  .main__footer
+    = render "shared/footer"
+  = render "shared/sellbtn"
+
+  
+    
+
+
+
+
+
