@@ -14,10 +14,13 @@
  *= require_self
  */
 
-@import "reset";
-@import "font";
-@import "items";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "item_index";
-@import "mypage";
+ @import "reset";
+ @import "font";
+ @import "modules/mixin";
+ @import "items";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import "item_index";
+ @import "mypage";
+ @import "header/header";
+ @import "header/popup_mypage.scss";
