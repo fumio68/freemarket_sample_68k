@@ -84,7 +84,7 @@
   
   .middle-banner {
     @include banner (
-      url(/assets/material/pict/bg-topMiddleDl-pict.jpg),
+      url(material/pict/bg-topMiddleDl-pict.jpg),
       400px, 
       27px, 
       0 60, 
@@ -184,7 +184,7 @@
   
   .bottom-banner {
     @include banner (
-      url(/assets/material/pict/bg-appBanner-pict.jpg), 
+      url(material/pict/bg-appBanner-pict.jpg), 
       400px,
       24px,
       100px 40px,
