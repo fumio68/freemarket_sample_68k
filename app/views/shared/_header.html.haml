@@ -14,18 +14,18 @@
             %li.header__mask__menu__nav-box__left__item__parent.nav-search
               カテゴリーから探す
               %ul.header__mask__menu__nav-box__left__item__parent__child
-                %li.nav-search
-                  - @parents.each do |parent|
+                - @parents.each do |parent|
+                  %li.nav-search
                     #{parent.name}
                     %ul.header__mask__menu__nav-box__left__item__parent__child__gchild
-                      %li.nav-search
-                        - children = parent.children
-                        - children.each do |child|
+                      - children = parent.children
+                      - children.each do |child|
+                        %li.nav-search
                           #{child.name}
                           %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
-                            %li.nav-search
-                              - grandchildren = child.children
-                              - grandchildren.each do |grandchild|
+                            - grandchildren = child.children
+                            - grandchildren.each do |grandchild|
+                              %li.nav-search
                                 #{grandchild.name}
           = link_to "#", class: 'header__mask__menu__nav-box__left__item' do
             = image_tag("material/icon/icon_brand.png", class: 'header__mask__menu__nav-box__left__item__icon')
