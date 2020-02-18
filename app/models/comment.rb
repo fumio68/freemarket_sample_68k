@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :item
   #validation
-  validates :text, null: false
+  validates :text, presence: true
 
 end

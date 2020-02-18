@@ -1,13 +1,17 @@
 class Residence < ApplicationRecord
+
   # association
   belongs_to :user
+
   # validation
-  validates :family_name, null: false
-  validates :last_name, null: false
-  validates :j_family_name, null: false
-  validates :j_last_name, null: false
-  validates :postcode, null: false
-  validates :prefecture, null: false
-  validates :city, null: false
-  validates :block, null: false
+  validates :family_name,        presence: true, format: { with: /\A[一-龥ぁ-ん]/ }
+  validates :last_name,          presence: true, format: { with: /\A[一-龥ぁ-ん]/ }
+  validates :j_family_name,      presence: true, format: { with: /\A[ぁ-ん]/ }
+  validates :j_last_name,        presence: true, format: { with: /\A[ぁ-ん]/ }
+  validates :postcode,           presence: true
+  validates :prefecture,         presence: true
+  validates :city,               presence: true
+  validates :block,              presence: true
+  
 end
+

@@ -4,17 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  # association
-  has_many :items
-  # validation
-  validates :nickname, null: false
-  validates :email, null: false
-  validates :encrypted_password, null: false
-  validates :family_name, null: false
-  validates :last_name, null: false
-  validates :j_family_name, null: false
-  validates :j_last_name, null: false
-  validates :b_year, null: false
-  validates :b_month, null: false
-  validates :b_date, null: false
+   # association
+   has_many :items
+   has_one :residence
+   # validation
+   validates :nickname,           presence: true
+   validates :email,              presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
+   validates :encrypted_password, presence: true, length: { minimum: 7 }
+   validates :family_name,        presence: true, format: { with: /\A[一-龥ぁ-ん]/ }
+   validates :last_name,          presence: true, format: { with: /\A[一-龥ぁ-ん]/ }
+   validates :j_family_name,      presence: true, format: { with: /\A[ぁ-ん]/ }
+   validates :j_last_name,        presence: true, format: { with: /\A[ぁ-ん]/ }
+   validates :b_year,             presence: true
+   validates :b_month,            presence: true
+   validates :b_date,             presence: true
 end

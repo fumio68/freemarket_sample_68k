@@ -12,6 +12,7 @@
   right: 0px;
   width: 315px;
   height: 492px;
+  z-index: 1000;
 }
 
 .popup--mypage{
@@ -19,7 +20,7 @@
     width: 315px;
     height: 155px;
     &__bgimage{
-      background-image: url("material/pict/awa.jpg");
+      background-image: image-url("material/pict/awa.jpg");
       background-size: cover;
       width: 315px;
       height: 80px;

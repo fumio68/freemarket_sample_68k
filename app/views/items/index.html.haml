@@ -1,5 +1,5 @@
 .header
-  header
+  = render "/shared/header"
   
 .main
   .top-banner
@@ -12,7 +12,7 @@
         .lists__list
           .lists__list--picture
             %p.number 1
-            = image_tag '/assets/material/pict/pict-reason-01.jpg', class: "reason-picture"
+            = image_tag 'material/pict/pict-reason-01.jpg', class: "reason-picture"
           .lists__list--text
             %span 3分
             ですぐに出品
@@ -21,7 +21,7 @@
         .lists__list
           .lists__list--picture
             %p.number 2
-            = image_tag '/assets/material/pict/pict-reason-02.jpg', class: "reason-picture"
+            = image_tag 'material/pict/pict-reason-02.jpg', class: "reason-picture"
           .lists__list--text
             %span シンプル 
             で使いやすい
@@ -30,7 +30,7 @@
         .lists__list
           .lists__list--picture
             %p.number 3
-            = image_tag '/assets/material/pict/pict-reason-03.jpg', class: "reason-picture"
+            = image_tag 'material/pict/pict-reason-03.jpg', class: "reason-picture"
           .lists__list--text
             手数料 
             %span 業界最安
@@ -46,21 +46,21 @@
     .feature__feature-lists 
       .list
         .list__picture
-          = image_tag '/assets/material/icon/icon-01.png', class: "feature-picture"
+          = image_tag 'material/icon/icon-01.png', class: "feature-picture"
         .list__text
           簡単に売り買いできる
         .list__discription
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       .list
         .list__picture
-          = image_tag '/assets/material/icon/icon-03.png', class: "feature-picture"
+          = image_tag 'material/icon/icon-03.png', class: "feature-picture"
         .list__text
           売上金は即日振込みに対応
         .list__discription
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       .list
         .list__picture
-          = image_tag '/assets/material/icon/icon-04.png', class: "feature-picture"
+          = image_tag 'material/icon/icon-04.png', class: "feature-picture"
         .list__text
           様々な支払いに対応
         .list__discription
@@ -86,35 +86,8 @@
     
 
 
-.footer 
-  .footer__contents
-    .footer__contents--content
-      .list 
-        .list__title FURIMAについて
-        .list__links
-          = link_to "会社概要（運営会社）", "#", class: "link"
-          = link_to "プライバシーポリシー", "#", class: "link"
-          = link_to "FURIMA利用規約", "#", class: "link"
-          = link_to "ポイントに関する特約", "#", class: "link"
+.footer
+  = render "shared/footer"
 
-    .footer__contents--content
-      .list
-        .list__title FURIMAを見る
-
-        .list__links
-          = link_to "カテゴリー一覧", "#", class: "link"
-          = link_to "ブランド一覧", "#", class: "link"
-
-    .footer__contents--content
-      .list
-        .list__title ヘルプ＆ガイド
-        .list__links
-          = link_to "FURIMAガイド", "#", class: "link"
-          = link_to "FURIMAロゴ利用ガイドライン", "#", class: "link"
-          = link_to "お知らせ", "#", class: "link"
-    
-  .footer__logo
-    = link_to "#" do
-      = image_tag '/assets/material/logo/logo-white.png', class: "logo-btn"
-  
-  %p.copyright © FURIMA
+.sellbtn
+  = render "shared/sellbtn"

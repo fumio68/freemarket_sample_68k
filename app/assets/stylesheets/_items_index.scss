@@ -1,13 +1,5 @@
 @import "mixins";
 
-.header {
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
-  font-size: 50px;
-  background-color: red;
-}
-
 .main {
 
   .top-banner {
@@ -92,7 +84,7 @@
   
   .middle-banner {
     @include banner (
-      url(/assets/material/pict/bg-topMiddleDl-pict.jpg),
+      image-url("material/pict/bg-topMiddleDl-pict.jpg"),
       400px, 
       27px, 
       0 60, 
@@ -192,7 +184,7 @@
   
   .bottom-banner {
     @include banner (
-      url(/assets/material/pict/bg-appBanner-pict.jpg), 
+      image-url("material/pict/bg-appBanner-pict.jpg"), 
       400px,
       24px,
       100px 40px,
