@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   end
   def show
     # @user = User.find(params[:id])
-    @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.order("id ASC").limit(13)
   end
 end
