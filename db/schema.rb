@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_122427) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
@@ -61,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_02_14_122427) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "item_image_id"
+    t.index ["item_image_id"], name: "index_items_on_item_image_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -122,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_122427) do
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "item_images"
   add_foreign_key "items", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
