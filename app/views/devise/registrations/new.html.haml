@@ -1,4 +1,4 @@
-.header
+.devise-header
   = render "/shared/sub_header"
 
 .main
@@ -106,19 +106,4 @@
             and
             = link_to "#" do
               Terms of Service apply.
-.footer
-  .footer__box
-    %ul.footer__box__menu
-      %li.footer__box__menu__privacy
-        = link_to "#" do
-          プライバシーポリシー
-      %li.footer__box__menu__kiyaku
-        = link_to "#" do
-          メルカリ利用規約
-      %li.footer__box__menu__torihiki
-        = link_to "#" do
-          特定商取引に関する表記
-    = link_to "#"  do
-      = image_tag "/assets/material/logo/logo.png", class:"footer__box__image"
-    .footer__box__bottom
-      © Furima, Inc.
+= render "/shared/sub_footer"
