@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @parents = Category.order("id ASC").limit(1)
+    @parents = Category.order("id ASC").limit(13)
     # @user = User.find(1)
   end
   def create
