@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.all.order("created_at DESC")
+    @item_images = ItemImage.all
+    @user = User.find(1)
+    @parents = Category.order("id ASC").limit(13)
     # @user = User.find(1)
   end
   def create
@@ -7,4 +11,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id]) 
   end
+
+  
 end
