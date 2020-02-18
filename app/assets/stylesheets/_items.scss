@@ -23,14 +23,9 @@
     margin: 0;
     z-index: auto;
     .item-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       width: 100%;
       height: 150px;
-      object-fit: cover;   
+      object-fit: cover; 
     }
   }
   &__body {
@@ -71,4 +66,23 @@
 }
 .item:hover {
   opacity: 0.5;
+}
+
+.sold-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 50px solid #4FCFD3;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #4FCFD3;
+}
+.sold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 25px;
+  font-size: 24px;
+  color: white;
+  transform: rotate(315deg); 
 }

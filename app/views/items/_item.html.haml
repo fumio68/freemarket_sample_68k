@@ -1,19 +1,42 @@
 .item 
-  %a.item__link(href = "#")
-  .item__image 
-    - objects =  item.item_images
-    - objects.each do |object| 
-      = image_tag object.image
+  - if item.status == 1
+    %a.item__link(href = "#")
+    .item__image 
+      - objects = item.item_images
+      - objects.each do |object| 
+        = image_tag object.image , class: "item-image"
+      
+    .item__body
+      .item__body--name
+        = item.name
+      .item__body--middle
+        .item__body--middle__price
+          = item.price
+        .item__body--middle__favorite
+          = link_to "#" do
+            %i.fa.fa-star
+          %p.favorit-number 0
+      .item__body--fee
+        (税込)
+  - else 
+    %a.item__link(href = "#")
+    .item__image 
+      - objects = item.item_images
+      - objects.each do |object| 
+        = image_tag object.image , class: "item-image"
+    .sold-cover
+    %p.sold sold
+      
+    .item__body
+      .item__body--name
+        = item.name
+      .item__body--middle
+        .item__body--middle__price
+          = item.price
+        .item__body--middle__favorite
+          = link_to "#" do
+            %i.fa.fa-star
+          %p.favorit-number 0
+      .item__body--fee
+        (税込)
     
-  .item__body
-    .item__body--name
-      = item.name
-    .item__body--middle
-      .item__body--middle__price
-        = item.price
-      .item__body--middle__favorite
-        = link_to "#" do
-          %i.fa.fa-star
-        %p.favorit-number 0
-    .item__body--fee
-      (税込)
