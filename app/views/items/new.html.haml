@@ -1,0 +1,152 @@
+.product-listings-page
+  .product-listings-page__header
+    = image_tag "material/logo/logo.png", class:"product-listings-page__header__logo"
+  .product-listings-page__main
+    .product-listings-page__main__contents
+      .product-listings-page__main__contents__head
+        %h2.product-listings-page__main__contents__head__text 商品の情報を入力
+      = form_with model: @item, local: true, class:"product-listings-page__main__contents__form" do |form|
+        .product-listings-page__main__contents__photo-box
+          .product-listings-page__main__contents__photo-box__title
+            %h3.product-listings-page__main__contents__photo-box__title__left 出品画像
+            %span.product-listings-page__main__contents__photo-box__title__right 必須
+          %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
+          = form.label :image do
+            .product-listings-page__main__contents__photo-box__drop-area
+              = form.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file"
+              %pre.product-listings-page__main__contents__photo-box__drop-area__text
+                :preserve
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
+        .product-listings-page__main__contents__name-box
+          .product-listings-page__main__contents__name-box__title
+            .product-listings-page__main__contents__name-box__title__left 商品名
+            %span.product-listings-page__main__contents__name-box__title__right 必須
+          =form.text_field :name, class:"product-listings-page__main__contents__name-box__text-field", placeholder:"商品名（必須40文字まで）"
+          .product-listings-page__main__contents__name-box__title
+            .product-listings-page__main__contents__name-box__title__left 商品の説明
+            %span.product-listings-page__main__contents__name-box__title__right 必須
+          =form.text_area :content, class:"product-listings-page__main__contents__name-box__text-area", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        .product-listings-page__main__contents__detail-box
+          %h3.product-listings-page__main__contents__detail-box__title 商品の詳細
+          .product-listings-page__main__contents__detail-box__select-list
+            .product-listings-page__main__contents__detail-box__select-list__title
+              .product-listings-page__main__contents__detail-box__select-list__title__left カテゴリー
+              %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
+            .product-listings-page__main__contents__detail-box__select-list__category-form
+              .product-listings-page__main__contents__detail-box__select-list__category-form--first
+                =form.select :name, {"---":0, "レディース":1, "メンズ":2, "ベビー・キッズ":3, "インテリア・住まい・小物":4, "本・音楽・ゲーム":5, "おもちゃ・ホビー・グッズ":6, "コスメ・香水・美容":7, "家電・スマホ・カメラ":8, "スポーツ・レジャー":9, "ハンドメイド":10, "チケット":11, "自動車・オートバイ":12, "その他":13 }, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value'
+                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--first__icon")
+              .product-listings-page__main__contents__detail-box__select-list__category-form--second
+                =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
+                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
+              .product-listings-page__main__contents__detail-box__select-list__category-form--third
+                =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value'
+                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
+            .product-listings-page__main__contents__detail-box__select-list__title
+              .product-listings-page__main__contents__detail-box__select-list__title__left サイズ
+              %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
+            .product-listings-page__main__contents__detail-box__select-list__size-form
+              =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__size-form__value'
+              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__size-form__icon")
+            .product-listings-page__main__contents__detail-box__select-list__title
+              .product-listings-page__main__contents__detail-box__select-list__title__left ブランド
+              %span.product-listings-page__main__contents__detail-box__select-list__title__right--not-required 任意
+            .product-listings-page__main__contents__detail-box__select-list__brand-form
+              =form.text_field :brand, class:"product-listings-page__main__contents__detail-box__select-list__brand-form__value", placeholder:"例）シャネル"
+            .product-listings-page__main__contents__detail-box__select-list__title
+              .product-listings-page__main__contents__detail-box__select-list__title__left 商品の状態
+              %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
+            .product-listings-page__main__contents__detail-box__select-list__condition-form
+              =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__condition-form__value'
+              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__condition-form__icon")
+
+        .product-listings-page__main__contents__delivery-box
+          %h3.product-listings-page__main__contents__delivery-box__title 配送について
+          = link_to "#",  class:"product-listings-page__main__contents__delivery-box__title__question" do
+            ?
+          .product-listings-page__main__contents__delivery-box__select-list
+            .product-listings-page__main__contents__delivery-box__select-list__title
+              .product-listings-page__main__contents__delivery-box__select-list__title__left 配送料の負担
+              %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
+            .product-listings-page__main__contents__delivery-box__select-list__shipping-form
+              =form.select :shipping, {"---":0, "送料込み(出品者負担)":1, "着払い(購入者負担)":2}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__shipping-form__value'
+              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__shipping-form__icon")
+            .product-listings-page__main__contents__delivery-box__select-list__title
+              .product-listings-page__main__contents__delivery-box__select-list__title__left 配送の方法
+              %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
+            .product-listings-page__main__contents__delivery-box__select-list__method-form
+              =form.select :shipping_method, {"---":0}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__method-form__value'
+              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__method-form__icon")
+            .product-listings-page__main__contents__delivery-box__select-list__title
+              .product-listings-page__main__contents__delivery-box__select-list__title__left 発送元の地域
+              %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
+            .product-listings-page__main__contents__delivery-box__select-list__area-form
+              =form.select :shipping_area, {"---":0}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__area-form__value'
+              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__area-form__icon")
+            .product-listings-page__main__contents__delivery-box__select-list__title
+              .product-listings-page__main__contents__delivery-box__select-list__title__left 発送までの日数
+              %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
+            .product-listings-page__main__contents__delivery-box__select-list__days-form
+              =form.select :days_to_ship, {"---":0}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__days-form__value'
+              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__days-form__icon")
+
+        .product-listings-page__main__contents__price-box
+          %h3.product-listings-page__main__contents__price-box__title 販売価格(300〜9,999,999)
+          = link_to "#",  class:"product-listings-page__main__contents__price-box__title__question" do
+            ?
+          .product-listings-page__main__contents__price-box__form-box
+            %ul.product-listings-page__main__contents__price-box__form-box__lists
+              %li.product-listings-page__main__contents__price-box__form-box__lists-price
+                .product-listings-page__main__contents__price-box__form-box__lists-price-left
+                  .product-listings-page__main__contents__price-box__form-box__lists-price-left__title 価格
+                  %span.product-listings-page__main__contents__price-box__form-box__lists-price-left__title-right 必須
+                .product-listings-page__main__contents__price-box__form-box__lists-price-right
+                  .product-listings-page__main__contents__price-box__form-box__lists-price-right__text ¥
+                  =form.text_field :price, class:"product-listings-page__main__contents__price-box__form-box__lists-price-right__form ", placeholder:"例）300"
+              %li.product-listings-page__main__contents__price-box__form-box__lists-fee
+                .product-listings-page__main__contents__price-box__form-box__lists-fee-left 販売手数料(10%)
+                .product-listings-page__main__contents__price-box__form-box__lists-fee-right -
+              %li.product-listings-page__main__contents__price-box__form-box__lists-interests
+                .product-listings-page__main__contents__price-box__form-box__lists-interests-left 販売利益
+                .product-listings-page__main__contents__price-box__form-box__lists-interests-right -
+
+
+        .product-listings-page__main__contents__send-box
+          .product-listings-page__main__contents__send-box__text
+            = link_to "#" do
+              禁止されている出品
+            、
+            = link_to "#" do
+              行為
+            を必ずご確認ください。
+          .product-listings-page__main__contents__send-box__text
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "#" do
+              偽ブランド
+            の販売は犯罪であり処罰される可能性があります。
+          .product-listings-page__main__contents__send-box__text
+            また、出品をもちまして
+            = link_to "#" do
+              加盟店規約
+            に同意したことになります。
+          =form.submit "出品する", class: "product-listings-page__main__contents__send-box__btn"
+          .product-listings-page__main__contents__send-box__return-btn もどる
+
+  .footer
+    .footer__box
+      %ul.footer__box__menu
+        %li.footer__box__menu__privacy
+          = link_to "#" do
+            プライバシーポリシー
+        %li.footer__box__menu__kiyaku
+          = link_to "#" do
+            メルカリ利用規約
+        %li.footer__box__menu__torihiki
+          = link_to "#" do
+            特定商取引に関する表記
+      = link_to "#"  do
+        = image_tag "/assets/material/logo/logo.png", class:"footer__box__image"
+      .footer__box__bottom
+        © Furima, Inc.
+
