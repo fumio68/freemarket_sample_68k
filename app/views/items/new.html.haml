@@ -133,20 +133,5 @@
           =form.submit "出品する", class: "product-listings-page__main__contents__send-box__btn"
           .product-listings-page__main__contents__send-box__return-btn もどる
 
-  .footer
-    .footer__box
-      %ul.footer__box__menu
-        %li.footer__box__menu__privacy
-          = link_to "#" do
-            プライバシーポリシー
-        %li.footer__box__menu__kiyaku
-          = link_to "#" do
-            メルカリ利用規約
-        %li.footer__box__menu__torihiki
-          = link_to "#" do
-            特定商取引に関する表記
-      = link_to "#"  do
-        = image_tag "/assets/material/logo/logo.png", class:"footer__box__image"
-      .footer__box__bottom
-        © Furima, Inc.
+= render "/shared/sub_footer"
 
