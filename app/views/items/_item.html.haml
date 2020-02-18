@@ -1,6 +1,6 @@
 .item 
   - if item.status == 1
-    %a.item__link(href = "#")
+    = link_to "", root_path, class: "link"
     .item__image 
       - objects = item.item_images
       - objects.each do |object| 
@@ -19,7 +19,7 @@
       .item__body--fee
         (税込)
   - else 
-    %a.item__link(href = "#")
+    = link_to "", root_path, class: "link"
     .item__image 
       - objects = item.item_images
       - objects.each do |object| 
