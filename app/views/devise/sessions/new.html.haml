@@ -21,14 +21,14 @@
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .main__case__contents__form
           = f.email_field :email, autocomplete: "email", placeholder:'メールアドレス',class:'main__case__contents__form__email'
-          %span#email_error.error_m
+          #email_error.error_m
           %br
           %span#email_error2.error_m
           = f.password_field  :password, autocomplete: "new-password", class:"main__case__contents__form__pass", placeholder:'パスワード'
-          %span#pass_error.error_m
+          #pass_error.error_m
           .main__case__contents__form__info
             .main__case__contents__form__info__left
-              = check_box_tag '', class:'main__case__contents__form__info__left__checkbox' 
+              = check_box_tag (:main__case__contents__form__info__left__checkbox)
             .main__case__contents__form__info__center
               =label_tag '', "私はロボットではありません", {class: "main__case__contents__form__info__center__label"}
             .main__case__contents__form__info__right
@@ -36,9 +36,9 @@
             .main__case__contents__form__info__bottom
               = link_to "#" do
                 プライバシー
-                -
               = link_to "#" do
                 利用規約
+          #check_error.error_m
           = f.submit "ログイン",class:'main__case__contents__form__login'
           = link_to "#" , class: "main__case__contents__form__passforget" do
             パスワードをお忘れの方
