@@ -14,3 +14,5 @@ class Residence < ApplicationRecord
   validates :block,              presence: true
   
 end
+
+

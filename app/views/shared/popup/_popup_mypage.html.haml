@@ -1,0 +1,50 @@
+.popup--mypage
+  .popup--mypage__iconimage
+    .popup--mypage__iconimage__bgimage
+      = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'popup--mypage__iconimage__bgimage__userimage')
+    .popup--mypage__iconimage__inner
+      .popup--mypage__iconimage__inner__name
+        hogehoge
+        -# {@user.nickname}
+      %ul.popup--mypage__iconimage__inner__count
+        %li
+          = link_to "#", class: 'popup--mypage__iconimage__inner__count__item' do
+            %p 評価 0
+        %li
+          = link_to "#", class: 'popup--mypage__iconimage__inner__count__item' do
+            %p 出品数 0
+  .popup--mypage__pointbox
+    %ul.popup--mypage__pointbox__moneyandpoint
+      %li
+        %ul
+          = link_to "#" ,class: 'popup--mypage__pointbox__moneyandpoint__item--money' do
+            %li 売上金
+            %li
+              ¥0
+              = icon("fa", "angle-right", class: 'popup--mypage__pointbox__moneyandpoint__item--money__arrow')
+      %li
+        %ul
+          = link_to "#" ,class: 'popup--mypage__pointbox__moneyandpoint__item--point' do
+            %li ポイント
+            %li
+              P0
+              = icon("fa", "angle-right", class: 'popup--mypage__pointbox__moneyandpoint__item--point__arrow')
+  %ul.popup--mypage__list
+    = link_to "#", class: 'popup--mypage__list__item--head' do
+      %li いいね！一覧
+      = icon("fa", "angle-right", class: 'popup--mypage__list__item--head__arrow')
+    = link_to "#", class: 'popup--mypage__list__item' do
+      %li 出品した商品-出品中
+      = icon("fa", "angle-right", class: 'popup--mypage__list__item__arrow')
+    = link_to "#", class: 'popup--mypage__list__item' do
+      %li 出品した商品-取引中
+      = icon("fa", "angle-right", class: 'popup--mypage__list__item__arrow')
+    = link_to "#", class: 'popup--mypage__list__item' do
+      %li 出品した商品-売却済み
+      = icon("fa", "angle-right", class: 'popup--mypage__list__item__arrow')
+    = link_to "#", class: 'popup--mypage__list__item' do
+      %li 購入した商品-取引中
+      = icon("fa", "angle-right", class: 'popup--mypage__list__item__arrow')
+    = link_to "#", class: 'popup--mypage__list__item' do
+      %li 購入した商品-過去の取引
+      = icon("fa", "angle-right", class: 'popup--mypage__list__item__arrow')

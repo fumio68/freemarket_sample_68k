@@ -1,0 +1,87 @@
+.header
+  = render "/shared/header"
+  
+.main
+  .top-banner
+    = render partial: "banner", locals: {title: "人生を変えるフリマアプリ", sub: "FURIMAはだれでもかんたんに出品・購入できる\nフリマアプリです"}
+  .introduction
+    .introduction__reason-for-chose
+      FURIMAが選ばれる3つの理由
+    .introduction__reason-lists
+      .lists
+        .lists__list
+          .lists__list--picture
+            %p.number 1
+            = image_tag 'material/pict/pict-reason-01.jpg', class: "reason-picture"
+          .lists__list--text
+            %span 3分
+            ですぐに出品
+          .lists__list--discription
+            スマホで入力するだけで簡単に出品できる！
+        .lists__list
+          .lists__list--picture
+            %p.number 2
+            = image_tag 'material/pict/pict-reason-02.jpg', class: "reason-picture"
+          .lists__list--text
+            %span シンプル 
+            で使いやすい
+          .lists__list--discription
+            めんどくさい入力は必要なく、検索も購入もスムーズ！
+        .lists__list
+          .lists__list--picture
+            %p.number 3
+            = image_tag 'material/pict/pict-reason-03.jpg', class: "reason-picture"
+          .lists__list--text
+            手数料 
+            %span 業界最安
+          .lists__list--discription
+            最大3%でお得に出品&購入！
+
+  .middle-banner
+    = render partial: "banner", locals: {title: "会員数日本一位", sub: "FURIMAは、フリマアプリで最も人気。\n出品・購入回数も業界最多です！\nほしかったあの商品に出会えるかもしれません。"}
+
+  .feature
+    .feature__title
+      FURIMAの特徴
+    .feature__feature-lists 
+      .list
+        .list__picture
+          = image_tag 'material/icon/icon-01.png', class: "feature-picture"
+        .list__text
+          簡単に売り買いできる
+        .list__discription
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .list
+        .list__picture
+          = image_tag 'material/icon/icon-03.png', class: "feature-picture"
+        .list__text
+          売上金は即日振込みに対応
+        .list__discription
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .list
+        .list__picture
+          = image_tag 'material/icon/icon-04.png', class: "feature-picture"
+        .list__text
+          様々な支払いに対応
+        .list__discription
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  
+  .pic-up
+    .pic-up__title
+      ピックアップ
+
+    .pic-up__content
+      = link_to '商品一覧', "#", class: "item-links"
+      .items
+        = render @items
+
+  .bottom-banner
+    = render partial: "banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
+    
+
+.footer
+  = render "shared/footer"
+
+.sellbtn
+  = render "shared/sellbtn"
+

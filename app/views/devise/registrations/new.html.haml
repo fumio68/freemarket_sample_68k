@@ -1,7 +1,5 @@
-.header
-  = link_to "#"  do
-    = image_tag "/assets/material/logo/logo.png", class:"header__image"
-
+.devise-header
+  = render "/shared/sub_header"
 .main
   .main__box
     .main__box__header
@@ -9,135 +7,121 @@
     .main__box__contents
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
-        .main__box__contents__one
-          .main__box__contents__one__top
-            .main__box__one__contents__top__nickname
+
+        .main__box__contents__nickname
+          .main__box__contents__nickname__top
+            .main__box__contents__nickname__top__left
               ニックネーム
-            .main__box__contents__one__top__hitu
+            .main__box__contents__nickname__top__hitu
               必須
           = f.text_field  :nickname, autocomplete: "new-nickname", class:"main__box__contents__one__form", placeholder:'例）メルカリ太郎'
           %span#nickname_error.error_m   
 
-        .main__box__contents__two
-          .main__box__contents__two__top
-            .main__box__contents__two__top__email
+        .main__box__contents__email
+          .main__box__contents__email__top
+            .main__box__contents__email__top__left
               メールアドレス
-            .main__box__contents__two__top__hitu
+            .main__box__contents__email__top__right
               必須
-          = f.email_field :email, autocomplete: "email", placeholder:'PC・携帯どちらでも可',class:'main__box__contents__two__form'
+          = f.email_field :email, autocomplete: "email", placeholder:'PC・携帯どちらでも可',class:'main__box__contents__email__form'
           %span#email_error.error_m  
 
-        .main__box__contents__three
-          .main__box__contents__three__top
-            .main__box__contents__three__top__pass
+        .main__box__contents__pass
+          .main__box__contents__pass__top
+            .main__box__contents__pass__top__left
               パスワード
-            .main__box__contents__three__top__hitu
+            .main__box__contents__pass__top__right
               必須
-          = f.password_field  :password, autocomplete: "new-password", class:"main__box__contents__three__form", placeholder:'７文字以上の半角英数字'
+          = f.password_field  :password, autocomplete: "new-password", class:"main__box__contents__pass__form", placeholder:'７文字以上の半角英数字'
           %span#password_error.error_m
+          = f.password_field  :password_confirmation, autocomplete: "new-password", class:"main__box__contents__pass__repeat", placeholder:'（確認用）パスワード入力'
 
-          .main__box__contents__three__middle
+          .main__box__contents__pass__middle
             ※ 英字と数字の両方を含めて設定してください
           = check_box_tag :password
-          =label_tag :password, "パスワードを表示する", {class: "main__box__contents__three__bottom"}
+          =label_tag :password, "パスワードを表示する", {class: "main__box__contents__pass__bottom"}
           %br
-          %span.main__box__contents__three__password
-        .main__box__contents__four
-          .main__box__contents__four__top
+          %span.main__box__contents__pass__password
+        .main__box__contents__ident
+          .main__box__contents__ident__top
             本人確認
-          .main__box__contents__four__bottom
+          .main__box__contents__ident__bottom
             安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
-        .main__box__contents__five
-          .main__box__contents__five__top
-            .main__box__contents__five__top__name
+        .main__box__contents__name
+          .main__box__contents__name__top
+            .main__box__contents__name__top__left
               お名前（全角） 
-            .main__box__contents__five__top__hitu
+            .main__box__contents__name__top__right
               必須
-          .main__box__contents__five__form
-            = f.text_field  :family_name, autocomplete: "new-family_name", class:"main__box__contents__five__form__family", placeholder:'例）山田'
-            = f.text_field  :last_name, autocomplete: "new-last_name", class:"main__box__contents__five__form__last", placeholder:'例）彩'
+          .main__box__contents__name__form
+            = f.text_field  :family_name, autocomplete: "new-family_name", class:"main__box__contents__name__form__family", placeholder:'例）山田'
+            = f.text_field  :last_name, autocomplete: "new-last_name", class:"main__box__contents__name__form__last", placeholder:'例）彩'
           %ul.main__box__contents__five__name-error
             %li.main__box__contents__five__name-error__family.error_m 
             %li.main__box__contents__five__name-error__last.error_m
           
-        .main__box__contents__six
-          .main__box__contents__six__top
-            .main__box__contents__six__top__kana
+        .main__box__contents__kana
+          .main__box__contents__kana__top
+            .main__box__contents__kana__top__left
               お名前カナ（全角）
-            .main__box__contents__six__top__hitu
+            .main__box__contents__kana__top__right
               必須
-          .main__box__contents__six__form
-            = f.text_field  :j_family_name, autocomplete: "new-j_family_name", class:"main__box__contents__six__form__j-family", placeholder:'例）ヤマダ'
-            = f.text_field  :j_last_name, autocomplete: "new-j_last_name", class:"main__box__contents__six__form__j-last", placeholder:'例）アヤ'
-          %ul.main__box__contents__six__name-error
-            %li.main__box__contents__six__name-error__j-family.error_m 
-            %li.main__box__contents__six__name-error__j-last.error_m
+          .main__box__contents__kana__form
+            = f.text_field  :j_family_name, autocomplete: "new-j_family_name", class:"main__box__contents__kana__form__j-family", placeholder:'例）ヤマダ'
+            = f.text_field  :j_last_name, autocomplete: "new-j_last_name", class:"main__box__contents__kana__form__j-last", placeholder:'例）アヤ'
+          %ul.main__box__contents__kana__name-error
+            %li.main__box__contents__kana__name-error__j-family.error_m 
+            %li.main__box__contents__kana__name-error__j-last.error_m
         
-        .main__box__contents__seven
-          .main__box__contents__seven__top
-            .main__box__contents__seven__top__birth
+        .main__box__contents__birth
+          .main__box__contents__birth__top
+            .main__box__contents__birth__top__left
               生年月日
-            .main__box__contents__seven__top__hitu
+            .main__box__contents__birth__top__right
               必須
               = icon('fas', 'chevron-down', class: "icon")
-          .main__box__contents__seven__middle
-            .main__box__contents__seven__middle__year
-              = f.select :b_year,{},{},{class: "main__box__contents__seven__middle__year-box"} do
+          .main__box__contents__birth__middle
+            .main__box__contents__birth__middle__year
+              = f.select :b_year,{},{},{class: "main__box__contents__birth__middle__year-box"} do
                 - year_array = []
                 - for cnt in 1..100 do year_array[cnt] = cnt+1919 end 
                 = options_for_select(year_array)
-              = icon('fas', 'chevron-down', class: "main__box__contents__seven__middle__year__chevron")
+              = icon('fas', 'chevron-down', class: "main__box__contents__birth__middle__year__chevron")
               %p 年
-            .main__box__contents__seven__middle__month
-              = f.select :b_month,{},{},{class: "main__box__contents__seven__middle__month-box"} do
+            .main__box__contents__birth__middle__month
+              = f.select :b_month,{},{},{class: "main__box__contents__birth__middle__month-box"} do
                 - month_array = []
                 - for cnt in 1..12 do month_array[cnt] = cnt end 
                 = options_for_select(month_array)
-              = icon('fas', 'chevron-down', class: "main__box__contents__seven__middle__month__chevron")
+              = icon('fas', 'chevron-down', class: "main__box__contents__birth__middle__month__chevron")
               %p 月
-            .main__box__contents__seven__middle__date
-              = f.select :b_date,{},{},{class: "main__box__contents__seven__middle__date-box"} do
+            .main__box__contents__birth__middle__date
+              = f.select :b_date,{},{},{class: "main__box__contents__birth__middle__date-box"} do
                 - date_array = []
                 - for cnt in 1..31 do date_array[cnt] = cnt end 
                 = options_for_select(date_array)
-              = icon('fas', 'chevron-down', class: "main__box__contents__seven__middle__date__chevron")
+              = icon('fas', 'chevron-down', class: "main__box__contents__birth__middle__date__chevron")
               %p 日
           %span#b_year_error.error_m
 
-          .main__box__contents__seven__bottom
+          .main__box__contents__birth__bottom
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .main__box__contents__eight
-          .main__box__contents__eight__top
+        .main__box__contents__next
+          .main__box__contents__next__top
             「次へ進む」のボタンを押すことにより、
             = link_to "#" do
               利用規約
             に同意したものとみなします
-          = f.submit "次へ進む",class:'main__box__contents__eight__middle'
-          .main__box__contents__eight__bottom
-            = link_to "#" , class: "main__box__contents__eight__bottom" do
+          = f.submit "次へ進む",class:'main__box__contents__next__middle'
+          .main__box__contents__next__bottom
+            = link_to "#" , class: "main__box__contents__next__bottom" do
               本人情報の登録について＞
-        .main__box__contents__nine
-          .main__box__contents__nine__text
+        .main__box__contents__text
+          .main__box__contents__text__line
             This site is protected by reCAPTCHA and the Google
             = link_to "#" do
               Privacy Policy 
             and
             = link_to "#" do
               Terms of Service apply.
-.footer
-  .footer__box
-    %ul.footer__box__menu
-      %li.footer__box__menu__privacy
-        = link_to "#" do
-          プライバシーポリシー
-      %li.footer__box__menu__kiyaku
-        = link_to "#" do
-          メルカリ利用規約
-      %li.footer__box__menu__torihiki
-        = link_to "#" do
-          特定商取引に関する表記
-    = link_to "#"  do
-      = image_tag "/assets/material/logo/logo.png", class:"footer__box__image"
-    .footer__box__bottom
-      © Furima, Inc.
+= render "/shared/sub_footer"
