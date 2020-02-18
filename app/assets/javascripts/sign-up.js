@@ -47,24 +47,24 @@ function input_check(){
 		result = false;
 	}
 	
-	if(email == ""){
-		$("#email_error").html(" メールアドレスを入力してください。");
-		$(".main__box__contents__two__form").addClass("inp_error");
-		result = false;
-	}else if(!email.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
-		$('#email_error').html("フォーマットが不適切です");
-		$(".main__box__contents__two__form").addClass("inp_error");
-		result = false;
-	}
+	// if(email == ""){
+	// 	$("#email_error").html(" メールアドレスを入力してください。");
+	// 	$(".main__box__contents__two__form").addClass("inp_error");
+	// 	result = false;
+	// }else if(!email.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
+	// 	$('#email_error').html("フォーマットが不適切です");
+	// 	$(".main__box__contents__two__form").addClass("inp_error");
+	// 	result = false;
+	// }
 
   if(password == ""){
 		$("#password_error").html(" パスワードを入力してください");
 		$(".main__box__contents__three__form").addClass("inp_error");
 		result = false;
-	}else if(password.length < 7 || password.length > 128 ){
-		$("#password_error").html(" パスワードは7文字以上 128文字以下で入力してください。");
-		$("#.main__box__contents__three__form").addClass("inp_error");
-		result = false;
+	// }else if(password.length < 7 || password.length > 128 ){
+	// 	$("#password_error").html(" パスワードは7文字以上 128文字以下で入力してください。");
+	// 	$("#.main__box__contents__three__form").addClass("inp_error");
+	// 	result = false;
 	}
 
 	if(nameseikanzi == ""){
