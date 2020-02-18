@@ -6,7 +6,8 @@
   display: inline-block;
   float: left;
   height: 300px;
-  position: relative;  
+  position: relative; 
+  margin: 20px; 
   &__link {
     position: absolute;
     top: 0;
