@@ -37,7 +37,6 @@ lady_hair_accessory = lady.children.create(:name=>"ヘアアクセサリー")
 lady_goods = lady.children.create(:name=>"小物")
 lady_watch = lady.children.create(:name=>"時計")
 
-
 # 第三階層目
 lady_tops.children.create([
   {:name=>"Tシャツ/カットソー(半袖/袖なし)"}, 
