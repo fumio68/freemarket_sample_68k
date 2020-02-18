@@ -4,6 +4,10 @@
   text-decoration: none;
 }
 
+a {
+  color: #0099e8;
+}
+
 @mixin form-value() {
   z-index: 2;
   height: 48px;
