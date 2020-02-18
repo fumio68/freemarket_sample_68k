@@ -79,6 +79,7 @@
               &__child{
                 display: none;
                 position: relative;
+                z-index: 1000;
                 &__gchild{
                   display: none;
                   position: relative;

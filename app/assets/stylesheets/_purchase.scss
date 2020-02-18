@@ -1,0 +1,80 @@
+.purchase{
+  background-color: #F5F5F5;
+  width: 100vw;
+  height: 1392px;
+  &__inner{
+    width: 700px;
+    height: 1392px;
+    margin: 0 auto;
+    &__top{
+      width: 700px;
+      height: 128px;
+      text-align: center;
+      background-color: #F5F5F5;
+      display: flex;
+      align-items: center;
+      &__logo{
+        height: 50px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    &__main{
+      width: 342px;
+      height: 916px;
+      background-color: white;
+      text-align: center;
+      padding-left: 179px;
+      padding-right: 179px;
+      &__confirmation{
+        width: 278px;
+        padding:32px;
+        height:33px;
+        line-height: 33px;
+        font-size: 22px;
+        display: inline-block;
+        border: 1px solid;
+        border-color: #F5F5F5;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        font-weight: bold;
+      }
+      &__item{
+        display: flex;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        border: 1px solid;
+        border-color: #F5F5F5;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        &__image{
+          width: 80px;
+          height: 80px;
+        }
+        &__description{
+          margin-left: 16px;
+          font-size: 14px;
+        }
+      }
+      &__cost{
+        padding-top: 32px;
+        &__box{
+          display: flex;
+          justify-content: space-between;
+          &__head{
+            font-size: 18px;
+          }
+          &__amount{
+            font-size: 30px;
+          }
+        }
+      }
+    }
+    &__footer{
+      width: 700px;
+      height: 348px;
+    }
+  }
+}

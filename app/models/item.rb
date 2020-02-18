@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   # association
   belongs_to :user
   has_many :item_images
+  belongs_to :category
+
   # validation
   validates :name,          presence: true
   validates :price,         presence: true
