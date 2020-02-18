@@ -120,3 +120,12 @@ lady_legware.children.create([
   {name: "レッグウォーマー"},
   {name: "その他"}
 ])
+lady_hat.children.create([
+  {name: "ニットキャップ/ビーニー"},
+  {name: "ハット"},
+  {name: "ハンチング/ベレー帽"},
+  {name: "キャップ"},
+  {name: "キャスケット"},
+  {name: "麦わら帽子"},
+  {name: "その他"}
+])
