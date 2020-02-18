@@ -1,16 +1,14 @@
 $(function(){
 	
 	$(".main__case__contents__form__login").on('click',function(e){
-    e.preventDefault();
-    if(log_in_input_check()){ 
+    if(!log_in_input_check()){
+			e.preventDefault(); 
 		}
 	});
 });
-
 // 入力内容チェックのための関数
 function log_in_input_check(){
 	let result = true;
-
 	// エラー用装飾のためのクラスリセット
 	$('.main__case__contents__form__email').removeClass("inp_error");
 	$('.main__case__contents__form__pass').removeClass("inp_error");
@@ -27,7 +25,7 @@ function log_in_input_check(){
 		$("#pass_error").html(" パスワードを入力してください");
 		$(".main__case__contents__form__pass").addClass("inp_error");
 		result = false;
-	}else if(pass.length > 7){
+	}else if(pass.length < 7){
 		$("#pass_error").html(" パスワードは7文字以上 128文字以下で入力してください。");
 		$("#user_password").addClass("inp_error");
 		result = false;
@@ -49,7 +47,6 @@ function log_in_input_check(){
 	// チェックボックス 
 	if($('#main__case__contents__form__info__left__checkbox').prop("checked") == true){	
 		$('#check_error').html("");
-		result = false;
 	}else{
 		console.log($('.main__case__contents__form__info__left__checkbox'));
 		$('#check_error').html("選択してください");

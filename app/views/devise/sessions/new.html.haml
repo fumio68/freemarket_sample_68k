@@ -40,7 +40,7 @@
                 利用規約
           #check_error.error_m
           = f.submit "ログイン",class:'main__case__contents__form__login'
-          = link_to "#" , class: "main__case__contents__form__passforget" do
+          = link_to items_path , class: "main__case__contents__form__passforget" do
             パスワードをお忘れの方
 .footer
   .footer__box
@@ -64,20 +64,3 @@
 
 
 
--# %h2 Log in
--# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     %br/
--#     = f.password_field :password, autocomplete: "current-password"
--#   - if devise_mapping.rememberable?
--#     .field
--#       = f.check_box :remember_me
--#       = f.label :remember_me
--#   .actions
--#     = f.submit "Log in"
--# = render "devise/shared/links"
