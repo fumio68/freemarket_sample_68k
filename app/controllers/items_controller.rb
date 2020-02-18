@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
     @items = Item.all.order("created_at DESC")
     @item_images = ItemImage.all
     @user = User.find(1)
+
   end
   def create
   end

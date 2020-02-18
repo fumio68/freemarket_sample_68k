@@ -3,8 +3,8 @@ class Purchase < ApplicationRecord
   belongs_to :user
   belongs_to :item
   #validation
-  validates :postcode, null: false
-  validates :prefecture, null: false
-  validates :city, null: false
-  validates :block, null: false
+  validates :postcode,   presence: true
+  validates :prefecture, presence: true
+  validates :city,       presence: true
+  validates :block,      presence: true
 end
