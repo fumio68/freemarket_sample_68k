@@ -80,54 +80,57 @@
             %li ログアウト
             = icon("fa", "angle-right", class: 'residence__main__mask__left__nav-list__item__arrow')
       .residence__main__mask__right
-        .residence__main__mask__right__head
+        %h1.residence__main__mask__right__head 発送元・お届け先住所変更
         = form_with(model: [@user,@residence], class: 'residence__main__mask__right__form', local: true) do |f|
           .residence__main__mask__right__form__mask
             .residence__main__mask__right__form__mask__name
               %p.residence-form-head
                 %span.residence-form-text お名前
                 %span.residence-form-required 必須
-              = f.text_field :family_name, placeholder: '例)山田', class: 'residence__main__mask__right__form__mask__name__familyname'
-              = f.text_field :last_name, placeholder: '例)彩', class: 'residence__main__mask__right__form__mask__name__lastname'
+              = f.text_field :family_name, placeholder: '例)山田', class: 'residence-form-text-field'
+              = f.text_field :last_name, placeholder: '例)彩', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__jname
               %p.residence-form-head
                 %span.residence-form-text お名前カナ
                 %span.residence-form-required 必須
-              = f.text_field :j_family_name, placeholder: '例)ヤマダ', class:'residence__main__mask__right__form__jname__jfamilyname'
-              = f.text_field :j_last_name, placeholder: '例)アヤ', class: 'residence__main__mask__right__form__jname__jlastname'
+              = f.text_field :j_family_name, placeholder: '例)ヤマダ', class:'residence-form-text-field'
+              = f.text_field :j_last_name, placeholder: '例)アヤ', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__postcode
               %p.residence-form-head
                 %span.residence-form-text 郵便番号
                 %span.residence-form-required 必須
-              = f.text_field :postcode, placeholder: '例)123-4567', class: 'residence__main__mask__right__form__mask__postcode__postcode'
+              = f.text_field :postcode, placeholder: '例)123-4567', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__prefecture
               %p.residence-form-head
                 %span.residence-form-text 都道府県
                 %span.residence-form-required 必須
-              -# オプションはuser登録ページから拾ってくることにする
-              = f.text_field :prefecture, placeholder: '例)'
+              
+              = f.select :prefecture,{},{},{class: "residence__main__mask__right__form__mask__prefecture__box"}
+              -# - year_array = []
+              -# - for cnt in 1..100 do year_array[cnt] = cnt+1919 end 
+              -# = options_for_select(year_array)
             .residence__main__mask__right__form__mask__city
               %p.residence-form-head
                 %span.residence-form-text 市区町村
                 %span.residence-form-required 必須
-              = f.text_field :city, placeholder: '例)横浜市緑区', class: 'residence__main__mask__right__form__mask__city__city'
+              = f.text_field :city, placeholder: '例)横浜市緑区', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__block
               %p.residence-form-head
                 %span.residence-form-text 番地
                 %span.residence-form-required 必須
-              = f.text_field :block, placeholder: '例)青山1-1-1', class: 'residence__main__mask__right__form__mask__block__block'
+              = f.text_field :block, placeholder: '例)青山1-1-1', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__building
               %p.residence-form-head
                 %span.residence-form-text 建物名
                 %span.residence-form-optional 任意
-              = f.text_field :building, placeholder: '例)柳ビル103', class: 'residence__main__mask__right__form__mask__building__building'
+              = f.text_field :building, placeholder: '例)柳ビル103', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__phonenumber
               %p.residence-form-head
                 %span.residence-form-text 電話
                 %span.residence-form-optional 任意
-              = f.text_field :phone_number, placeholder: '例)09012345678', class: 'residence__main__mask__right__form__mask__phonenumber__phonenumber'
+              = f.text_field :phone_number, placeholder: '例)09012345678', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__button
-              = f.submit '送信', class: 'residence__main__mask__right__form__mask__button__button'
+              = f.submit '変更する', class: 'residence-form-submit-button'
   .residence__footer
     = render "/shared/footer"
 
