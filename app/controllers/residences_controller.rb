@@ -6,6 +6,8 @@ class ResidencesController < ApplicationController
 
   def show
     isExistResidence = Residence.find(params[:user_id])
+    @parents = Category.order("id ASC").limit(13)
+    @user = User.find(params[:user_id])
     if isExistResidence
       @residence = isExistResidence
     else
