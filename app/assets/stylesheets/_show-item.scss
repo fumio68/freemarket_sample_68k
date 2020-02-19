@@ -47,17 +47,18 @@
                 }
                 &__ul{
                   display:flex;
-                  justify-content: center;
+                  justify-content: flex-start;
                   margin-top: 10px;
+                  width: 620px;
+                  overflow-x: scroll;
                   &__li{
-                    width: 25%;
                     margin: 0 10px 0 0;
                     height:70px;
                     &__img{
                       width:140px;
                       height:87px;
                       object-fit: cover;
-                      margin-right:25px;
+                      margin-left:25px;
                     }
                   }
                 }
