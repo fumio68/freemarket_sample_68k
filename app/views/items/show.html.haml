@@ -9,15 +9,12 @@
           .main__show__content__top__itemInfo__image
 
             %ul.main__show__content__top__itemInfo__image__ul
-              %li.main__show__content__top__itemInfo__image__ul__li
-                - objects = @item.item_images
-                - object = objects.first
-                = image_tag object.image, class: "main__show__content__top__itemInfo__image__ul__li__img "
-                %ul.main__show__content__top__itemInfo__image__ul__li__ul
-                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
-                  - objects = @item.item_images
-                  - objects.each do |object| 
-                    = image_tag object.image, class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
+              - objects = @item.item_images
+              - objects.each do |object| 
+                %li.main__show__content__top__itemInfo__image__ul__li
+                  = image_tag object.image, class: "main__show__content__top__itemInfo__image__ul__li__img "
+      
+          
           .main__show__content__top__itemInfo__price
             %span.main__show__content__top__itemInfo__price__span
               = @item.price

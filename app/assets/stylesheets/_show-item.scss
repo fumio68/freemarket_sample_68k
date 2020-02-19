@@ -29,11 +29,7 @@
           &__image{
             margin:16px 0 0;
             &__ul{
-              display: flex;
-              position: relative;
-              list-style: none;
               &__li{
-                display: flex;
                 flex-direction: column;
                 width: 620px;
                 align-items: center;
@@ -44,23 +40,6 @@
                   width: 100%;
                   vertical-align: bottom;
                   border: 0;
-                }
-                &__ul{
-                  display:flex;
-                  justify-content: flex-start;
-                  margin-top: 10px;
-                  width: 620px;
-                  overflow-x: scroll;
-                  &__li{
-                    margin: 0 10px 0 0;
-                    height:70px;
-                    &__img{
-                      width:140px;
-                      height:87px;
-                      object-fit: cover;
-                      margin-left:25px;
-                    }
-                  }
                 }
               }
             }
