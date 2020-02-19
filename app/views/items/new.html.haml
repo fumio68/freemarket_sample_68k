@@ -13,7 +13,8 @@
           %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
           = form.label :image do
             .product-listings-page__main__contents__photo-box__drop-area
-              = form.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file"
+              = form.fields_for :item_images do |i|
+                = i.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file"
               %pre.product-listings-page__main__contents__photo-box__drop-area__text
                 :preserve
                   ドラッグアンドドロップ
