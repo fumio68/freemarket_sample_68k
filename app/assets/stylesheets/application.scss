@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ * require_tree .
  *= require_self
  */
 
@@ -29,5 +29,5 @@
  @import "header/popup_mypage";
  @import "show-item";
  @import "items-new";
- @import "users/new_registration";
- @import "users/new_session";
+//  @import "users/new_registration";
+//  @import "users/new_session";
