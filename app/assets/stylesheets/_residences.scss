@@ -236,11 +236,10 @@
       &__right{
         width: 700px;
         height: 1133px;
-        background-color: red;
+        background-color: white;
         &__head{
           height: 51px;
-          background-color: green;
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid #CCC;
           text-align: center;
           padding-top: 8px;
           padding-bottom: 8px;
@@ -250,70 +249,58 @@
         }
         &__form{
           height: 1082px;
-          background-color: yellow;
-          
           &__mask{
             width: 343px;
             height: 1082px;
             padding-top: 40px;
             padding-bottom: 64px;
             margin: 0 auto;
-            background-color: blue;
             &__name{
               height: 126px;
               margin: 0 auto;
-              background-color: lime;
             }
             &__jname{
               height: 126px;
               
               margin: 0 auto;
               margin-top: 32px;
-              background-color: pink;
             }
             &__postcode{
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
-              background-color: purple;
 
             }
             &__prefecture{
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
-              background-color: lime;
             }
             &__city{
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
-              background-color: pink;
             }
             &__block{
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
-              background-color: lime;
             }
             &__building{
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
-              background-color: lime;
             }
             &__phonenumber{
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
-              background-color: lime;
             }
             &__button{
               width: 341px;
               margin: 0 auto;
               margin-top: 32px;
               height: 48px;
-              // border: 1px solid red;
             }
           }
         }
@@ -356,9 +343,9 @@
   padding-top: 10px;
   padding-right: 18px;
   padding-bottom: 8px;
-  border: 1px solid black;
+  border: 1px solid #CCC;
   margin-top: 8px;
-  border-radius: 5px;
+  border-radius: 4px;
 
 }
 .residence-form-submit-button{
