@@ -89,9 +89,12 @@
           &__usepoint{
             display: flex;
             &__button{
-              transform: scale(1.5);
+              // transform: scale(1.5);
               margin-left: 5px;
               margin-top: 25px;
+              height: 24px;
+              width: 24px;
+              background-color: gray;
             }
             &__text{
               margin-left: 25px;
