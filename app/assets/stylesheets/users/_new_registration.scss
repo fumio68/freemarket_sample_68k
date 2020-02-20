@@ -30,7 +30,7 @@
     margin: 0 auto;
     background-color: white;
     width: 700px;
-    height: 1300px;
+    height: 1350px;
     &__header{
       border: solid 1px #f5f5f5;
       width: 701px;
@@ -52,6 +52,7 @@
           display: flex;
           &__left{
             font-size: 14px;
+            font-weight: bold;
           }
           &__right{
             width: 32px;
@@ -85,6 +86,7 @@
           display: flex;
           &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
           &__right{
@@ -118,6 +120,7 @@
           display: flex;
           &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
           &__right{
@@ -149,6 +152,15 @@
           border-radius: 4px;
           border: 1px solid #ccc;
         }
+        &__repeat{
+          height: 50px;
+          width: 100%;
+          margin-top: 8px;
+          color: #333333;
+          padding-left: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
         &__middle{
           margin-top: 12px;
           margin-bottom: 10px;
@@ -170,6 +182,7 @@
         height: 122px;
         &__top{
           font-size: 16px;
+          font-weight: bold;
           color: #333333;
           font-weight: bold;
           margin-top: 45px;
@@ -244,6 +257,7 @@
           display: flex;
           &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
           &__right{
@@ -289,6 +303,7 @@
           display: flex;
           &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
           &__right{
@@ -304,7 +319,6 @@
         &__middle{
           margin-top: 8px;
           display: flex;
-          
           &__year{
             color: #333333;
             font-size: 14px;
@@ -505,6 +519,7 @@
       width: 130px;
       text-align: center;
       margin: 0 auto;
+      color: #333
     }
   }
 }
@@ -512,11 +527,11 @@
 .inp_error{border: 1px solid #F88A8A;
 }
 .error_m {
-	font-size: 15px;
-	font-weight: normal;
-	color: #FF4040;
-	display: block;
-	margin: 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
 }
 .pass-display{
   display: inline-block;

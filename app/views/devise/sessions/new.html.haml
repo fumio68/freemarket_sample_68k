@@ -35,8 +35,9 @@
                 プライバシー                
               = link_to "#" do
                 利用規約
+            %span#check_error.error_m
           = f.submit "ログイン",class:'main__case__contents__form__login'
-          = link_to items_path , class: "main__case__contents__form__passforget" do
+          = link_to class: "main__case__contents__form__passforget" do
             パスワードをお忘れの方
 = render "/shared/sub_footer"
 

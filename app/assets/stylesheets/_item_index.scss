@@ -3,7 +3,8 @@
   display: inline-block;
   float: left;
   height: 300px;
-  position: relative;  
+  position: relative; 
+  margin: 20px;  
   &__link {
     position: absolute;
     top: 0;
@@ -64,4 +65,23 @@
 }
 .item:hover {
   opacity: 0.5;
+}
+
+.sold-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 50px solid #4FCFD3;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #4FCFD3;
+}
+.sold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 25px;
+  font-size: 24px;
+  color: white;
+  transform: rotate(315deg); 
 }
