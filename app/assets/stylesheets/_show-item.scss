@@ -11,7 +11,7 @@
     background: #f8f8f8;
     &__content{
       width: 700px;
-      height: 1600px;
+      height: 1800px;
       margin: 0 auto;
       &__top{
         width: 700px;
@@ -28,12 +28,11 @@
           }
           &__image{
             margin:16px 0 0;
+            .bx-wrapper {
+              border: none;
+            }
             &__ul{
               &__li{
-                flex-direction: column;
-                width: 620px;
-                align-items: center;
-                margin: 0 auto;
                 &__img{
                   object-fit: cover;
                   height: 346px;
@@ -41,6 +40,16 @@
                   vertical-align: bottom;
                   border: 0;
                 }
+              }
+            }
+            .custom-thumb {
+              .thumb {
+                object-fit: cover;
+                vertical-align: bottom;
+                opacity: 0.5;
+              } 
+              .thumb:hover {
+                opacity: 1;
               }
             }
           }
