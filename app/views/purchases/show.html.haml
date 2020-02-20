@@ -25,7 +25,7 @@
           = label_tag :use_point ,class: 'purchase__inner__main__form__cost__usepoint' do
             = f.check_box :use_point, class: 'purchase__inner__main__form__cost__usepoint__button'
             %p.purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P0)
-              
+      
         .purchase__inner__main__form__payment
           %h2 支払い方法
           %p.register-button
@@ -37,12 +37,15 @@
               %li 配送先
               %li.register-button
                 = icon("fas", "plus-circle")
-                登録してください
+                -# = link_to user_residence_path(id: params[:id], user_id: current_user.id) do
+                = link_to user_residence_path(id: params[:id], user_id: 1) do  
+                  登録してください
           - else
             %ul.data-exists__header
               %li 配送先
               %li.data-exists__header__modify
-                = link_to "#" do
+                -# = link_to user_residence(id: params[:id], user_id: current_user.id) do
+                = link_to user_residence_path(id: params[:id], user_id: 1) do  
                   変更する
             %ul.residence-data
               %li 〒#{@residence.postcode}

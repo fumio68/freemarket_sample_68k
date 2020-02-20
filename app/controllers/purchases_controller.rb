@@ -6,8 +6,8 @@ class PurchasesController < ApplicationController
   end
   def show
     # @residence = Residence.find(current_user.id)
-    if Residence.where(id: 1).exists?
-      @residence = Residence.find(1)
+    if !(Residence.where(id: 2).blank?)
+      @residence = Residence.find(2)
     else
       @residence = Residence.new()
     end
