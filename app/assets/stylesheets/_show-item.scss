@@ -109,7 +109,9 @@
                     &__link{
                       text-decoration: none;
                       color: #3CCACE;
-                      
+                    }
+                    &__link:hover {
+                      text-decoration: underline;
                     }
                   }
                 }
