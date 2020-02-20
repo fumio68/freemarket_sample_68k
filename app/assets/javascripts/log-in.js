@@ -1,5 +1,4 @@
 $(function(){
-	
 	$(".main__case__contents__form__login").on('click',function(e){
     if(!log_in_input_check()){
 			e.preventDefault(); 
@@ -13,13 +12,14 @@ function log_in_input_check(){
 	$('.main__case__contents__form__email').removeClass("inp_error");
 	$('.main__case__contents__form__pass').removeClass("inp_error");
 	$('.main__case__contents__form__info__left__checkbox').removeClass("inp_error");
+	$(".main__case__contents__form__info").removeClass("inp_error");
 	// 入力エラー文をリセット
 	$("#email_error").empty();
 	$("#pass_error").empty();
 	$("#check_error").empty();
 	// 入力内容セット
 	let email   = $(".main__case__contents__form__email").val();
-	var pass    = $("#user_password").val();
+	let pass    = $("#user_password").val();
 	// パスワード
   if(pass == ""){
 		$("#pass_error").html(" パスワードを入力してください");
@@ -48,7 +48,6 @@ function log_in_input_check(){
 	if($('#main__case__contents__form__info__left__checkbox').prop("checked") == true){	
 		$('#check_error').html("");
 	}else{
-		console.log($('.main__case__contents__form__info__left__checkbox'));
 		$('#check_error').html("選択してください");
 		$(".main__case__contents__form__info").addClass("inp_error");
 		result = false;

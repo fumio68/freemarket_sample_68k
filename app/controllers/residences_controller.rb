@@ -1,7 +1,17 @@
 class ResidencesController < ApplicationController
 
   def create
-    residence = Residence.create(residence_params)
+    @residence = Residence.create(residence_params)
+  end
+
+  def show
+    @parents = Category.order("id ASC").limit(13)
+    @user = User.find(params[:user_id])
+    if Residence.where(id: params[:user_id]).exists?
+      @residence = Residence.find(params[:user_id])
+    else
+      @residence = Residence.new()
+    end
   end
 
   private

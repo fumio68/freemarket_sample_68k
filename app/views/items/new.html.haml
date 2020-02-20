@@ -59,7 +59,7 @@
               .product-listings-page__main__contents__detail-box__select-list__title__left 商品の状態
               %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
             .product-listings-page__main__contents__detail-box__select-list__condition-form
-              =form.select :status, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__condition-form__value'
+              =form.select :status, {"---":0, "新品、未使用":1, "未使用に近い":2, "目立った傷や汚れなし":3, "やや傷や汚れあり":4, "傷や汚れあり":5, "全体的に状態が悪い":6}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__condition-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__condition-form__icon")
 
         .product-listings-page__main__contents__delivery-box
@@ -77,19 +77,19 @@
               .product-listings-page__main__contents__delivery-box__select-list__title__left 配送の方法
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__method-form
-              =form.select :shipping_method, {"---":0}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__method-form__value'
+              =form.select :shipping_method, {"---":0,"らくらくメルカリ便":1, "ゆうメール":2, "レターパック":3, "普通郵便（定型、定形外）":4, "クロネコヤマト":5, "ゆうパック":6, "クリックポスト":7, "ゆうパケット":8 }, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__method-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__method-form__icon")
             .product-listings-page__main__contents__delivery-box__select-list__title
               .product-listings-page__main__contents__delivery-box__select-list__title__left 発送元の地域
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__area-form
-              =form.select :shipping_area, {"---":0}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__area-form__value'
+              =form.collection_select :shipping_area, Prefecture.all, :id, :name, {}, prompt: "---", class: 'product-listings-page__main__contents__delivery-box__select-list__area-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__area-form__icon")
             .product-listings-page__main__contents__delivery-box__select-list__title
               .product-listings-page__main__contents__delivery-box__select-list__title__left 発送までの日数
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__days-form
-              =form.select :days_to_ship, {"---":0}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__days-form__value'
+              =form.select :days_to_ship, {"---":0, "１〜２日で発送":1, "２〜３日で発送":2, "４〜７日で発送":3}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__days-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__days-form__icon")
 
         .product-listings-page__main__contents__price-box

@@ -14,7 +14,7 @@
               ニックネーム
             .main__box__contents__nickname__top__hitu
               必須
-          = f.text_field  :nickname, autocomplete: "new-nickname", class:"main__box__contents__one__form", placeholder:'例）メルカリ太郎'
+          = f.text_field  :nickname, autocomplete: "new-nickname", class:"main__box__contents__nickname__form", placeholder:'例）メルカリ太郎'
           %span#nickname_error.error_m   
 
         .main__box__contents__email
@@ -33,8 +33,9 @@
             .main__box__contents__pass__top__right
               必須
           = f.password_field  :password, autocomplete: "new-password", class:"main__box__contents__pass__form", placeholder:'７文字以上の半角英数字'
-          %span#password_error.error_m
-          = f.password_field  :password_confirmation, autocomplete: "new-password", class:"main__box__contents__pass__repeat", placeholder:'（確認用）パスワード入力'
+          %span#pass_error.error_m
+          = f.password_field  :password_confirmation, autocomplete: "new-password", class:"main__box__contents__repeat__form", placeholder:'（確認用）パスワード入力'
+          %span#repeat_error.error_m
 
           .main__box__contents__pass__middle
             ※ 英字と数字の両方を含めて設定してください
@@ -56,9 +57,9 @@
           .main__box__contents__name__form
             = f.text_field  :family_name, autocomplete: "new-family_name", class:"main__box__contents__name__form__family", placeholder:'例）山田'
             = f.text_field  :last_name, autocomplete: "new-last_name", class:"main__box__contents__name__form__last", placeholder:'例）彩'
-          %ul.main__box__contents__five__name-error
-            %li.main__box__contents__five__name-error__family.error_m 
-            %li.main__box__contents__five__name-error__last.error_m
+          %ul.main__box__contents__name__error
+            %li.main__box__contents__name__error__family.error_m 
+            %li.main__box__contents__name__error__last.error_m
           
         .main__box__contents__kana
           .main__box__contents__kana__top
@@ -114,7 +115,7 @@
             に同意したものとみなします
           = f.submit "次へ進む",class:'main__box__contents__next__middle'
           .main__box__contents__next__bottom
-            = link_to "#" , class: "main__box__contents__next__bottom" do
+            = link_to "#" , class: "main__box__contents__next__bottom__text" do
               本人情報の登録について＞
         .main__box__contents__text
           .main__box__contents__text__line
@@ -125,3 +126,4 @@
             = link_to "#" do
               Terms of Service apply.
 = render "/shared/sub_footer"
+
