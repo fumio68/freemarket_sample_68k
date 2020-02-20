@@ -2,16 +2,21 @@
   box-sizing: border-box;
 }
 
-.header{
+.devise-header{
   background-color: #f5f5f5;
   height: 130px;
   width: 100%;
-  a{
-    line-height: 150px;
-    .header__image{
+  &__image{
+    width: 500px;
+    height: 130px;
+    margin: 0 auto;
+    &__icon{
       width: 170px;
       height: 50xp;
-      margin-left: 200px;
+      margin-left: 150px;
+    }
+    a{
+      line-height: 150px;
     }
   }
 }
@@ -37,17 +42,17 @@
     }
     &__contents{
       padding-top: 40px;
- 
-      &__one{
+      &__nickname{
         margin: 0 auto;
         width: 350px;
         height: 70px;
         &__top{
+          font-weight: bold;
           display: flex;
-          &__nickname{
+          &__left{
             font-size: 14px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -69,18 +74,19 @@
           border: 1px solid #ccc;
         }
       }
-      &__two{
+      &__email{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 102px;
         &__top{
+          font-weight: bold;
           display: flex;
-          &__email{
+          &__left{
             font-size: 14px;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -100,18 +106,20 @@
           border: 1px solid #ccc;
         }
       }
-      &__three{
+      &__pass{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 162px;
+        margin-bottom: 60px;
         &__top{
+          font-weight: bold;
           display: flex;
-          &__pass{
+          &__left{
             font-size: 14px;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -126,22 +134,35 @@
           height: 50px;
           width: 350px;
           padding: 10px 16px 8px;
+          margin-bottom: 10px;
+          color: #333333;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        &__repeat{
+          margin: 8px 0;
+          height: 50px;
+          width: 350px;
+          padding: 10px 16px 8px;
           color: #333333;
           border-radius: 4px;
           border: 1px solid #ccc;
         }
         &__middle{
-          margin-top: 8px;
+          margin-top: 12px;
           margin-bottom: 10px;
           font-size: 14px;
           color: #888888;
+        }
+        #password{
+          -webkit-appearance: checkbox;
         }
         &__bottom{
           font-size: 14px;
           color: #333333;
         }
       }
-      &__four{
+      &__ident{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
@@ -149,6 +170,8 @@
         &__top{
           font-size: 16px;
           color: #333333;
+          font-weight: bold;
+          margin-top: 45px;
         }
         &__bottom{
           font-size: 14px;
@@ -156,21 +179,23 @@
           margin-top: 8px;
         }
       }
-      &__five{
+      &__name{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 102px;
-        &__name-error li{
+        &__error li{
           display: inline;
+          margin-right:5px;
         }
         &__top{
+          font-weight: bold;
           display: flex;
-          &__name{
+          margin: 25px 8px 0 0;
+          &__left{
             font-size: 14px;
-            margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -202,22 +227,25 @@
           }
         }
       }
-      &__six{
+      &__kana{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 102px;
-        &__name-error li{
+        margin-top: 30px;
+        &__error li{
           display: inline;
           font-size: 14px;
+          margin-right: 5px;;
         }
         &__top{
+          font-weight: bold;
           display: flex;
-          &__kana{
+          &__left{
             font-size: 14px;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -249,19 +277,20 @@
           }
         }
       }
-      &__seven{
+      &__birth{
         padding-bottom: 32px;
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 120px;
         &__top{
+          font-weight: bold;
           display: flex;
-          &__birth{
+          &__left{
             font-size: 14px;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -274,26 +303,23 @@
         &__middle{
           margin-top: 8px;
           display: flex;
-
-
-          &__year-box{
-            -webkit-appearance: none;
-            background-color: white;
-            color: #333333;
-            height: 50px;
-            width: 75px;
-            margin-right: 8px;
-            padding: 10px 16px 8px;
-          }
+          
           &__year{
             color: #333333;
             font-size: 14px;
             line-height: 50px;
             margin-right: 8px;
-
-            // modify
             display: flex;
             position: relative;
+            &__box{
+              -webkit-appearance: none;
+              background-color: white;
+              color: #333333;
+              height: 50px;
+              width: 75px;
+              margin-right: 8px;
+              padding: 10px 16px 8px;
+            }
             &__chevron{
               position: absolute;
               right: 25px;
@@ -301,15 +327,6 @@
               color: #888888;
               font-size: 20px;
             }
-          }
-          &__month-box{
-            -webkit-appearance: none;
-            background-color: white;
-            color: #333333;
-            height: 50px;
-            width: 75px;
-            margin-right: 8px;
-            padding: 10px 16px 8px;
           }
           &__month{
             color: #333333;
@@ -318,6 +335,15 @@
             margin-right: 8px;
             display: flex;
             position: relative;
+            &__box{
+              -webkit-appearance: none;
+              background-color: white;
+              color: #333333;
+              height: 50px;
+              width: 75px;
+              margin-right: 8px;
+              padding: 10px 16px 8px;
+            }
             &__chevron{
               position: absolute;
               right: 25px;
@@ -326,21 +352,22 @@
               font-size: 20px;
             }
           }
-          &__date-box{
-            -webkit-appearance: none;
-            background-color: white;
-            color: #333333;
-            height: 50px;
-            width: 75px;
-            margin-right: 8px;
-            padding: 10px 16px 8px;
-          }
+          
           &__date{
             color: #333333;
             font-size: 14px;
             line-height: 50px;
             display: flex;
             position: relative;
+            &__box{
+              -webkit-appearance: none;
+              background-color: white;
+              color: #333333;
+              height: 50px;
+              width: 75px;
+              margin-right: 8px;
+              padding: 10px 16px 8px;
+            }
             &__chevron{
               position: absolute;
               right: 25px;
@@ -358,7 +385,7 @@
           margin-top: 3px;
         }
       }
-      &__eight{
+      &__next{
         padding-top: 70px;
         margin: 0 auto;
         width: 350px;
@@ -386,9 +413,7 @@
           text-decoration: none;
           touch-action: manipulation;
           border: 1px solid #ffffff;
-          a{
-            
-          }
+          
         }
         &__bottom{
           a{
@@ -401,12 +426,12 @@
           }
         }
       }
-      &__nine{
+      &__text{
         padding-top: 70px;
         width: 350px;
         height: 50px;
         margin: 0 auto;
-        &__text{
+        &__line{
         padding: 8px 16px;
         font-size: 12px;
         color: #333333;
@@ -420,7 +445,7 @@
     }
   }
 }
-.footer{
+.sub-footer{
   background-color: #f5f5f5;
   width: 100%;
   height: 150px;
@@ -435,7 +460,6 @@
       justify-content: space-between;
       margin: 0 auto;
       &__privacy{
-        
         display: block;
         padding-left: 20px;
         a{
@@ -482,11 +506,8 @@
   }
 }
 
-
-//増井  編集箇所
 .inp_error{border: 1px solid #F88A8A;
 }
-
 .error_m {
 	font-size: 15px;
 	font-weight: normal;
@@ -494,7 +515,6 @@
 	display: block;
 	margin: 0;
 }
-
 .pass-display{
   display: inline-block;
   background-color: #f5f5f5;
