@@ -11,14 +11,14 @@
             %h3.product-listings-page__main__contents__photo-box__title__left 出品画像
             %span.product-listings-page__main__contents__photo-box__title__right 必須
           %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
-          = form.label :image do
-            .product-listings-page__main__contents__photo-box__drop-area
-              = form.fields_for :item_images do |i|
+          = form.fields_for :item_images do |i|
+            = i.label :image do
+              .product-listings-page__main__contents__photo-box__drop-area
                 = i.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file"
-              %pre.product-listings-page__main__contents__photo-box__drop-area__text
-                :preserve
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
+                %pre.product-listings-page__main__contents__photo-box__drop-area__text
+                  :preserve
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
         .product-listings-page__main__contents__name-box
           .product-listings-page__main__contents__name-box__title
             .product-listings-page__main__contents__name-box__title__left 商品名
@@ -36,7 +36,7 @@
               %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
             .product-listings-page__main__contents__detail-box__select-list__category-form
               .product-listings-page__main__contents__detail-box__select-list__category-form--first
-                =form.select :category_id, {"---":0, "レディース":1, "メンズ":2, "ベビー・キッズ":3, "インテリア・住まい・小物":4, "本・音楽・ゲーム":5, "おもちゃ・ホビー・グッズ":6, "コスメ・香水・美容":7, "家電・スマホ・カメラ":8, "スポーツ・レジャー":9, "ハンドメイド":10, "チケット":11, "自動車・オートバイ":12, "その他":13 }, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value'
+                = form.select :category, @category_parent_array, {}, {class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value', id: 'parent_category'}
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--first__icon")
               .product-listings-page__main__contents__detail-box__select-list__category-form--second
                 =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
