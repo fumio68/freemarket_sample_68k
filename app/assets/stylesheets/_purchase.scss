@@ -1,11 +1,12 @@
 .purchase{
   background-color: #F5F5F5;
   width: 100vw;
-  height: 1392px;
+  height: 1125px;
   &__inner{
     width: 700px;
-    height: 1392px;
+    height: 1125px;
     margin: 0 auto;
+    background-color: white;
     &__top{
       width: 700px;
       height: 128px;
@@ -20,61 +21,150 @@
       }
     }
     &__main{
-      width: 342px;
-      height: 916px;
-      background-color: white;
-      text-align: center;
-      padding-left: 179px;
-      padding-right: 179px;
+      width: 700px;
+      height: 741px;
       &__confirmation{
-        width: 278px;
-        padding:32px;
-        height:33px;
-        line-height: 33px;
+        width: 700px;
+        height:96px;
+        line-height: 96px;
+        text-align: center;
+        margin: 0 auto;
         font-size: 22px;
-        display: inline-block;
-        border: 1px solid;
-        border-color: #F5F5F5;
-        border-left: 0px;
-        border-right: 0px;
-        border-top: 0px;
         font-weight: bold;
+        border-bottom: 1px solid #F5F5F5;
       }
       &__item{
+        width: 700px;
+        padding-right: 178px;
+        padding-left: 178px;
+        height:143px;
+        margin: 0 auto;
         display: flex;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        border: 1px solid;
-        border-color: #F5F5F5;
-        border-left: 0px;
-        border-right: 0px;
-        border-top: 0px;
+        align-items: center;
+        border-bottom: 1px solid #F5F5F5;
         &__image{
           width: 80px;
           height: 80px;
         }
         &__description{
-          margin-left: 16px;
+          width: 240px;
+          height: 80px;
+          margin-left: 18px;
+          &__name{
+            font-size: 14px;
+          }
+          &__money{
+            display: flex;
+            &__money{
+              font-size: 15px;
+            }
+            &__text{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      &__form{
+        width: 343px;
+        height: 500px;
+        margin: 0 auto;
+        &__cost{
+          width: 343px;
+          height: 139px;
+          border-bottom: 1px solid #F5F5F5;
+          &__box{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 35px;
+            &__head{
+              margin-top: 8px;
+              font-size: 18px;
+              font-weight: bold;
+            }
+            &__amount{
+              font-size: 30px;
+              font-weight: bold;
+            }
+          }
+          &__usepoint{
+            display: flex;
+            &__button{
+              // transform: scale(1.5);
+              margin-left: 5px;
+              margin-top: 25px;
+              height: 24px;
+              width: 24px;
+              background-color: gray;
+            }
+            &__text{
+              margin-left: 25px;
+              margin-top: 25px;
+              color: gray;
+            }
+          }
+        }
+        &__payment{
+          width: 343px;
+          height: 79px;
+          border-bottom: 1px solid #F5F5F5;
           font-size: 14px;
-        }
-      }
-      &__cost{
-        padding-top: 32px;
-        &__box{
-          display: flex;
-          justify-content: space-between;
-          &__head{
-            font-size: 18px;
-          }
-          &__amount{
-            font-size: 30px;
+          padding-top: 30px;
+          .register-button{
+            color: #0099e8;
           }
         }
-      }
+        &__shipping{
+          width: 343px;
+          height: 79px;
+          font-size: 14px;
+          padding-top: 30px;
+          border-bottom: 1px solid #F5F5F5;
+          .register-button{
+            color: #0099e8;
+          }
+        }
+        &__buy{
+          width: 343px;
+          height: 140px;
+          &__button{
+            margin-top: 33px;
+            width: 343px;
+            height: 50px;
+            background-color: gray;
+            color: white;
+            font-size: 16px;
+          }
+        }
+      } 
+      
     }
     &__footer{
       width: 700px;
-      height: 348px;
+      height: 256px;
+      background-color: #F5F5F5;
+      &__list{
+        padding-top: 40px;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-evenly;
+        color: #333;
+        &__privacy{
+          margin-left: 60px
+        }
+        &__disp{
+          margin-right: 60px;
+        }
+      }
+      &__logo{
+        width: 223.5px;
+        height: 90px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 40px;
+        &__image{
+          height: 65px;
+        }
+      }
     }
   }
 }

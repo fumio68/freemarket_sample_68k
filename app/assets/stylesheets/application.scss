@@ -11,9 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bxslider
- *= require_tree .
- *= require_self
+ * require_tree .
  */
+
 
  @import "reset";
  @import "font";
@@ -30,5 +30,6 @@
  @import "header/popup_mypage";
  @import "show-item";
  @import "items-new";
- @import "users/new_registration";
- @import "users/new_session";
+//  @import "users/new_registration";
+//  @import "users/new_session";
+ @import "purchase";

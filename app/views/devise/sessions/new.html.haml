@@ -1,6 +1,5 @@
 .devise-header
   = render "/shared/sub_header"
-
 .main
   .main__case
     .main__case__top
@@ -19,21 +18,26 @@
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .main__case__contents__form
           = f.email_field :email, autocomplete: "email", placeholder:'メールアドレス',class:'main__case__contents__form__email'
+          #email_error.error_m
+          %br
+          %span#email_error2.error_m
           = f.password_field  :password, autocomplete: "new-password", class:"main__case__contents__form__pass", placeholder:'パスワード'
+          #pass_error.error_m
           .main__case__contents__form__info
             .main__case__contents__form__info__left
-              = check_box_tag '', class:'main__case__contents__form__info__left__checkbox' 
+              = check_box_tag (:main__case__contents__form__info__left__checkbox)
             .main__case__contents__form__info__center
               =label_tag '', "私はロボットではありません", {class: "main__case__contents__form__info__center__label"}
             .main__case__contents__form__info__right
               = image_tag "/assets/material/logo/reCAPTCHA.png", class:"main__case__contents__form__info__right__icon"
             .main__case__contents__form__info__bottom
               = link_to "#" do
-                プライバシー
-                -
+                プライバシー                
               = link_to "#" do
                 利用規約
+            %span#check_error.error_m
           = f.submit "ログイン",class:'main__case__contents__form__login'
-          = link_to "#" , class: "main__case__contents__form__passforget" do
+          = link_to class: "main__case__contents__form__passforget" do
             パスワードをお忘れの方
 = render "/shared/sub_footer"
+
