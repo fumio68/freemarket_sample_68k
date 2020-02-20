@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index,:new, :create, :show]
   resources :users, only: [:index, :show] do
-    resources :residences
+    resources :residences, only: [:create, :show]
   end
   root "items#index"
 end
