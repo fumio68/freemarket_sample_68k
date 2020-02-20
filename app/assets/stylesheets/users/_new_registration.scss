@@ -42,6 +42,7 @@
     }
     &__contents{
       padding-top: 40px;
+      margin-top: 10px;
       &__nickname{
         margin: 0 auto;
         width: 350px;
@@ -396,9 +397,11 @@
           color: #333333;
           width: 350px;
           height: 40px;
+          
           a{
             text-decoration: none;
             color: #EA352D;
+            
           }
         }
         &__middle{
@@ -416,9 +419,9 @@
           
         }
         &__bottom{
-          a{
+          &__link{
             position: absolute;
-            margin-top: 30px;
+            margin-top: 5px;
             right: 0px;
             color: #EA352D;
             text-decoration: none;
@@ -427,7 +430,7 @@
         }
       }
       &__text{
-        padding-top: 70px;
+        padding-top: 20px;
         width: 350px;
         height: 50px;
         margin: 0 auto;

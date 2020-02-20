@@ -48,7 +48,6 @@ function log_in_input_check(){
 	if($('#main__case__contents__form__info__left__checkbox').prop("checked") == true){	
 		$('#check_error').html("");
 	}else{
-		console.log($('.main__case__contents__form__info__left__checkbox'));
 		$('#check_error').html("選択してください");
 		$(".main__case__contents__form__info").addClass("inp_error");
 		result = false;
