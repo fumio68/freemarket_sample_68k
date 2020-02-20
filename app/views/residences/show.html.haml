@@ -104,7 +104,7 @@
               %p.residence-form-head
                 %span.residence-form-text 都道府県
                 %span.residence-form-required 必須
-              = f.collection_select :shipping_area, Prefecture.all, :id, :name, {}, prompt: "---", class: 'residence-form-text-field'
+              = f.collection_select :prefecture , Prefecture.all, :id, :name, {}, prompt: "---", class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__city
               %p.residence-form-head
                 %span.residence-form-text 市区町村
