@@ -169,3 +169,27 @@
     }
   }
 }
+
+.data-exists__header{
+  display: flex;
+  justify-content: space-between;
+  &__modify{
+    color: #0099e8;
+  }
+}
+.residence-data{
+  font-size: 14px;
+  &__address{
+    display: flex;
+    &__item{
+      margin-right: 5px;
+    }
+  }
+  &__name{
+    display: flex;
+    &__item{
+      margin-right: 5px;
+    }
+    padding-bottom: 5px;
+  }
+}

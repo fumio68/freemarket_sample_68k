@@ -32,28 +32,30 @@
             = icon("fas", "plus-circle")
             登録してください
         .purchase__inner__main__form__shipping
-          - if @residence.present?
+          - if @residence.blank?
             %ul
               %li 配送先
               %li.register-button
                 = icon("fas", "plus-circle")
                 登録してください
           - else
-            %ul.isDataExists
+            %ul.data-exists__header
               %li 配送先
-              %li.isDataExists__modify 変更する
+              %li.data-exists__header__modify
+                = link_to "#" do
+                  変更する
             %ul.residence-data
               %li 〒#{@residence.postcode}
               %li
                 %ul.residence-data__address
-                  %li #{@residence.prefecture}
-                  %li #{@residence.city}
-                  %li #{@residence.block}
-                  %li #{@residence.building}
+                  %li.residence-data__address__item #{@residence.prefecture}
+                  %li.residence-data__address__item #{@residence.city}
+                  %li.residence-data__address__item #{@residence.block}
+                  %li.residence-data__address__item #{@residence.building}
               %li
-                %ul
-                  %li #{@residence.family_name}
-                  %li #{@residence.last_name}
+                %ul.residence-data__name
+                  %li.residence-data__name__item #{@residence.family_name}
+                  %li.residence-data__name__item #{@residence.last_name}
               
 
         .purchase__inner__main__form__buy
