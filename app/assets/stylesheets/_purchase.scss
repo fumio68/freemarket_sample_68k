@@ -102,22 +102,26 @@
         }
         &__payment{
           width: 343px;
-          height: 79px;
+          // height: 79px;
+          height: auto;
           border-bottom: 1px solid #F5F5F5;
           font-size: 14px;
           padding-top: 30px;
           .register-button{
             color: #0099e8;
+            padding-bottom: 5px;
           }
         }
         &__shipping{
           width: 343px;
-          height: 79px;
+          // height: 79px;
+          height: auto;
           font-size: 14px;
           padding-top: 30px;
           border-bottom: 1px solid #F5F5F5;
           .register-button{
             color: #0099e8;
+            padding-bottom: 5px;
           }
         }
         &__buy{
