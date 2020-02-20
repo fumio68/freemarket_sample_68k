@@ -3,8 +3,8 @@
     = link_to "", root_path, class: "link"
     .item__image 
       - objects = item.item_images
-      - objects.each do |object| 
-        = image_tag object.image , class: "item-image"
+      - first_image = objects.first 
+      = image_tag first_image.image , class: "item-image"
       
     .item__body
       .item__body--name
@@ -22,8 +22,8 @@
     = link_to "", root_path, class: "link"
     .item__image 
       - objects = item.item_images
-      - objects.each do |object| 
-        = image_tag object.image , class: "item-image"
+      - first_image = objects.first 
+      = image_tag first_image.image , class: "item-image"
     .sold-cover
     %p.sold sold
       

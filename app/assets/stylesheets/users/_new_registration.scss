@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.header{
+.devise-header{
   background-color: #f5f5f5;
   height: 130px;
   width: 100%;
@@ -25,7 +25,7 @@
     margin: 0 auto;
     background-color: white;
     width: 700px;
-    height: 1300px;
+    height: 1350px;
     &__header{
       border: solid 1px #f5f5f5;
       width: 701px;
@@ -38,16 +38,17 @@
     &__contents{
       padding-top: 40px;
  
-      &__one{
+      &__nickname{
         margin: 0 auto;
         width: 350px;
         height: 70px;
         &__top{
           display: flex;
-          &__nickname{
+          &__left{
             font-size: 14px;
+            font-weight: bold;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -69,18 +70,19 @@
           border: 1px solid #ccc;
         }
       }
-      &__two{
+      &__email{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 102px;
         &__top{
           display: flex;
-          &__email{
+          &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -100,18 +102,19 @@
           border: 1px solid #ccc;
         }
       }
-      &__three{
+      &__pass{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
-        height: 162px;
+        height: 212px;
         &__top{
           display: flex;
-          &__pass{
+          &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -130,6 +133,15 @@
           border-radius: 4px;
           border: 1px solid #ccc;
         }
+        &__repeat{
+          height: 50px;
+          width: 100%;
+          margin-top: 8px;
+          color: #333333;
+          padding-left: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
         &__middle{
           margin-top: 8px;
           margin-bottom: 10px;
@@ -141,13 +153,14 @@
           color: #333333;
         }
       }
-      &__four{
+      &__ident{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
         height: 122px;
         &__top{
           font-size: 16px;
+          font-weight: bold;
           color: #333333;
         }
         &__bottom{
@@ -156,7 +169,7 @@
           margin-top: 8px;
         }
       }
-      &__five{
+      &__name{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
@@ -166,11 +179,12 @@
         }
         &__top{
           display: flex;
-          &__name{
+          &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -202,7 +216,7 @@
           }
         }
       }
-      &__six{
+      &__kana{
         padding-top: 32px;
         margin: 0 auto;
         width: 350px;
@@ -213,11 +227,12 @@
         }
         &__top{
           display: flex;
-          &__kana{
+          &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -249,7 +264,7 @@
           }
         }
       }
-      &__seven{
+      &__birth{
         padding-bottom: 32px;
         padding-top: 32px;
         margin: 0 auto;
@@ -257,11 +272,12 @@
         height: 120px;
         &__top{
           display: flex;
-          &__birth{
+          &__left{
             font-size: 14px;
+            font-weight: bold;
             margin-right: 8px;
           }
-          &__hitu{
+          &__right{
             width: 32px;
             height: 20px;
             line-height: 20px;
@@ -274,8 +290,6 @@
         &__middle{
           margin-top: 8px;
           display: flex;
-
-
           &__year-box{
             -webkit-appearance: none;
             background-color: white;
@@ -290,8 +304,6 @@
             font-size: 14px;
             line-height: 50px;
             margin-right: 8px;
-
-            // modify
             display: flex;
             position: relative;
             &__chevron{
@@ -358,7 +370,7 @@
           margin-top: 3px;
         }
       }
-      &__eight{
+      &__next{
         padding-top: 70px;
         margin: 0 auto;
         width: 350px;
@@ -401,12 +413,12 @@
           }
         }
       }
-      &__nine{
+      &__text{
         padding-top: 70px;
         width: 350px;
         height: 50px;
         margin: 0 auto;
-        &__text{
+        &__line{
         padding: 8px 16px;
         font-size: 12px;
         color: #333333;
@@ -420,7 +432,7 @@
     }
   }
 }
-.footer{
+.sub-footer{
   background-color: #f5f5f5;
   width: 100%;
   height: 150px;
@@ -435,7 +447,6 @@
       justify-content: space-between;
       margin: 0 auto;
       &__privacy{
-        
         display: block;
         padding-left: 20px;
         a{
@@ -478,21 +489,20 @@
       width: 130px;
       text-align: center;
       margin: 0 auto;
+      color: #333
     }
   }
 }
 
-
-//増井  編集箇所
 .inp_error{border: 1px solid #F88A8A;
 }
 
 .error_m {
-	font-size: 15px;
-	font-weight: normal;
-	color: #FF4040;
-	display: block;
-	margin: 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: #FF4040;
+  display: block;
+  margin: 0;
 }
 
 .pass-display{
