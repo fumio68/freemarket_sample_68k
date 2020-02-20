@@ -2,5 +2,5 @@ class ItemImage < ApplicationRecord
   #association
   belongs_to :item
   #validation
-  validates :image, null: false
+  validates :image, presence: true
 end

@@ -1,5 +1,8 @@
-FactoryBot.define do
-  factory :residence do
+
+# FactoryBot.define do
+#   factory :residence do
     
-  end
-end
+#   end
+# end
+
+

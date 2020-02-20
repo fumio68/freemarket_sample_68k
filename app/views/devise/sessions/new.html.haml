@@ -1,17 +1,43 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.devise-header
+  = render "/shared/sub_header"
+.main
+  .main__case
+    .main__case__top
+      .main__case__top__menu
+        アカウントをお持ちでない方はこちら
+      = link_to "#", class:"main__case__top__menu__new" do
+        新規会員登録
+    .main__case__contents
+      .main__case__contents__sns
+        = button_tag '', class: "main__case__contents__sns__fcbk" do
+          = icon('fab', 'facebook-f', class: "main__case__contents__sns__fcbk__icon")
+          = label_tag '', 'Facebookでログイン', {class: 'main__case__contents__sns__fcbk__label'}
+        = button_tag '', class:"main__case__contents__sns__ggl" do
+          = image_tag "/assets/material/logo/google-icon.png", class:"main__case__contents__sns__ggl__icon"
+          = label_tag '', 'googleでログイン', {class: 'main__case__contents__sns__ggl__label'}
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .main__case__contents__form
+          = f.email_field :email, autocomplete: "email", placeholder:'メールアドレス',class:'main__case__contents__form__email'
+          #email_error.error_m
+          %br
+          %span#email_error2.error_m
+          = f.password_field  :password, autocomplete: "new-password", class:"main__case__contents__form__pass", placeholder:'パスワード'
+          #pass_error.error_m
+          .main__case__contents__form__info
+            .main__case__contents__form__info__left
+              = check_box_tag (:main__case__contents__form__info__left__checkbox)
+            .main__case__contents__form__info__center
+              =label_tag '', "私はロボットではありません", {class: "main__case__contents__form__info__center__label"}
+            .main__case__contents__form__info__right
+              = image_tag "/assets/material/logo/reCAPTCHA.png", class:"main__case__contents__form__info__right__icon"
+            .main__case__contents__form__info__bottom
+              = link_to "#" do
+                プライバシー                
+              = link_to "#" do
+                利用規約
+            %span#check_error.error_m
+          = f.submit "ログイン",class:'main__case__contents__form__login'
+          = link_to class: "main__case__contents__form__passforget" do
+            パスワードをお忘れの方
+= render "/shared/sub_footer"
+
