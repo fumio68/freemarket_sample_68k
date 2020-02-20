@@ -38,12 +38,12 @@
               .product-listings-page__main__contents__detail-box__select-list__category-form--first
                 = form.select :category, @category_parent_array, {}, {class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value', id: 'parent_category'}
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--first__icon")
-              .product-listings-page__main__contents__detail-box__select-list__category-form--second
-                =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
-                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
-              .product-listings-page__main__contents__detail-box__select-list__category-form--third
-                =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value'
-                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
+              -# .product-listings-page__main__contents__detail-box__select-list__category-form--second
+              -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
+              -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
+              -# .product-listings-page__main__contents__detail-box__select-list__category-form--third
+              -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value'
+              -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
             .product-listings-page__main__contents__detail-box__select-list__title
               .product-listings-page__main__contents__detail-box__select-list__title__left サイズ
               %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
