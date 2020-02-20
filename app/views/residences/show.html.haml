@@ -104,11 +104,7 @@
               %p.residence-form-head
                 %span.residence-form-text 都道府県
                 %span.residence-form-required 必須
-              
-              = f.select :prefecture,{},{},{class: "residence__main__mask__right__form__mask__prefecture__box"}
-              -# - year_array = []
-              -# - for cnt in 1..100 do year_array[cnt] = cnt+1919 end 
-              -# = options_for_select(year_array)
+              = f.collection_select :shipping_area, Prefecture.all, :id, :name, {}, prompt: "---", class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__city
               %p.residence-form-head
                 %span.residence-form-text 市区町村
