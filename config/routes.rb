@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :residences, only: [:create, :show]
   end
   root "items#index"
+  resources :categories, only: [:index]
 end
