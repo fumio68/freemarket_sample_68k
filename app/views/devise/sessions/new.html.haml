@@ -5,7 +5,7 @@
     .main__case__top
       .main__case__top__menu
         アカウントをお持ちでない方はこちら
-      = link_to "#", class:"main__case__top__menu__new" do
+      = link_to new_user_registration_path, class:"main__case__top__menu__new" do
         新規会員登録
     .main__case__contents
       .main__case__contents__sns
@@ -37,7 +37,7 @@
                 利用規約
             %span#check_error.error_m
           = f.submit "ログイン",class:'main__case__contents__form__login'
-          = link_to class: "main__case__contents__form__passforget" do
+          = link_to "#", class: "main__case__contents__form__passforget" do
             パスワードをお忘れの方
 = render "/shared/sub_footer"
 
