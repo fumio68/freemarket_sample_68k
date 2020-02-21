@@ -9,7 +9,7 @@
             = icon("fa", "search", class: 'header__mask__menu__top__search__form__icon')
       .header__mask__menu__nav-box
         %ul.header__mask__menu__nav-box__left
-          = link_to "#", class: 'header__mask__menu__nav-box__left__item' do
+          = link_to categories_path, class: 'header__mask__menu__nav-box__left__item' do
             = image_tag("material/icon/icon_category.png", class: 'header__mask__menu__nav-box__left__item__icon')
             %li.header__mask__menu__nav-box__left__item__parent.nav-search
               カテゴリーから探す
@@ -40,29 +40,39 @@
                       %ul.header__mask__menu__nav-box__left__item__parent__child__gchild__ggchild
                         %li.nav-search
                           test3
-        %ul.header__mask__menu__nav-box__right
-          %li.header__mask__menu__nav-box__right__mask
-            = link_to "#" ,class: 'nav-menu' do
-              = icon("far", "heart", class: 'header__mask__menu__nav-box__right__mask__icon')
-              %p.header__mask__menu__nav-box__right__mask__list いいね！一覧
-          %li.header__mask__menu__nav-box__right__mask
-            = link_to "#" ,class: 'nav-menu' do
-              = icon("far", "bell", class: 'header__mask__menu__nav-box__right__mask__icon')
-              %p.header__mask__menu__nav-box__right__mask__list お知らせ
-          %li.header__mask__menu__nav-box__right__mask
-            = link_to "#" ,class: 'nav-menu' do
-              = icon("fa", "check", class: 'header__mask__menu__nav-box__right__mask__icon')
-              %p.header__mask__menu__nav-box__right__mask__list やることリスト
-          %li.header__mask__menu__nav-box__right__mask.nav-menu.header__mask__menu__nav-box__right__mask--mypage
-            = link_to "#" ,class: 'nav-menu' do
-              = icon("far", "user", class: 'header__mask__menu__nav-box__right__mask__icon')
-              %p.header__mask__menu__nav-box__right__mask__list マイページ
-            = render partial: 'shared/popup/popup_mypage.html.haml'
-
+        
+        - if user_signed_in?
+          %ul.header__mask__menu__nav-box__right
+            %li.header__mask__menu__nav-box__right__mask
+              = link_to "#" ,class: 'nav-menu' do
+                = icon("far", "heart", class: 'header__mask__menu__nav-box__right__mask__icon')
+                %p.header__mask__menu__nav-box__right__mask__list いいね！一覧
+            %li.header__mask__menu__nav-box__right__mask
+              = link_to "#" ,class: 'nav-menu' do
+                = icon("far", "bell", class: 'header__mask__menu__nav-box__right__mask__icon')
+                %p.header__mask__menu__nav-box__right__mask__list お知らせ
+            %li.header__mask__menu__nav-box__right__mask
+              = link_to "#" ,class: 'nav-menu' do
+                = icon("fa", "check", class: 'header__mask__menu__nav-box__right__mask__icon')
+                %p.header__mask__menu__nav-box__right__mask__list やることリスト
+            %li.header__mask__menu__nav-box__right__mask.nav-menu.header__mask__menu__nav-box__right__mask--mypage
+              = link_to  user_path(current_user.id), class: 'nav-menu' do
+                = icon("far", "user", class: 'header__mask__menu__nav-box__right__mask__icon')
+                %p.header__mask__menu__nav-box__right__mask__list マイページ
+              = render partial: 'shared/popup/popup_mypage.html.haml'
+        - else
+          %ul.header__mask__menu__nav-box__right--notlogin
+            %li.header__mask__menu__nav-box__right--notlogin__mask
+              = link_to new_user_registration_path, class: 'sign_up-button' do
+                %p.header__mask__menu__nav-box__right--notlogin__mask__list 新規会員登録
+            %li.header__mask__menu__nav-box__right--notlogin__mask
+              = link_to user_session_path, class: 'sign_in-button' do
+                %p.header__mask__menu__nav-box__right--notlogin__mask__list ログイン
   .header__nav-mask
     %ul.header__nav-mask__inner
       = link_to "#", class: 'header__nav-mask__inner__item' do
         %li メルカリ >
-      = link_to "#", class: 'header__nav-mask__inner__item' do
-        %li マイページ
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+      - if user_signed_in?
+        = link_to user_path(current_user.id), class: 'header__nav-mask__inner__item' do
+          %li マイページ
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
