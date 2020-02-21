@@ -56,6 +56,8 @@ function input_check(){
 	}else if(!email.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
 		$('#email_error').html("フォーマットが不適切です");
 		$(".main__box__contents__email__form").addClass("inp_error");
+		$(".main__box__contents__pass__top").addClass("error_expand");
+		$(".main__box__contents__ident").addClass("error_expandh");
 		result = false;
 	}
 
@@ -65,7 +67,7 @@ function input_check(){
 		result = false;
 	}else if(password.length < 7 || password.length > 128 ){
 		$("#password_error").html(" 7文字以上 128文字以下で入力してください。");
-		$("#.main__box__contents__pass__form").addClass("inp_error");
+		$(".main__box__contents__pass__form").addClass("inp_error");
 		result = false;
 	}
 
@@ -87,26 +89,42 @@ function input_check(){
 		$(".main__box__contents__name__error__family").html("姓を入力してください");
 		$(".main__box__contents__name__form__family").addClass("inp_error");
 		result = false;
+	}else if(!nameseikanzi.match(/^[一-龥ぁ-ん]+$/)){
+		$(".main__box__contents__name__error__family").html("姓(全角)入力してください");
+		$(".main__box__contents__name__form__family").addClass("inp_error");
+		result = false;
 	}
 
 	if(namemeikanzi == ""){
 		$(".main__box__contents__name__error__last").html("名を入力してください");
 		$(".main__box__contents__name__form__last").addClass("inp_error");
 		result = false;
+	}else if(!namemeikanzi.match(/^[一-龥ぁ-ん]+$/)){
+		$(".main__box__contents__name__error__last").html("名(全角)入力してください");
+		$(".main__box__contents__name__form__last").addClass("inp_error");
+		result = false;
 	}
 
 	if(nameseikana == ""){
-		$(".main__box__contents__kana__error__j-family").html("姓かなを入力してください");
+		$(".main__box__contents__kana__error__j-family").html("姓を入力してください");
+		$(".main__box__contents__kana__form__j-family").addClass("inp_error");
+		result = false;
+	}else if(!nameseikana.match(/^[ぁ-ん]+$/)){
+		$(".main__box__contents__kana__error__j-family").html("姓ひらがな(全角)入力");
 		$(".main__box__contents__kana__form__j-family").addClass("inp_error");
 		result = false;
 	}
 
 	if(namemeikana == ""){
-		$(".main__box__contents__kana__error__j-last").html("名かなを入力してください");
+		$(".main__box__contents__kana__error__j-last").html("名を入力してください");
+		$(".main__box__contents__kana__form__j-last").addClass("inp_error");
+		result = false;
+	}else if(!namemeikana.match(/^[ぁ-ん]+$/)){
+		$(".main__box__contents__kana__error__j-last").html("名ひらがな(全角)入力");
 		$(".main__box__contents__kana__form__j-last").addClass("inp_error");
 		result = false;
 	}
-
+	
 	if(b_year == "" && b_month == "" && b_day == ""){
 		$("#b_year_error").html("生年月日を入力してください");
 		$(".main__box__contents__birth__middle__year__box").addClass("inp_error");
