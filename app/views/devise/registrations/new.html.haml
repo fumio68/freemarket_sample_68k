@@ -24,7 +24,10 @@
             .main__box__contents__email__top__right
               必須
           = f.email_field :email, autocomplete: "email", placeholder:'PC・携帯どちらでも可',class:'main__box__contents__email__form'
-          %span#email_error.error_m  
+          %span#email_error.error_m
+          - @user.errors.full_messages_for(:email).each do |message|
+            %span#email_error__color
+              = "この#{message}"
 
         .main__box__contents__pass
           .main__box__contents__pass__top
