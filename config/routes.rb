@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   end
   root "items#index"
   resources :categories, only: [:index]
-  get 'items/:item_id/purchases/:id/completed', to: 'purchases#show'
 end
