@@ -1,0 +1,42 @@
+.item 
+  - if item.status == 1
+    = link_to "", root_path, class: "link"
+    .item__image 
+      - objects = item.item_images
+      - first_image = objects.first 
+      = image_tag first_image.image , class: "item-image"
+      
+    .item__body
+      .item__body--name
+        = item.name
+      .item__body--middle
+        .item__body--middle__price
+          = item.price
+        .item__body--middle__favorite
+          = link_to "#" do
+            %i.fa.fa-star
+          %p.favorit-number 0
+      .item__body--fee
+        (税込)
+  - else 
+    = link_to "", root_path, class: "link"
+    .item__image 
+      - objects = item.item_images
+      - first_image = objects.first 
+      = image_tag first_image.image , class: "item-image"
+    .sold-cover
+    %p.sold sold
+      
+    .item__body
+      .item__body--name
+        = item.name
+      .item__body--middle
+        .item__body--middle__price
+          = item.price
+        .item__body--middle__favorite
+          = link_to "#" do
+            %i.fa.fa-star
+          %p.favorit-number 0
+      .item__body--fee
+        (税込)
+    

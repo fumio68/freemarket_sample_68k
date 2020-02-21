@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+.devise-header{
+  background-color: #f5f5f5;
+  height: 130px;
+  width: 100%;
+  &__image{
+    width: 500px;
+    height: 130px;
+    margin: 0 auto;
+    &__icon{
+      width: 170px;
+      height: 50px;
+      margin-left: 150px;
+    }
+    a{
+      line-height: 150px;
+    }
+  }
+}
+
+.main{
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  
+  &__case{
+    margin: 0 auto;
+    background-color: white;
+    width: 450px;
+    &__top{
+      border: solid 1px #f5f5f5;
+      width: 451px;
+      height: 150px;
+      padding: 32px 64px;
+      &__menu{
+        display: block;
+        font-size: 14px;
+        color: #333333;
+        width: 350px;
+        height: 15px;
+        text-align: center;
+        &__new{
+          display: block;
+          margin-top: 10px;
+          width: 320px;
+          height: 40px;
+          font-size: 14px;
+          color: #FFFFFF;
+          background-color: #ea352d;
+          line-height: 40px;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+    &__contents{
+      &__sns{
+        width: 450px;
+        height: 180px;
+        padding: 20px 64px;
+        &__fcbk{
+          width: 320px;
+          height: 50px;
+          background-color:#385185;
+          font-size: 14px;
+          margin-top: 16px;
+          border: #979797 solid 1px;
+          color: #333;
+          position: relative;
+          &__icon{
+            position: absolute;
+            left: 15px;
+            background-color: #FFF;
+            width: 25px;
+            height: 25px;
+            color: #385185;
+            border-radius: 2px;
+            font-size: 22px;
+            line-height: 33px;
+          }
+          &__label{
+            color: #FFF;
+          }
+        }
+        &__ggl{
+          width: 320px;
+          height: 50px;
+          background-color: #FFF;
+          font-size: 14px;
+          margin-top: 16px;
+          border: #979797 solid 1px;
+          color: #333;
+          position: relative;
+          &__icon{
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+            width: 30px;
+            height: 20px;
+          }
+          
+        }
+      }
+      &__form{
+        width: 450px;
+        padding: 25px 64px 32px;
+        &__email{
+          width: 320px;
+          height: 50px;
+          background-color: #FFFFFF;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          font-size: 16px;
+          color: #333;
+        }
+        &__pass{
+          width: 320px;
+          height: 50px;
+          background-color: #FFFFFF;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          font-size: 16px;
+          color: #333;
+          margin-top: 25px;
+        }
+        &__info{
+          margin-top: 25px;
+          width: 300px;
+          height: 80px;
+          background-color: #f1f1f1;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          position: relative;
+          &__left{
+            width: 40px;
+            height: 80px;
+            margin-left: 10px;
+            line-height: 80px;
+            #main__case__contents__form__info__left__checkbox{
+              -webkit-appearance: checkbox;
+            }
+          }
+          &__center{
+            &__label{
+              position: absolute;
+              left: 40px;
+              top: 20px;
+              width: 160px;
+              height: 30px;
+              font-size: 15px;
+            }
+          }
+          &__right{
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 70px;
+            height: 60px;
+            &__icon{
+              width: 85px;
+              height: 60px;
+              padding-right: 20px;
+            }
+          }
+          &__bottom{
+            position: absolute;
+            bottom: 0px;
+            width: 300px;
+            height: 20px;
+            text-align: right;
+            a{
+              font-size: 8px;
+              text-decoration: none;
+              color: #555;
+              padding-right: 10px;
+            }
+          }
+        }
+        &__login{
+          width: 320px;
+          height: 50px;
+          background-color: #0099e8;
+          margin-top: 40px;
+          color: #FFFFFF;
+          font-size: 14px;
+          border: 1px solid #0099e8;
+          margin-bottom: 40px;
+        }
+        &__passforget{
+          font-size: 14px;
+          text-decoration: none;
+          color:#EA352D;;
+        }
+      }
+    }
+  }
+}
+.sub-footer{
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  z-index: 1;
+  &__box{
+    margin: 0 auto;
+    height: 100px;
+    width: 450px;
+    &__menu{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      &__privacy{
+        display: block;
+        padding-left: 20px;
+        a{
+          text-decoration: none;
+          color: #333;
+          font-size: 12px;
+        }
+      }
+      &__kiyaku{
+        display: block;
+        width: 100px;
+        height: 20px;
+        a{
+          text-decoration: none;
+          color: #333;
+          font-size: 12px;
+        }
+      }
+      &__torihiki{
+        display: block;
+        padding-right: 20px;
+        a{
+          text-decoration: none;
+          color: #333;
+          font-size: 12px;
+        }
+      }
+    }
+    &__image{
+      width: 130px;
+      height: 40px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding-right: 10px;
+    }
+    &__bottom{
+      font-size: 12px;
+      height: 40px;
+      width: 130px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+.inp_error{border: 1px solid #F88A8A;
+}
+.error_m {
+	font-size: 15px;
+	font-weight: normal;
+	color: #FF4040;
+	display: block;
+	margin: 0;
+}
+
+

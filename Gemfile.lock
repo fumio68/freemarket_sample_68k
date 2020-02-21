@@ -24,6 +24,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_hash (3.1.0)
+      activesupport (>= 5.0.0)
     activejob (5.2.4.1)
       activesupport (= 5.2.4.1)
       globalid (>= 0.3.6)
@@ -246,10 +248,6 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    rspec (3.9.0)
-      rspec-core (~> 3.9.0)
-      rspec-expectations (~> 3.9.0)
-      rspec-mocks (~> 3.9.0)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.0)
@@ -257,6 +255,14 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
     ruby-vips (2.0.17)
@@ -327,6 +333,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash
   ancestry
   bootsnap (>= 1.1.0)
   byebug
@@ -354,7 +361,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
   rails-controller-testing
-  rspec
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

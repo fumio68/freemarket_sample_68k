@@ -1,7 +1,11 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
   # association
   belongs_to :user
+  has_many :item_images
   belongs_to :category
+
   # validation
   validates :name,          presence: true
   validates :price,         presence: true

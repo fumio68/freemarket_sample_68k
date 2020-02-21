@@ -147,3 +147,12 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+### Association
+- belongs_to :user
