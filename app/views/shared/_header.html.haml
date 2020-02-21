@@ -41,7 +41,7 @@
                         %li.nav-search
                           test3
         
-        - if !(user_signed_in?)
+        - if user_signed_in?
           %ul.header__mask__menu__nav-box__right
             %li.header__mask__menu__nav-box__right__mask
               = link_to "#" ,class: 'nav-menu' do
@@ -72,6 +72,7 @@
     %ul.header__nav-mask__inner
       = link_to "#", class: 'header__nav-mask__inner__item' do
         %li メルカリ >
-      = link_to user_path(current_user.id), class: 'header__nav-mask__inner__item' do
-        %li マイページ
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+      - if user_signed_in?
+        = link_to user_path(current_user.id), class: 'header__nav-mask__inner__item' do
+          %li マイページ
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
