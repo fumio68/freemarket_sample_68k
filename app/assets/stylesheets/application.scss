@@ -23,13 +23,13 @@
  @import "items_index"; 
  @import "item_index";
  @import "sell_btn";
- @import "footer";
+ @import "partial/footer";
  @import "mypage";
- @import "header/header";
- @import "header/popup_mypage";
+ @import "partial/header";
+ @import "partial/popup_mypage";
  @import "show-item";
  @import "items-new";
-//  @import "users/new_registration";
-//  @import "users/new_session";
+ @import "users/new_registration";
+ @import "users/new_session";
  @import "residences";
  @import "purchase";

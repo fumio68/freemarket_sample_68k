@@ -71,8 +71,10 @@
 
     .pic-up__content
       = link_to '商品一覧', "#", class: "item-links"
-      .items
-        = render @items
+      - if @item_images.present?
+        .items
+          = render @items
+      
 
   .bottom-banner
     = render partial: "banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
