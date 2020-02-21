@@ -32,6 +32,20 @@ $(function(){
                             </div>`;
     $('.product-listings-page__main__contents__detail-box__select-list__category-form').append(grandchildSelectHtml);
   }
+  // ひ孫(サイズ)カテゴリーの表示作成
+  function appendSizeBox(insertHTML){
+    var SizeSelectHtml = '';
+    SizeSelectHtml = `<div class='listing-select-wrapper__added' id= 'size_wrapper'>
+                              <div class='listing-select-wrapper__box'>
+                                <select class="listing-select-wrapper__box--select" id="size" name="category_id">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                </select>
+                                <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
+                              </div>
+                            </div>`;
+    $('.product-listings-page__main__contents__detail-box__select-list__category-form').append(SizeSelectHtml);
+  }
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
@@ -91,6 +105,36 @@ $(function(){
     }else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
       $('#size_wrapper').remove();
+      $('#brand_wrapper').remove();
+    }
+  });
+  // 孫カテゴリー選択後のイベント
+  $('.product-listings-page__main__contents__detail-box__select-list__category-form').on('change', '#grandchild_category', function(){
+    var grandChildId = $('#grandchild_category option:selected').data('category'); //選択された子カテゴリーのidを取得
+    if (grandChildId != "---"){ //子カテゴリーが初期値でないことを確認
+      console.log("=>", grandChildId);
+      $.ajax({
+        url: 'get_size',
+        type: 'GET',
+        data: { grandchild_id: grandChildId },
+        dataType: 'json'
+      })
+      .done(function(size){
+        if (size.length != 0) {
+          $('#size_wrapper').remove();//孫が変更された時、ひ孫以下を削除する
+          $('#brand_wrapper').remove();
+          var insertHTML = '';
+          size.forEach(function(size){
+            insertHTML += appendOption(size);
+          });
+          appendSizeBox(insertHTML);
+        }
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
+    }else{
+      $('#size_wrapper').remove();//子カテゴリーが初期値になった時、孫以下を削除する
       $('#brand_wrapper').remove();
     }
   });
