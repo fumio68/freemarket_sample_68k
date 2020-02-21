@@ -58,6 +58,7 @@ GEM
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bxslider-rails (4.2.5.1)
     byebug (11.1.1)
     capistrano (3.11.2)
       airbrussh (>= 1.0.0)
@@ -336,6 +337,7 @@ DEPENDENCIES
   active_hash
   ancestry
   bootsnap (>= 1.1.0)
+  bxslider-rails
   byebug
   capistrano
   capistrano-bundler

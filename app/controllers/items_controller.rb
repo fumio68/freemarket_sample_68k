@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def create
   end
   def show
+    @item = Item.find(params[:id]) 
+    @parents = Category.order("id ASC").limit(13)
   end
-
-  
 end
