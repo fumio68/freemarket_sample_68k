@@ -69,10 +69,6 @@ function input_check(){
 		$("#password_error").html(" 7文字以上 128文字以下で入力してください。");
 		$(".main__box__contents__pass__form").addClass("inp_error");
 		result = false;
-	}else if(!password.match(/^(?=.*?[a-z])(?=.*?\d)[a-z\d]/i)){
-		$("#password_error").html(" フォーマットが不適切です");
-		$(".main__box__contents__pass__form").addClass("inp_error");
-		result = false;
 	}
 
 	if(repeat == ""){
