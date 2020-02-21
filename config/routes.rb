@@ -16,4 +16,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  resources :categories, only: [:index]
 end
