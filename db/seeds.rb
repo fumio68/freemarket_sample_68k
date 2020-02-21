@@ -38,22 +38,22 @@ lady_goods = lady.children.create(name: "小物")
 lady_watch = lady.children.create(name: "時計")
 
 # 第三階層目
-lady_tops.children.create([
-  {name: "Tシャツ/カットソー(半袖/袖なし)"}, 
-  {name: "Tシャツ/カットソー(七分/長袖)"},
-  {name: "半袖/袖なし"},
-  {name: "シャツ/ブラウス(七分/長袖)"},
-  {name: "ポロシャツ"},
-  {name: "キャミソール"},
-  {name: "タンクトップ"},
-  {name: "ホルターネック"},
-  {name: "ニット/セーター"},
-  {name: "チュニック"},
-  {name: "カーディガン/ボレロ"},
-  {name: "アンサンブル"},
-  {name: "ベスト/ジレ"},
-  {name: "パーカー"}
-])
+lady_tops_kinds = lady_tops.children.create([
+                  {name: "Tシャツ/カットソー(半袖/袖なし)"}, 
+                  {name: "Tシャツ/カットソー(七分/長袖)"},
+                  {name: "半袖/袖なし"},
+                  {name: "シャツ/ブラウス(七分/長袖)"},
+                  {name: "ポロシャツ"},
+                  {name: "キャミソール"},
+                  {name: "タンクトップ"},
+                  {name: "ホルターネック"},
+                  {name: "ニット/セーター"},
+                  {name: "チュニック"},
+                  {name: "カーディガン/ボレロ"},
+                  {name: "アンサンブル"},
+                  {name: "ベスト/ジレ"},
+                  {name: "パーカー"}
+                ])
 lady_jacket.children.create([
   {name: "テーラードジャケット"},
   {name: "ノーカラージャケット"},
@@ -120,3 +120,19 @@ lady_legware.children.create([
   {name: "レッグウォーマー"},
   {name: "その他"}
 ])
+
+# 第四階層目
+lady_tops_kinds.each do |size|
+  size.children.create([
+    {name: "XXS以下"},
+    {name: "XS(SS)"},
+    {name: "S"},
+    {name: "M"},
+    {name: "L"},
+    {name: "XL(LL)"},
+    {name: "2XL(3L)"},
+    {name: "3XL(4L)"},
+    {name: "4XL(5L)以上"},
+    {name: "FREE SIZE"},
+  ])
+end
