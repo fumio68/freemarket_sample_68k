@@ -9,7 +9,7 @@
             = icon("fa", "search", class: 'header__mask__menu__top__search__form__icon')
       .header__mask__menu__nav-box
         %ul.header__mask__menu__nav-box__left
-          = link_to "#", class: 'header__mask__menu__nav-box__left__item' do
+          = link_to categories_path, class: 'header__mask__menu__nav-box__left__item' do
             = image_tag("material/icon/icon_category.png", class: 'header__mask__menu__nav-box__left__item__icon')
             %li.header__mask__menu__nav-box__left__item__parent.nav-search
               カテゴリーから探す
@@ -54,7 +54,7 @@
               = icon("fa", "check", class: 'header__mask__menu__nav-box__right__mask__icon')
               %p.header__mask__menu__nav-box__right__mask__list やることリスト
           %li.header__mask__menu__nav-box__right__mask.nav-menu.header__mask__menu__nav-box__right__mask--mypage
-            = link_to "#" ,class: 'nav-menu' do
+            = link_to  user_path(current_user.id), class: 'nav-menu' do
               = icon("far", "user", class: 'header__mask__menu__nav-box__right__mask__icon')
               %p.header__mask__menu__nav-box__right__mask__list マイページ
             = render partial: 'shared/popup/popup_mypage.html.haml'
@@ -63,6 +63,6 @@
     %ul.header__nav-mask__inner
       = link_to "#", class: 'header__nav-mask__inner__item' do
         %li メルカリ >
-      = link_to "#", class: 'header__nav-mask__inner__item' do
+      = link_to user_path(current_user.id), class: 'header__nav-mask__inner__item' do
         %li マイページ
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
