@@ -4,7 +4,7 @@
       = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'popup--mypage__iconimage__bgimage__userimage')
     .popup--mypage__iconimage__inner
       .popup--mypage__iconimage__inner__name
-        {@user.nickname}
+        #{@user.nickname}
       %ul.popup--mypage__iconimage__inner__count
         %li
           = link_to "#", class: 'popup--mypage__iconimage__inner__count__item' do
