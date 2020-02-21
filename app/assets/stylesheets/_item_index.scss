@@ -1,6 +1,5 @@
 .item {
   width: 220px;
-  display: inline-block;
   float: left;
   height: 300px;
   position: relative; 
@@ -40,20 +39,21 @@
       line-height: 1.5;
       font-size: 16px;
       text-align: left;
+      color: black;
     }
     &--middle {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      &__price {
-
-      }
       &__favorite {
         display: flex;
         .fa.fa-star {
           display: inline-block;
           color: black;  
         }
+      }
+      &__price{
+        color: black;
       }
     }
     &--fee {

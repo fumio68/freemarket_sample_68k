@@ -1,6 +1,6 @@
 - if item.status == 1
-  = link_to item_path(item.id) do
-    .item 
+  .item 
+    = link_to item_path(item.id) do
       .item__image 
         - objects = item.item_images
         - first_image = objects.first 
@@ -19,8 +19,8 @@
         .item__body--fee
           (税込)
 - else
-  = link_to item_path(item.id) do
-    .item
+  .item
+    = link_to item_path(item.id) do
       .item__image 
         - objects = item.item_images
         - first_image = objects.first 

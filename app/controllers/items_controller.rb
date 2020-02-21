@@ -12,5 +12,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id]) 
     @parents = Category.order("id ASC").limit(13)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
   end
 end
