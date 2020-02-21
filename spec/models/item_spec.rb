@@ -1,7 +1,8 @@
 require 'rails_helper'
 describe Item do
   describe '#create' do
-    
+  
+    # presence: true 
     it "is valid with a name, price, content, condition, shipping, shipping_area, days_to_ship, shipping_method, status" do
       user = build(:user)
       item = build(:item)
@@ -63,7 +64,7 @@ describe Item do
     end 
 
     
-    
+    # max length
     it "is invalid with a name that has more than 41 characters " do
       item = build(:item, name: "a" * 41)
       item.valid?

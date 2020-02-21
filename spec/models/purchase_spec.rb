@@ -1,6 +1,7 @@
 require 'rails_helper'
 describe Purchase do
   describe '#create' do
+    # presence: true 
     it "is valid with a postcode, prefecture, city, block" do
       user = build(:user)
       item = build(:item)

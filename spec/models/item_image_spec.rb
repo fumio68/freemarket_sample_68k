@@ -1,6 +1,7 @@
 require 'rails_helper'
 describe ItemImage do
   describe '#create' do
+    # presence: true 
     it "is valid with a image" do
       item = build(:item)
       item_image = build(:item_image)
