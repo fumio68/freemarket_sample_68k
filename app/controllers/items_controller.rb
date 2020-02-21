@@ -29,6 +29,13 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  # 孫カテゴリーが選択された後に動くアクション
+  def get_size
+    category_grandchildren = Category.find("#{params[:child_id]}").children
+    #選択された子カテゴリーに紐付くひ孫カテゴリーの配列を取得
+    @size = category_grandchildren.children
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
