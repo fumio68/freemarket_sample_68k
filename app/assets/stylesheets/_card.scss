@@ -16,7 +16,6 @@
     }
     &__body{
       width: 700px;
-      // height: 450px;
       background-color: #FFFFFF;
       padding: 25px 16px 40px;
       &__card{
@@ -52,7 +51,9 @@
         }
         &__bottom{
           &__icon{
+           
             &__credit{
+            margin-top: 10px;
             width: 294px;
             height: 33px;
             }
@@ -111,6 +112,7 @@
               padding-right: 8px;
               border: 1px solid #ccc;
               background-color: #FFFFFF;
+              cursor: pointer;
             }
           }
           &__year{
@@ -124,14 +126,13 @@
               font-size: 20px;
               color: #888;
               line-height: 50px;
-
             }
             &__select{
               width: 130px;
               height: 50px;
               font-size: 16px;
               padding: 0px 16px;
-              
+              cursor: pointer;
               border: 1px solid #ccc;
               background-color: #FFFFFF;
             }
@@ -196,6 +197,44 @@
               color: #0099E8;
               margin-top: 8px;
             }
+            
+            .open{
+              opacity: 1;
+              visibility: visible;
+            }
+            &__tooltip{
+              position: absolute;
+              top: 50px;
+              right: -10px;
+              background-color: #eee;
+              width: 380px;
+              height: 170px;
+              text-align: center;
+              padding: 15px;
+              border-radius: 6px;
+              -webkit-transition: all 0.5s;
+              -moz-transition: all 0.5s;
+              -ms-transition: all 0.5s;
+              -o-transition: all 0.5s;
+              transition: all 0.5s;
+              opacity: 0;
+              visibility: hidden;
+            }
+            &__tooltip:before{
+              content: '';
+              position: absolute; /* 位置固定 */
+              top: -28px;
+              left: 85%;
+              margin-left: 0px;
+              border-width: 0 10px 10px 10px;
+              border: 14px solid transparent; /* 線幅の設定 */
+              border-bottom-color: #eee; /* 吹き出しの地と同じ色 */
+              -webkit-transition: all 0.5s;
+              -moz-transition: all 0.5s;
+              -ms-transition: all 0.5s;
+              -o-transition: all 0.5s;
+              transition: all 0.5s;
+            }
           }
         }
       }
@@ -203,6 +242,7 @@
         width: 345px;
         margin: 0 auto;
         padding-bottom: 25px;
+        z-index: 1;
         &__box{
           margin-top: 25px;
           width: 345px;
@@ -212,6 +252,9 @@
           text-align: center;
           line-height: 50px;
           border: solid 1px #3CCACE;
+          cursor: pointer;
+          z-index: 1;
+ 
         }
       }
     }

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :residences, only: [:create, :show]
   end
   root "items#index"
-  resources :card, only: [:index, :new, :show] do
+  resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'

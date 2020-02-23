@@ -2,25 +2,22 @@ class CardController < ApplicationController
 
   require "payjp"
 
-  def index
-  end
-
   def new
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
+  def pay
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト', #なくてもOK
-      email: current_user.email, #なくてもOK
+      description: '登録テスト', 
+      email: current_user.email,
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      ) 
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
@@ -30,7 +27,7 @@ class CardController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
+  def delete 
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -42,7 +39,7 @@ class CardController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+  def show 
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
@@ -50,6 +47,21 @@ class CardController < ApplicationController
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
+      @default_card_brand = @default_card_information.brand      
+      case @default_card_brand
+      when "Visa"
+        @default_card_src = "visa.png"
+      when "JCB"
+        @default_card_src = "jcb.png"
+      when "MasterCard"
+        @default_card_src = "master.png"
+      when "American Express"
+        @default_card_src = "american.png"
+      when "Diners Club"
+        @default_card_src = "dinersclub.png"
+      when "Discover"
+        @default_card_src = "discover.png"
+      end
     end
   end
 end

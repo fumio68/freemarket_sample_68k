@@ -1,39 +1,78 @@
-= form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %label カード番号
-  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-  %br
-  %label 有効期限
-  %select#exp_month{name: "exp_month", type: "text"}
-    %option{value: ""} --
-    %option{value: "1"}01
-    %option{value: "2"}02
-    %option{value: "3"}03
-    %option{value: "4"}04
-    %option{value: "5"}05
-    %option{value: "6"}06
-    %option{value: "7"}07
-    %option{value: "8"}08
-    %option{value: "9"}09
-    %option{value: "10"}10
-    %option{value: "11"}11
-    %option{value: "12"}12
-  %span 月/
-  %select#exp_year{name: "exp_year", type: "text"}
-    %option{value: ""} --
-    %option{value: "2019"}19
-    %option{value: "2020"}20
-    %option{value: "2021"}21
-    %option{value: "2022"}22
-    %option{value: "2023"}23
-    %option{value: "2024"}24
-    %option{value: "2025"}25
-    %option{value: "2026"}26
-    %option{value: "2027"}27
-    %option{value: "2028"}28
-    %option{value: "2029"}29
-  %span 年
-  %br
-  %label セキュリティコード
-  = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-  #card_token
-  = submit_tag "追加する", id: "token_submit"
+.devise-header
+  = render "/shared/sub_header"
+.card-main
+  .card-main__contents
+    .card-main__contents__header
+      支払い方法
+    .card-main__contents__body
+      = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        .card-main__contents__body__card
+          .card-main__contents__body__card__top
+            .card-main__contents__body__card__top__left
+              カード番号
+            .card-main__contents__body__card__top__right
+              必須
+          .card-main__contents__body__card__middle
+            = text_field_tag "number", "", class: "card-main__contents__body__card__middle__box", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+          .card-main__contents__body__card__bottom
+            = image_tag "/assets/material/logo/credit.png", class:"card-main__contents__body__card__bottom__icon__credit"
+        .card-main__contents__body__effective
+          .card-main__contents__body__effective__top
+            .card-main__contents__body__effective__top__left
+              有効期限
+            .card-main__contents__body__effective__top__right
+              必須
+          .card-main__contents__body__effective__bottom
+            .card-main__contents__body__effective__bottom__month
+              = icon('fas', 'chevron-down', class: "card-main__contents__body__effective__bottom__month__icon")
+              %select#exp_month{name: "exp_month", type: "text", class:"card-main__contents__body__effective__bottom__month__select"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+            %p.card-main__contents__body__effective__bottom__month__text 月
+            .card-main__contents__body__effective__bottom__year
+              = icon('fas', 'chevron-down', class: "card-main__contents__body__effective__bottom__year__icon")
+              %select#exp_year{name: "exp_year", type: "text", class:"card-main__contents__body__effective__bottom__year__select"}
+                %option{value: ""} --
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+            %p.card-main__contents__body__effective__bottom__year__text 年
+        .card-main__contents__body__security
+          .card-main__contents__body__security__top
+            .card-main__contents__body__security__top__left
+              セキュリティーコード
+            .card-main__contents__body__security__top__right
+              必須
+          .card-main__contents__body__security__bottom
+            = text_field_tag "cvc", "", class: "card-main__contents__body__security__bottom__box", placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc"
+            .card-main__contents__body__security__bottom__note
+              = link_to "#note1", class:"card-main__contents__body__security__bottom__note__question" do
+                ?
+              = link_to "#note1", class:"card-main__contents__body__security__bottom__note__text" do
+                カード裏面の番号とは？
+              %p{class:'card-main__contents__body__security__bottom__note__tooltip invisible',id:'note1'}
+                カードの裏面をご参照ください。
+                = image_tag "/assets/material/credit/note.png", width: '240', height: '105'
+        .card-main__contents__body__btn
+          #card_token
+          = submit_tag "登録する", id: "token_submit", class:"card-main__contents__body__btn__box"
+= render "/shared/sub_footer"
