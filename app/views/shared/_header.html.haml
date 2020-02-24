@@ -61,6 +61,7 @@
                 = icon("far", "user", class: 'header__mask__menu__nav-box__right__mask__icon')
                 %p.header__mask__menu__nav-box__right__mask__list マイページ
               = render partial: 'shared/popup/popup_mypage.html.haml'
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn"
         - else
           %ul.header__mask__menu__nav-box__right--notlogin
             %li.header__mask__menu__nav-box__right--notlogin__mask
@@ -69,11 +70,4 @@
             %li.header__mask__menu__nav-box__right--notlogin__mask
               = link_to user_session_path, class: 'sign_in-button' do
                 %p.header__mask__menu__nav-box__right--notlogin__mask__list ログイン
-  .header__nav-mask
-    %ul.header__nav-mask__inner
-      = link_to "#", class: 'header__nav-mask__inner__item' do
-        %li メルカリ >
-      - if user_signed_in?
-        = link_to user_path(current_user.id), class: 'header__nav-mask__inner__item' do
-          %li マイページ
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+  
