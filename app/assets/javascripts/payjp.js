@@ -35,15 +35,16 @@ document.addEventListener(
 // ? をクリックした時の動作
 $(function(){
   $('a.card-main__contents__body__security__bottom__note__question').click(function(){
-  $('a.card-main__contents__body__security__bottom__note__text').click(function(){
-    // リンクの #note** を取得
-    var targetNote = $(this).attr('href');
-    $('p.card-main__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
-  });
- 
-  // 表示されたツールチップを隠す処理（マウスクリックで全て隠す）
-  $('html').mousedown(function(){
-    $('p.card-main__contents__body__security__bottom__note__tooltip').removeClass('open');
+    $('a.card-main__contents__body__security__bottom__note__text').click(function(){
+      // リンクの #note** を取得
+      var targetNote = $(this).attr('href');
+      $('p.card-main__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
+    });
+  
+    // 表示されたツールチップを隠す処理（マウスクリックで全て隠す）
+    $('html').mousedown(function(){
+      $('p.card-main__contents__body__security__bottom__note__tooltip').removeClass('open');
+    });
   });
 });
 
