@@ -1,19 +1,18 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
-                        <div class='listing-select-wrapper__box'>
-                          <select class="listing-select-wrapper__box--select" id="child_category" name="category_id">
-                            <option value="---" data-category="---">---</option>
+    childSelectHtml = `<div class='product-listings-page__main__contents__detail-box__select-list__category-form--second' id= 'children_wrapper'>
+                        <select class="product-listings-page__main__contents__detail-box__select-list__category-form--second__value" id="child_category" name=category_id_2">
+                          <option value="---" data-category="---">---</option>
                             ${insertHTML}
-                          <select>
-                          <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
+                        </select>
+                        <i class='fas fa-chevron-down product-listings-page__main__contents__detail-box__select-list__category-form--second__icon'></i>
                         </div>
                       </div>`;
     $('.product-listings-page__main__contents__detail-box__select-list__category-form').append(childSelectHtml);
@@ -21,13 +20,12 @@ $(function(){
   // 孫カテゴリーの表示作成
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
-                              <div class='listing-select-wrapper__box'>
-                                <select class="listing-select-wrapper__box--select" id="grandchild_category" name="category_id">
-                                  <option value="---" data-category="---">---</option>
+    grandchildSelectHtml = `<div class='product-listings-page__main__contents__detail-box__select-list__category-form--third' id= 'grandchildren_wrapper'>
+                              <select class="product-listings-page__main__contents__detail-box__select-list__category-form--third__value" id="grandchild_category" name="category_id_3">
+                                <option value="---" data-category="---">---</option>
                                   ${insertHTML}
-                                </select>
-                                <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
+                              </select>
+                              <i class='fas fa-chevron-down product-listings-page__main__contents__detail-box__select-list__category-form--third__icon'></i>
                               </div>
                             </div>`;
     $('.product-listings-page__main__contents__detail-box__select-list__category-form').append(grandchildSelectHtml);
@@ -35,15 +33,19 @@ $(function(){
   // ひ孫(サイズ)カテゴリーの表示作成
   function appendSizeBox(insertHTML){
     var SizeSelectHtml = '';
-    SizeSelectHtml = `<div class='listing-select-wrapper__added' id= 'size_wrapper'>
-                              <div class='listing-select-wrapper__box'>
-                                <select class="listing-select-wrapper__box--select" id="size" name="category_id">
-                                  <option value="---" data-category="---">---</option>
-                                  ${insertHTML}
-                                </select>
-                                <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
-                              </div>
-                            </div>`;
+    SizeSelectHtml = `<div class='product-listings-page__main__contents__detail-box__select-list__category-form--fourth' id= 'size_wrapper'>
+                        <div class='product-listings-page__main__contents__detail-box__select-list__title'>
+                          <p class='product-listings-page__main__contents__detail-box__select-list__title__left'>サイズ</p>
+                          <span class='product-listings-page__main__contents__detail-box__select-list__title__right'>必須</span>
+                        </div>
+                        <div class='product-listings-page__main__contents__detail-box__select-list__size-form'>
+                          <select class="product-listings-page__main__contents__detail-box__select-list__size-form__value" id="size" name="category_id_4">
+                            <option value="---" data-category="---">---</option>
+                              ${insertHTML}
+                          </select>
+                          <i class='fas fa-chevron-down product-listings-page__main__contents__detail-box__select-list__size-form__icon'></i>
+                        </div>
+                      </div>`;
     $('.product-listings-page__main__contents__detail-box__select-list__category-form').append(SizeSelectHtml);
   }
   // 親カテゴリー選択後のイベント
@@ -53,7 +55,7 @@ $(function(){
       $.ajax({
         url: 'get_category_children',
         type: 'GET',
-        data: { parent_name: parentCategory },
+        data: { parent_id: parentCategory },
         dataType: 'json'
       })
       .done(function(children){
@@ -112,7 +114,6 @@ $(function(){
   $('.product-listings-page__main__contents__detail-box__select-list__category-form').on('change', '#grandchild_category', function(){
     var grandChildId = $('#grandchild_category option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (grandChildId != "---"){ //子カテゴリーが初期値でないことを確認
-      console.log("=>", grandChildId);
       $.ajax({
         url: 'get_size',
         type: 'GET',
