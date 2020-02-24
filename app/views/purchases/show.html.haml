@@ -14,7 +14,7 @@
               %li.purchase__inner__main__item__description__money__money ¥1,600（税込）
               %li.purchase__inner__main__item__description__money__text 送料込み
       -#  form bigin
-      = form_with(model: @purchase, class: 'purchase__inner__main__form', remote: true) do |f|
+      = form_with(model: @purchase, class: 'purchase__inner__main__form', local: true) do |f|
         .purchase__inner__main__form__cost
           %ul.purchase__inner__main__form__cost__box
             %li.purchase__inner__main__form__cost__box__head 支払い金額

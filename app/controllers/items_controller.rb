@@ -2,7 +2,9 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order("created_at DESC")
     @item_images = ItemImage.all
-    @user = User.find(current_user.id)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
     @parents = Category.order("id ASC").limit(13)
   end
 
@@ -44,13 +46,18 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @parents = Category.order("id ASC").limit(13)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
   end
+
 
   private
 
   def item_params
     params.require(:item).permit(:name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id, item_images_attributes: [:image]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
   end
-
 
 end

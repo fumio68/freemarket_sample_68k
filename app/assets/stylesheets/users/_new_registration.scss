@@ -60,7 +60,7 @@
             line-height: 20px;
             text-align: center;
             font-size: 12px;
-            background-color: #25e7ee;
+            background-color: #3CCACE;
             color: white;
             margin-left: 8px;
           }
@@ -95,7 +95,7 @@
             line-height: 20px;
             text-align: center;
             font-size: 12px;
-            background-color: #25e7ee;
+            background-color: #3CCACE;
             color: white;
           }
         }
@@ -107,6 +107,9 @@
           padding-left: 10px;
           border-radius: 4px;
           border: 1px solid #ccc;
+        }
+        #email_error__color{
+          color: red;
         }
       }
       &__pass{
@@ -129,7 +132,7 @@
             line-height: 20px;
             text-align: center;
             font-size: 12px;
-            background-color: #25e7ee;
+            background-color: #3CCACE;
             color: white;
           }
         }
@@ -215,7 +218,7 @@
             line-height: 20px;
             text-align: center;
             font-size: 12px;
-            background-color: #25e7ee;
+            background-color: #3CCACE;
             color: white;
           }
         }
@@ -266,7 +269,7 @@
             line-height: 20px;
             text-align: center;
             font-size: 12px;
-            background-color: #25e7ee;
+            background-color: #3CCACE;
             color: white;
           }
         }
@@ -312,7 +315,7 @@
             line-height: 20px;
             text-align: center;
             font-size: 12px;
-            background-color: #25e7ee;
+            background-color: #3CCACE;
             color: white;
           }
         }
@@ -423,7 +426,7 @@
           height: 45px;
           font-size: 14px;
           color: #ffffff;
-          background-color: #25e7ee;
+          background-color: #3CCACE;
           line-height: 45px;
           text-align: center;
           margin-top: 32px;
@@ -524,6 +527,9 @@
   }
 }
 
+#error_explanation{
+  display: none;
+}
 .inp_error{border: 1px solid #F88A8A;
 }
 .error_m {
@@ -537,4 +543,10 @@
   display: inline-block;
   background-color: #f5f5f5;
   padding: 4px 8px;
+}
+.error_expand{
+  margin-top: 25px;
+}
+.error_expandh{
+  margin-top: 90px;
 }
