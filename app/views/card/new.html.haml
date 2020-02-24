@@ -5,7 +5,7 @@
     .card-main__contents__header
       支払い方法
     .card-main__contents__body
-      = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      = form_tag(pay_user_card_index_path(current_user.id), method: :post, id: 'charge-form',  name: "inputForm") do
         .card-main__contents__body__card
           .card-main__contents__body__card__top
             .card-main__contents__body__card__top__left

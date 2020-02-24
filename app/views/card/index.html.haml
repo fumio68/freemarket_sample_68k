@@ -16,7 +16,7 @@
         - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
         = exp_month + " / " + exp_year
         .card-main__contents__content__menu__delete
-        = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        = form_tag(delete_user_card_index_path(user_id: current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
           %input{ type: "hidden", name: "card_id", value: "" }
           %button.card-main__contents__content__menu__delete__btn 削除する
       .card-main__contents__content__info
