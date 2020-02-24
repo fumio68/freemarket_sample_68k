@@ -2,7 +2,8 @@
   .header__mask
     .header__mask__menu
       .header__mask__menu__top
-        = image_tag("material/logo/logo.png", class: 'header__mask__menu__top__icon')
+        = link_to root_path do
+          = image_tag("material/logo/logo.png", class: 'header__mask__menu__top__icon')
         .header__mask__menu__top__search
           = form_with(model: @message, class: 'header__mask__menu__top__search__form', local: true) do |form|
             = form.search_field :content, placeholder: '何かお探しですか？', class: 'header__mask__menu__top__search__form__text-field'
