@@ -5,12 +5,10 @@ class ResidencesController < ApplicationController
       target = Residence.where(user_id: current_uesr.id)
       target.update(residence_params)
       redirect_back(fallback_location: root_path)
-      # binding.pry
     else
       @residence = Residence.new(residence_params)
       @residence.save!
       redirect_back(fallback_location: root_path)
-      # binding.pry
     end
   end
 
