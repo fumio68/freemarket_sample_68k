@@ -2,16 +2,19 @@ class ResidencesController < ApplicationController
 
   def create
     if Residence.where(user_id: params[:user_id]).exists?
-      Residence.update(residence_params)
+      target = Residence.where(user_id: params[:user_id])
+      target.update(residence_params)
+      redirect_back(fallback_location: root_path)
       # binding.pry
     else
       @residence = Residence.new(residence_params)
       @residence.save!
+      redirect_back(fallback_location: root_path)
       # binding.pry
     end
   end
 
-  def show
+  def index
     @parents = Category.order("id ASC").limit(13)
 
     @user = User.find(current_user.id)

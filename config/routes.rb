@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :purchases, only: [:index, :create, :show]
   end
   resources :users, only: [:index, :show] do
-    resources :residences, only: [:create, :show]
+    resources :residences, only: [:create, :index]
   end
   root "items#index"
   resources :categories, only: [:index]
