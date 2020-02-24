@@ -76,7 +76,7 @@
           = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
             %li 電話番号の確認
             = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
-          = link_to destroy_user_session_path, class: 'mypage__main__mask__left__nav-list__item' do
+          = link_to destroy_user_session_path, method: :delete, class: 'mypage__main__mask__left__nav-list__item' do
             %li ログアウト
             = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
       .mypage__main__mask__right
