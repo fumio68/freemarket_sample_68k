@@ -81,7 +81,6 @@
             = icon("fa", "angle-right", class: 'residence__main__mask__left__nav-list__item__arrow')
       .residence__main__mask__right
         %h1.residence__main__mask__right__head 発送元・お届け先住所変更
-        -# - url_str = '/users/' + (current_user.id).to_s + '/residences'
         = form_with(model: [@user,@residence], method: 'post',url: user_residences_path, class: 'residence__main__mask__right__form', local: true) do |f|
           .residence__main__mask__right__form__mask
             .residence__main__mask__right__form__mask__name
