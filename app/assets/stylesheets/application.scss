@@ -10,9 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ * require bxslider
  * require_tree .
- *= require_self
  */
+
 
  @import "reset";
  @import "font";
@@ -23,10 +24,10 @@
  @import "items_index"; 
  @import "item_index";
  @import "sell_btn";
- @import "footer";
+ @import "partial/footer";
  @import "mypage";
- @import "header/header";
- @import "header/popup_mypage";
+ @import "partial/header";
+ @import "partial/popup_mypage";
  @import "show-item";
  @import "items-new";
  @import "users/new_registration";

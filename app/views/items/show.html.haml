@@ -5,29 +5,25 @@
       .main__show__content__top
         .main__show__content__top__itemInfo
           .main__show__content__top__itemInfo__name
-            %h2 product
+            = @item.name
           .main__show__content__top__itemInfo__image
 
             %ul.main__show__content__top__itemInfo__image__ul
-              %li.main__show__content__top__itemInfo__image__ul__li
-                = image_tag src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "main__show__content__top__itemInfo__image__ul__li__img "
-                %ul.main__show__content__top__itemInfo__image__ul__li__ul
-                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
-                    = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
-                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
-                    = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png", class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
-                  %li.main__show__content__top__itemInfo__image__ul__li__ul__li
-                    = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "main__show__content__top__itemInfo__image__ul__li__ul__li__img "
+              - objects = @item.item_images
+              - objects.each do |object| 
+                %li.main__show__content__top__itemInfo__image__ul__li
+                  = image_tag object.image, class: "main__show__content__top__itemInfo__image__ul__li__img "
+            .custom-thumb
           .main__show__content__top__itemInfo__price
             %span.main__show__content__top__itemInfo__price__span
-              ¥20000
+              = @item.price
             .main__show__content__top__itemInfo__price__detail
               %span.main__show__content__top__itemInfo__price__detail__span
                 (税込み)
               %span.main__show__content__top__itemInfo__price__detail__span
                 送料込み
           .main__show__content__top__itemInfo__detail
-            product
+            = @item.name
           .main__show__content__top__itemInfo__table
             %table.main__show__content__top__itemInfo__table__table
               %tbody.main__show__content__top__itemInfo__table__table__tbody
@@ -35,7 +31,7 @@
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     出品者
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    hoge
+                    = @item.user.nickname
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     カテゴリー
@@ -51,6 +47,7 @@
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     ブランド
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
+                    = @item.brand
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     商品のサイズ
@@ -60,22 +57,22 @@
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     商品の状態
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    新品/未使用
+                    = @item.condition
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     配送料の負担
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    送料込み(出品者負担)
+                    = @item.shipping
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     発送元の地域
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    = link_to "青森県", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                    = @item.shipping_area
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     発送日の目安
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    1-2日で発送
+                    = @item.days_to_ship
 
           .main__show__content__top__itemInfo__other  
             %ul.main__show__content__top__itemInfo__other__left

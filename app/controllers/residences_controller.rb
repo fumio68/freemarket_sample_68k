@@ -13,9 +13,10 @@ class ResidencesController < ApplicationController
 
   def show
     @parents = Category.order("id ASC").limit(13)
-    @user = User.find(params[:user_id])
-    if Residence.where(user_id: params[:user_id]).exists?
-      @residence = Residence.find_by(user_id: params[:user_id])
+
+    @user = User.find(current_user.id)
+    if Residence.where(user_id: current_user.id).exists?
+      @residence = Residence.find_by(user_id: current_user.id)
     else
       @residence = Residence.new()
     end
