@@ -1,8 +1,8 @@
 class ResidencesController < ApplicationController
 
   def create
-    if Residence.where(user_id: params[:user_id]).exists?
-      target = Residence.where(user_id: params[:user_id])
+    if Residence.where(user_id: current_user.id).exists?
+      target = Residence.where(user_id: current_uesr.id)
       target.update(residence_params)
       redirect_back(fallback_location: root_path)
       # binding.pry

@@ -36,14 +36,15 @@
               %li.register-button
                 = icon("fas", "plus-circle")
                 -# = link_to user_residence_path(id: params[:id], user_id: current_user.id) do
-                = link_to user_residence_path(id: params[:id], user_id: 1) do  
+                = link_to get_purchase_modify_item_purchases_path(user_id: current_user.id) do  
                   登録してください
           - else
             %ul.data-exists__header
               %li 配送先
               %li.data-exists__header__modify
                 -# = link_to user_residence(id: params[:id], user_id: current_user.id) do
-                = link_to user_residence_path(id: params[:id], user_id: 1) do  
+                -# - url_str = '/items/' + id.to_s + '/purchases/modify_residence'
+                = link_to get_purchase_modify_item_purchases_path(item_id: @itemId) do
                   変更する
             %ul.residence-data
               %li 〒#{@residence.postcode}
