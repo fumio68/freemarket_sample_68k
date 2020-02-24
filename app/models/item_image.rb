@@ -1,5 +1,5 @@
 class ItemImage < ApplicationRecord
-  mount_uploader :src, ImageUploader
+  mount_uploader :image, ImageUploader
   #association
   belongs_to :item
   #validation

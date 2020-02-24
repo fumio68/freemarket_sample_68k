@@ -8,7 +8,7 @@ $(function(){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='product-listings-page__main__contents__detail-box__select-list__category-form--second' id= 'children_wrapper'>
-                        <select class="product-listings-page__main__contents__detail-box__select-list__category-form--second__value" id="child_category" name=category_id_2">
+                        <select class="product-listings-page__main__contents__detail-box__select-list__category-form--second__value" id="child_category" name=item[category_id_2] category_id_2>
                           <option value="---" data-category="---">---</option>
                             ${insertHTML}
                         </select>
@@ -21,9 +21,9 @@ $(function(){
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='product-listings-page__main__contents__detail-box__select-list__category-form--third' id= 'grandchildren_wrapper'>
-                              <select class="product-listings-page__main__contents__detail-box__select-list__category-form--third__value" id="grandchild_category" name="category_id_3">
-                                <option value="---" data-category="---">---</option>
-                                  ${insertHTML}
+                              <select class="product-listings-page__main__contents__detail-box__select-list__category-form--third__value" id="grandchild_category" name=item[category_id_3] category_id_3>
+                              <option value="---" data-category="---">---</option>
+                                ${insertHTML}
                               </select>
                               <i class='fas fa-chevron-down product-listings-page__main__contents__detail-box__select-list__category-form--third__icon'></i>
                               </div>
@@ -39,9 +39,9 @@ $(function(){
                           <span class='product-listings-page__main__contents__detail-box__select-list__title__right'>必須</span>
                         </div>
                         <div class='product-listings-page__main__contents__detail-box__select-list__size-form'>
-                          <select class="product-listings-page__main__contents__detail-box__select-list__size-form__value" id="size" name="category_id_4">
-                            <option value="---" data-category="---">---</option>
-                              ${insertHTML}
+                          <select class="product-listings-page__main__contents__detail-box__select-list__size-form__value" id="size" name=item[size_id] size_id>
+                          <option value="---" data-category="---">---</option>
+                            ${insertHTML}
                           </select>
                           <i class='fas fa-chevron-down product-listings-page__main__contents__detail-box__select-list__size-form__icon'></i>
                         </div>
