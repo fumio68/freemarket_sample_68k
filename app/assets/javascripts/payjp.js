@@ -32,11 +32,12 @@ document.addEventListener(
   false
 );
 
+// ? をクリックした時の動作
 $(function(){
   $('a.card-main__contents__body__security__bottom__note__question').click(function(){
+  $('a.card-main__contents__body__security__bottom__note__text').click(function(){
     // リンクの #note** を取得
     var targetNote = $(this).attr('href');
-    // ツールチップの class="invisible" を削除
     $('p.card-main__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
   });
  
@@ -46,11 +47,11 @@ $(function(){
   });
 });
 
+
+// textをクリックした時の動作
 $(function(){
-  $('a.card-main__contents__body__security__bottom__note__text').click(function(){
-    // リンクの #note** を取得
+  $('a.card-main__contents__body__security__bottom__note__question').click(function(){
     var targetNote = $(this).attr('href');
-    // ツールチップの class="invisible" を削除
     $('p.card-main__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
   });
  
@@ -59,6 +60,7 @@ $(function(){
     $('p.card-main__contents__body__security__bottom__note__tooltip').removeClass('open');
   });
 });
+
 
 
 
