@@ -1,7 +1,9 @@
 class ResidencesController < ApplicationController
 
   def create
-    @residence = Residence.create(residence_params)
+    @residence = Residence.new(residence_params)
+    @residence.save!
+    # binding.pry
   end
 
   def show
@@ -16,6 +18,6 @@ class ResidencesController < ApplicationController
 
   private
   def residence_params
-    params.require(:residence).permit(:family_name, :last_name, :j_family_name, :j_last_name, :postcode, :prefecture, :city, :block)
+    params.require(:residence).permit(:family_name, :last_name, :j_family_name, :j_last_name, :postcode, :prefecture, :city, :block).merge(user_id: current_user.id)
   end
 end
