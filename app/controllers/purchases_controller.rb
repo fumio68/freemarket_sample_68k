@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   def index
     @itemId = params[:item_id]
     @purchaseId = params[:id]
-    if current_user.residences.present?
+    if Residence.where(user_id: current_user.id).exists?
       @residence = Residence.find_by(user_id: current_user.id)
     else
       @residence = Residence.new
