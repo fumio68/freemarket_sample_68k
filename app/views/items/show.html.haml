@@ -11,7 +11,7 @@
               - objects = @item.item_images
               - objects.each do |object| 
                 %li.main__show__content__top__itemInfo__image__ul__li
-                  = image_tag object.image, class: "main__show__content__top__itemInfo__image__ul__li__img "
+                  = image_tag object.image.url, class: "main__show__content__top__itemInfo__image__ul__li__img "
                   - if @item.status == 0
                     .show-sold-cover
                     %p.show-sold sold
