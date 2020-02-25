@@ -16,4 +16,14 @@ class ItemsController < ApplicationController
       @user = User.find(current_user.id)
     end
   end
+
+  def destroy
+    @parents = Category.order("id ASC").limit(13)
+    @user = User.find(current_user.id)
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id
+      item.destroy
+    end
+  end
+
 end

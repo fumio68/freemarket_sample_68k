@@ -94,7 +94,7 @@
             .main__show__content__top__itemUser__edit
               = link_to "商品の編集", "#", class: "main__show__content__top__itemUser__edit__link"
             .main__show__content__top__itemUser__destroy
-              = link_to "この商品を削除する", "#", class: "main__show__content__top__itemUser__destroy__link"
+              = link_to "この商品を削除する", item_path(@item), method: :delete, class: "main__show__content__top__itemUser__destroy__link"
         .main__show__content__top__commentArea
           %form{action: "#", class: "main__show__content__top__commentArea__form"}
             %textarea.main__show__content__top__commentArea__form__textarea

@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   # association
   belongs_to :user
-  has_many :item_images
+  has_many :item_images, dependent: :destroy
   belongs_to :category
 
   # validation
