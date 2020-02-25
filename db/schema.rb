@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "item_image_id"
     t.integer "category_id_1", null: false
     t.integer "category_id_2", null: false
     t.integer "category_id_3", null: false
@@ -76,7 +75,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
     t.string "shipping", null: false
     t.bigint "category_id"
     t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["item_image_id"], name: "index_items_on_item_image_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -141,7 +139,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
   add_foreign_key "favorites", "users"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
-  add_foreign_key "items", "item_images"
   add_foreign_key "items", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
