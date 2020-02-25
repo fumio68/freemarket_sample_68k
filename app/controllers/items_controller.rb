@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:destroy]
+  before_action :set_item, only:[:destroy, :show]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
   def create
   end
   def show
-    @item = Item.find(params[:id]) 
     @parents = Category.order("id ASC").limit(13)
   end
 
