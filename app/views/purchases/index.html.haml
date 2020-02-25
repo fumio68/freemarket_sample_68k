@@ -13,29 +13,51 @@
             %ul.purchase__inner__main__item__description__money
               %li.purchase__inner__main__item__description__money__money ¥1,600（税込）
               %li.purchase__inner__main__item__description__money__text 送料込み
-      -#  form bigin
       = form_with(model: @purchase, class: 'purchase__inner__main__form', local: true) do |f|
         .purchase__inner__main__form__cost
           %ul.purchase__inner__main__form__cost__box
             %li.purchase__inner__main__form__cost__box__head 支払い金額
             %li.purchase__inner__main__form__cost__box__amount ¥1,600
-          -# .purchase__inner__main__form__cost__usepoint
           = label_tag :use_point ,class: 'purchase__inner__main__form__cost__usepoint' do
             = f.check_box :use_point, class: 'purchase__inner__main__form__cost__usepoint__button'
             %p.purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P0)
+
         .purchase__inner__main__form__payment
           %h2 支払い方法
           %p.register-button
             = icon("fas", "plus-circle")
             登録してください
         .purchase__inner__main__form__shipping
-          %h2 配送先
-          %p.register-button
-            = icon("fas", "plus-circle")
-            登録してください
+          - if @residence.new_record?
+            %ul
+              %li 配送先
+              %li.register-button
+                = icon("fas", "plus-circle")
+                -# = link_to get_purchase_modify_item_purchases_path(user_id: current_user.id) do 
+                = link_to get_purchase_modify_item_purchases_url(user_id: current_user.id) do
+                  登録してください
+          - else
+            %ul.data-exists__header
+              %li 配送先
+              %li.data-exists__header__modify
+                -# = link_to get_purchase_modify_item_purchases_path(item_id: @itemId) do
+                = link_to get_purchase_modify_item_purchases_url(item_id: @itemId) do
+                  変更する
+            %ul.residence-data
+              %li 〒#{@residence.postcode}
+              %li
+                %ul.residence-data__address
+                  %li.residence-data__address__item #{@residence.prefecture}
+                  %li.residence-data__address__item #{@residence.city}
+                  %li.residence-data__address__item #{@residence.block}
+                  %li.residence-data__address__item #{@residence.building}
+              %li
+                %ul.residence-data__name
+                  %li.residence-data__name__item #{@residence.family_name}
+                  %li.residence-data__name__item #{@residence.last_name}
+
         .purchase__inner__main__form__buy
           = f.button '購入する', class: 'purchase__inner__main__form__buy__button'
-      -#  form end
     .purchase__inner__footer
       %ul.purchase__inner__footer__list
         %li.purchase__inner__footer__list__privacy

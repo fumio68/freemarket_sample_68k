@@ -11,13 +11,15 @@
             %h3.product-listings-page__main__contents__photo-box__title__left 出品画像
             %span.product-listings-page__main__contents__photo-box__title__right 必須
           %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
-          = form.label :image do
-            .product-listings-page__main__contents__photo-box__drop-area
-              = form.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file"
+          = form.fields_for :item_images do |image|
+            -# 写真投稿フォーム表示のために一時的にコメントアウト
+            -# = image.label :image do
+            .product-listings-page__main__contents__photo-box__drop-area#image-box
               %pre.product-listings-page__main__contents__photo-box__drop-area__text
-                :preserve
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+              .js-file_group{data: image.index}
+                = image.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file js-file"
         .product-listings-page__main__contents__name-box
           .product-listings-page__main__contents__name-box__title
             .product-listings-page__main__contents__name-box__title__left 商品名
@@ -35,20 +37,21 @@
               %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
             .product-listings-page__main__contents__detail-box__select-list__category-form
               .product-listings-page__main__contents__detail-box__select-list__category-form--first
-                =form.select :name, {"---":0, "レディース":1, "メンズ":2, "ベビー・キッズ":3, "インテリア・住まい・小物":4, "本・音楽・ゲーム":5, "おもちゃ・ホビー・グッズ":6, "コスメ・香水・美容":7, "家電・スマホ・カメラ":8, "スポーツ・レジャー":9, "ハンドメイド":10, "チケット":11, "自動車・オートバイ":12, "その他":13 }, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value'
+                = form.select :category_id_1, {"---":0, "レディース":1, "メンズ":2, "ベビー・キッズ":3, "インテリア・住まい・小物":4, "本・音楽・ゲーム":5, "おもちゃ・ホビー・グッズ":6, "コスメ・香水・美容":7, "家電・スマホ・カメラ":8, "スポーツ・レジャー":9, "ハンドメイド":10, "チケット":11, "自転車・オートバイ":12, "その他":13}, {}, {class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value', id: 'parent_category'}
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--first__icon")
-              .product-listings-page__main__contents__detail-box__select-list__category-form--second
-                =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
-                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
-              .product-listings-page__main__contents__detail-box__select-list__category-form--third
-                =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value'
-                = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
-            .product-listings-page__main__contents__detail-box__select-list__title
-              .product-listings-page__main__contents__detail-box__select-list__title__left サイズ
-              %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
-            .product-listings-page__main__contents__detail-box__select-list__size-form
-              =form.select :name, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__size-form__value'
-              = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__size-form__icon")
+              -# 商品編集機能実装時に使用する可能性があるためにコメントアウトを残しています
+              -# .product-listings-page__main__contents__detail-box__select-list__category-form--second
+              -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
+              -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
+              -# .product-listings-page__main__contents__detail-box__select-list__category-form--third
+              -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value'
+              -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
+            -# .product-listings-page__main__contents__detail-box__select-list__title
+            -#   .product-listings-page__main__contents__detail-box__select-list__title__left サイズ
+            -#   %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
+            -# .product-listings-page__main__contents__detail-box__select-list__size-form
+            -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__size-form__value'
+            -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__size-form__icon")
             .product-listings-page__main__contents__detail-box__select-list__title
               .product-listings-page__main__contents__detail-box__select-list__title__left ブランド
               %span.product-listings-page__main__contents__detail-box__select-list__title__right--not-required 任意
@@ -58,7 +61,7 @@
               .product-listings-page__main__contents__detail-box__select-list__title__left 商品の状態
               %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
             .product-listings-page__main__contents__detail-box__select-list__condition-form
-              =form.select :name, {"---":0, "新品、未使用":1, "未使用に近い":2, "目立った傷や汚れなし":3, "やや傷や汚れあり":4, "傷や汚れあり":5, "全体的に状態が悪い":6}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__condition-form__value'
+              =form.select :condition, {"---":"---", "新品、未使用":"新品、未使用", "未使用に近い":"未使用に近い", "目立った傷や汚れなし":"目立った傷や汚れなし", "やや傷や汚れあり":"やや傷や汚れあり", "傷や汚れあり":"傷や汚れあり", "全体的に状態が悪い":"全体的に状態が悪い"}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__condition-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__condition-form__icon")
 
         .product-listings-page__main__contents__delivery-box
@@ -70,25 +73,25 @@
               .product-listings-page__main__contents__delivery-box__select-list__title__left 配送料の負担
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__shipping-form
-              =form.select :shipping, {"---":0, "送料込み(出品者負担)":1, "着払い(購入者負担)":2}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__shipping-form__value'
+              =form.select :shipping, {"---":"---", "送料込み(出品者負担)":"送料込み(出品者負担)", "着払い(購入者負担)":"着払い(購入者負担)"}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__shipping-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__shipping-form__icon")
             .product-listings-page__main__contents__delivery-box__select-list__title
               .product-listings-page__main__contents__delivery-box__select-list__title__left 配送の方法
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__method-form
-              =form.select :shipping_method, {"---":0,"らくらくメルカリ便":1, "ゆうメール":2, "レターパック":3, "普通郵便（定型、定形外）":4, "クロネコヤマト":5, "ゆうパック":6, "クリックポスト":7, "ゆうパケット":8 }, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__method-form__value'
+              =form.select :shipping_method, {"---":"---","らくらくメルカリ便":"らくらくメルカリ便", "ゆうメール":"ゆうメール", "レターパック":"レターパック", "普通郵便（定型、定形外）":"普通郵便（定型、定形外）", "クロネコヤマト":"クロネコヤマト", "ゆうパック":"ゆうパック", "クリックポスト":"クリックポスト", "ゆうパケット":"ゆうパケット" }, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__method-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__method-form__icon")
             .product-listings-page__main__contents__delivery-box__select-list__title
               .product-listings-page__main__contents__delivery-box__select-list__title__left 発送元の地域
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__area-form
-              =form.collection_select :shipping_area, Prefecture.all, :id, :name, {}, prompt: "---", class: 'product-listings-page__main__contents__delivery-box__select-list__area-form__value'
+              =form.collection_select :shipping_area, Prefecture.all, :name, :name, {}, prompt: "---", class: 'product-listings-page__main__contents__delivery-box__select-list__area-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__area-form__icon")
             .product-listings-page__main__contents__delivery-box__select-list__title
               .product-listings-page__main__contents__delivery-box__select-list__title__left 発送までの日数
               %span.product-listings-page__main__contents__delivery-box__select-list__title__right 必須
             .product-listings-page__main__contents__delivery-box__select-list__days-form
-              =form.select :days_to_ship, {"---":0, "１〜２日で発送":1, "２〜３日で発送":2, "４〜７日で発送":3}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__days-form__value'
+              =form.select :days_to_ship, {"---":"---", "１〜２日で発送":"１〜２日で発送", "２〜３日で発送":"２〜３日で発送", "４〜７日で発送":"４〜７日で発送"}, {},  class: 'product-listings-page__main__contents__delivery-box__select-list__days-form__value'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__delivery-box__select-list__days-form__icon")
 
         .product-listings-page__main__contents__price-box
@@ -134,4 +137,3 @@
           .product-listings-page__main__contents__send-box__return-btn もどる
 
 = render "/shared/sub_footer"
-
