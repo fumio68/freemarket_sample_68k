@@ -60,7 +60,10 @@ Things you may want to cover:
 |shipping_method|string|null: false|
 |status|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
+|category_id_1|references|null: false, foreign_key: true|
+|category_id_2|references|null: false, foreign_key: true|
+|category_id_3|references|null: false, foreign_key: true|
+|size_id|references||
 ### Association
 - has_many :item_images
 - has_many :comments
@@ -100,17 +103,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
-
-## creditsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|number|integer|null: false|
-|month|integer|null: false|
-|year|integer|null: false|
-|security|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
 
 ## residencesテーブル
 |Column|Type|Options|
