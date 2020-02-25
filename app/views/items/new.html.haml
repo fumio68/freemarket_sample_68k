@@ -11,14 +11,14 @@
             %h3.product-listings-page__main__contents__photo-box__title__left 出品画像
             %span.product-listings-page__main__contents__photo-box__title__right 必須
           %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
-          = form.fields_for :item_images do |i|
-            = i.label :image do
-              .product-listings-page__main__contents__photo-box__drop-area
-                = i.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file"
-                %pre.product-listings-page__main__contents__photo-box__drop-area__text
-                  :preserve
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+          = form.fields_for :item_images do |image|
+            -# = image.label :image do
+            .product-listings-page__main__contents__photo-box__drop-area#image-box
+              %pre.product-listings-page__main__contents__photo-box__drop-area__text
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+              .js-file_group{data: image.index}
+                = image.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file js-file"
         .product-listings-page__main__contents__name-box
           .product-listings-page__main__contents__name-box__title
             .product-listings-page__main__contents__name-box__title__left 商品名
@@ -135,4 +135,3 @@
           .product-listings-page__main__contents__send-box__return-btn もどる
 
 = render "/shared/sub_footer"
-
