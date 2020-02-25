@@ -22,7 +22,11 @@ class ItemsController < ApplicationController
     @user = User.find(current_user.id)
     item = Item.find(params[:id])
     if item.user_id == current_user.id
-      item.destroy
+      if item.destroy
+        # redirect_to item_path(item)
+      else
+        render :delete
+      end
     end
   end
 
