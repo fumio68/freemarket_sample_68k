@@ -23,11 +23,9 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     if item.user_id == current_user.id
       if item.destroy
-        # redirect_to item_path(item)
       else
         render :delete
       end
-    end
   end
 
 end
