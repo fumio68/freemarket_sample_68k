@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       collection do
         get 'get_purchase_modify'
         post 'post_purchase_modify'
+        get 'done'
       end
     end
   end
