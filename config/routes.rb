@@ -10,8 +10,15 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :show] do
     resources :residences, only: [:create, :index]
+    resources :card, only: [:new, :index] do
+      collection do
+        post 'pay', to: 'card#pay'
+        delete 'delete', to: 'card#delete'
+      end
+    end
   end
   root "items#index"
+  
   resources :categories, only: [:index]
   
 end
