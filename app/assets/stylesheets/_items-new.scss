@@ -88,9 +88,11 @@ a {
           background: #f5f5f5;
           display: flex;
           flex-wrap: wrap;
+        // 写真投稿フォーム表示のために一時的にコメントアウト
           // align-items: center;
           // justify-content: center;
           &__file{
+        // 写真投稿フォーム表示のために一時的にコメントアウト
             // display: none;
           }
           &__text{
