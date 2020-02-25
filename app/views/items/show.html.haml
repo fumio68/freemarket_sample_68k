@@ -25,7 +25,7 @@
               %span.main__show__content__top__itemInfo__price__detail__span
                 送料込み
           - if @item.status == 1 && user_signed_in?
-            - unless @current_user.id == @item.user_id
+            - unless current_user.id == @item.user_id
               .main__show__content__top__itemInfo__purchase
                 = link_to '購入画面に進む', '#', class: "main__show__content__top__itemInfo__purchase__link"
           .main__show__content__top__itemInfo__detail

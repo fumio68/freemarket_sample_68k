@@ -84,7 +84,7 @@
           %a.mypage__main__mask__right__user-box__inner{:href => "#"}
             = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'mypage__main__mask__right__user-box__inner__icon')
             .mypage__main__mask__right__user-box__inner__name
-              #{@user.nickname}
+              #{current_user.nickname}
             .mypage__main__mask__right__user-box__inner__count
               評価 0 出品数 0
         .mypage__main__mask__right__notification

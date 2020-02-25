@@ -33,13 +33,15 @@
               %li 配送先
               %li.register-button
                 = icon("fas", "plus-circle")
-                = link_to get_purchase_modify_item_purchases_path(user_id: current_user.id) do  
+                -# = link_to get_purchase_modify_item_purchases_path(user_id: current_user.id) do 
+                = link_to get_purchase_modify_item_purchases_url(user_id: current_user.id) do
                   登録してください
           - else
             %ul.data-exists__header
               %li 配送先
               %li.data-exists__header__modify
-                = link_to get_purchase_modify_item_purchases_path(item_id: @itemId) do
+                -# = link_to get_purchase_modify_item_purchases_path(item_id: @itemId) do
+                = link_to get_purchase_modify_item_purchases_url(item_id: @itemId) do
                   変更する
             %ul.residence-data
               %li 〒#{@residence.postcode}

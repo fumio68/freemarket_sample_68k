@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_063010) do
+ActiveRecord::Schema.define(version: 2020_02_25_111610) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -129,8 +129,10 @@ ActiveRecord::Schema.define(version: 2020_02_25_063010) do
     t.integer "b_month", null: false
     t.integer "b_date", null: false
     t.string "user_image"
+    t.bigint "residence_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["residence_id"], name: "index_users_on_residence_id"
   end
 
   add_foreign_key "comments", "items"
@@ -144,4 +146,5 @@ ActiveRecord::Schema.define(version: 2020_02_25_063010) do
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
   add_foreign_key "residences", "users"
+  add_foreign_key "users", "residences"
 end
