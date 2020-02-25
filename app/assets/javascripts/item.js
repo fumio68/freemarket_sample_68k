@@ -15,7 +15,6 @@ $(function(){
 
   $('#image-box').on('change', '.js-file', function(e) {
 
-    // fileIndexの先頭の数字を使ってinputを作る
     $('#image-box').append(buildFileField(fileIndex[0]));
     fileIndex.shift();
     // 末尾の数に1足した数を追加する
@@ -24,11 +23,9 @@ $(function(){
 
   $('#image-box').on('click', '.js-remove', function() {
     $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
+    // 画像入力欄が0個にならないようにする
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
-
-
 
 
   // ここからカテゴリーボックスの生成
