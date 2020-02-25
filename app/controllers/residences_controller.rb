@@ -15,7 +15,7 @@ class ResidencesController < ApplicationController
   def index
     @parents = Category.order("id ASC").limit(13)
 
-    @user = User.find(current_user.id)
+    @user = current_user
     if Residence.where(user_id: current_user.id).exists?
       @residence = Residence.find_by(user_id: current_user.id)
     else
