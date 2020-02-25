@@ -64,7 +64,7 @@
           = link_to '#', class: 'residence__main__mask__left__nav-list__item' do
             %li 発送元・お届け先情報変更
             = icon("fa", "angle-right", class: 'residence__main__mask__left__nav-list__item__arrow')
-          = link_to '#', class: 'residence__main__mask__left__nav-list__item' do
+          = link_to '#', class: 'residence__main__mask__left__nav-list__item' do 
             %li 支払い方法
             = icon("fa", "angle-right", class: 'residence__main__mask__left__nav-list__item__arrow')
           = link_to '#', class: 'residence__main__mask__left__nav-list__item' do
@@ -81,8 +81,7 @@
             = icon("fa", "angle-right", class: 'residence__main__mask__left__nav-list__item__arrow')
       .residence__main__mask__right
         %h1.residence__main__mask__right__head 発送元・お届け先住所変更
-        - url_str = '/items/' + (@itemId).to_s + '/purchases/post_purchase_modify'
-        = form_with(model: [@user,@residence], method: 'post', url: url_str, class: 'residence__main__mask__right__form', local: true) do |f|
+        = form_with(model: [@user,@residence], class: 'residence__main__mask__right__form', local: true) do |f|
           .residence__main__mask__right__form__mask
             .residence__main__mask__right__form__mask__name
               %p.residence-form-head
@@ -92,10 +91,10 @@
               = f.text_field :last_name, placeholder: '例)彩', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__jname
               %p.residence-form-head
-                %span.residence-form-text お名前かな
+                %span.residence-form-text お名前カナ
                 %span.residence-form-required 必須
-              = f.text_field :j_family_name, placeholder: '例)やまだ', class:'residence-form-text-field'
-              = f.text_field :j_last_name, placeholder: '例)あや', class: 'residence-form-text-field'
+              = f.text_field :j_family_name, placeholder: '例)ヤマダ', class:'residence-form-text-field'
+              = f.text_field :j_last_name, placeholder: '例)アヤ', class: 'residence-form-text-field'
             .residence__main__mask__right__form__mask__postcode
               %p.residence-form-head
                 %span.residence-form-text 郵便番号
