@@ -6,27 +6,37 @@
       %h1.purchase__inner__main__confirmation
         購入内容の確認
       .purchase__inner__main__item
-        = image_tag("material/icon/member_photo_noimage_thumb.png", class: 'purchase__inner__main__item__image')
+        - objects = @item.item_images
+        - first_image = objects.first 
+        = image_tag first_image.image.url, class: 'purchase__inner__main__item__image'
         %ul.purchase__inner__main__item__description
-          %li.purchase__inner__main__item__description__name ディズニーTシャツ3点セット
+          %li.purchase__inner__main__item__description__name #{@item.name}
           %li
             %ul.purchase__inner__main__item__description__money
-              %li.purchase__inner__main__item__description__money__money ¥1,600（税込）
+              %li.purchase__inner__main__item__description__money__money ¥#{@item.price}（税込）
               %li.purchase__inner__main__item__description__money__text 送料込み
-      = form_with(model: @purchase, class: 'purchase__inner__main__form', local: true) do |f|
+      = form_with(url: done_item_purchases_path(item_id: @itemId), model: @purchase, class: 'purchase__inner__main__form', local: true) do |f|
         .purchase__inner__main__form__cost
           %ul.purchase__inner__main__form__cost__box
             %li.purchase__inner__main__form__cost__box__head 支払い金額
-            %li.purchase__inner__main__form__cost__box__amount ¥1,600
+            %li.purchase__inner__main__form__cost__box__amount ¥#{@item.price}
           = label_tag :use_point ,class: 'purchase__inner__main__form__cost__usepoint' do
             = f.check_box :use_point, class: 'purchase__inner__main__form__cost__usepoint__button'
             %p.purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P0)
 
         .purchase__inner__main__form__payment
-          %h2 支払い方法
-          %p.register-button
-            = icon("fas", "plus-circle")
-            登録してください
+          -# %ul
+          -#   %li = link_to new_user_card_path(user_id: current_user.id) do
+          -#     変更する
+          -# %p.purchase__inner__main__form__payment__title 支払い方法
+          -# = "**** **** **** " + @default_card_information.last4 
+          -# %br
+          -# - exp_month = @default_card_information.exp_month.to_s
+          -# - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          -# = exp_month + " / " + exp_year
+          -# %br
+          -# = image_tag "/assets/material/credit/#{@default_card_src}", width: '40', height: '25', alt: @default_card_brand, id: "card_image"
+
         .purchase__inner__main__form__shipping
           - if @residence.new_record?
             %ul
