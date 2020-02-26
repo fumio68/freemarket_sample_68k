@@ -21,7 +21,7 @@ ticket = Category.create(name: "チケット")
 bicycle = Category.create(name: "自転車・オートバイ")
 others = Category.create(name: "その他")
 
-# 第二階層目　レディース
+# 第二階層目レディース
 lady_tops = lady.children.create(name: "トップス")
 lady_jacket = lady.children.create(name: "ジャケット/アウター")
 lady_pants = lady.children.create(name: "パンツ")
@@ -54,7 +54,7 @@ lady_tops_kinds = lady_tops.children.create([
                   {name: "ベスト/ジレ"},
                   {name: "パーカー"}
                 ])
-# 第三階層目　レディース
+# 第三階層目レディース
 lady_tops.children.create([
   {name: "Tシャツ/カットソー(半袖/袖なし)"}, 
   {name: "Tシャツ/カットソー(七分/長袖)"},
@@ -177,7 +177,7 @@ lady_bag.children.create([
   {name: "ビジネスバッグ"},
   {name: "旅行用バッグ/キャリーバッグ"}
 ])
-lady_accessory.create([
+lady_accessory.children.create([
   {name: "ネックレス"},
   {name: "ブレスレット"},
   {name: "バングル/リストバンド"},
@@ -189,13 +189,13 @@ lady_accessory.create([
   {name: "ブローチ/コサージュ"},
   {name: "チャーム"}
 ])
-lady_hair_accessory.create([
+lady_hair_accessory.children.create([
   {name: "ヘアゴム/シュシュ"},
   {name: "ヘアバンド/カチューシャ"},
   {name: "ヘアピン"},
   {name: "その他"}
 ])
-lady_goods.create([
+lady_goods.children.create([
   {name: "長財布"},
   {name: "折り財布"},
   {name: "コインケース/小銭入れ"},
@@ -211,7 +211,7 @@ lady_goods.create([
   {name: "ネックウォーマー"},
   {name: "サスペンダー"}
 ])
-lady_watch.create([
+lady_watch.children.create([
   {name: "腕時計（アナログ）"},
   {name: "腕時計（デジタル）"},
   {name: "ラバーベルト"},
@@ -220,7 +220,7 @@ lady_watch.create([
   {name: "その他"}
 ])
 
-# 第二階層目　メンズ
+# 第二階層目メンズ
 man_tops = man.children.create(name: "トップス")
 man_jacket = man.children.create(name: "ジャケット/アウター")
 man_pants = man.children.create(name: "パンツ")
@@ -236,7 +236,7 @@ man_legware = man.children.create(name: "レッグウェア")
 man_underware = man.children.create(name: "アンダーウェア")
 man_other = man.children.create(name: "その他")
 
-# 第三階層目　メンズ
+# 第三階層目メンズ
 man_tops.children.create([
   {name: "Tシャツ/カットソー(半袖/袖なし)"}, 
   {name: "Tシャツ/カットソー(七分/長袖)"},
@@ -251,7 +251,7 @@ man_tops.children.create([
   {name: "ベスト"},
   {name: "その他"}
 ])
-man_jacket.create([
+man_jacket.children.create([
   {name: "テーラードジャケット"},
   {name: "ノーカラージャケット"},
   {name: "Gジャン/デニムジャケット"},
@@ -267,7 +267,7 @@ man_jacket.create([
   {name: "トレンチコート"},
   {name: "モッズコート"}
 ])
-man_pants.create([
+man_pants.children.create([
   {name: "デニム/ジーンズ"},
   {name: "ワークパンツ/カーゴパンツ"},
   {name: "スラックス"},
@@ -278,14 +278,14 @@ man_pants.create([
   {name: "オーバーオール"},
   {name: "その他"}
 ])
-man_shoe.create
-man_bag.create
-man_suit.create
-man_hat.create
-man_accessory.create
-man_goods.create
-man_watch.create
-man_swimsuit.create
-man_legware.create
-man_underware.create
-man_other .create
+# man_shoe.create
+# man_bag.create
+# man_suit.create
+# man_hat.create
+# man_accessory.create
+# man_goods.create
+# man_watch.create
+# man_swimsuit.create
+# man_legware.create
+# man_underware.create
+# man_other .create
