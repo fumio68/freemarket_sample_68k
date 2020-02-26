@@ -23,27 +23,32 @@ function input_check(){
 	$('.product-listings-page__main__contents__delivery-box__select-list__days-form__value').removeClass("inp_error");
 	$('.product-listings-page__main__contents__price-box__form-box__lists-price-right__form').removeClass("inp_error");
   
-	$("#nickname_error").empty();
-	$("#email_error").empty();
-	$("#password_error").empty();
-	$("#repeat_error").empty();
-	$(".main__box__contents__name__error__family").empty();
-	$(".main__box__contents__name__error__last").empty();
-	$(".main__box__contents__kana__error__j-family").empty();
-	$(".main__box__contents__kana__error__j-last").empty();
-	$('#b_year_error').empty();
+	$("#image_error").empty();
+	$("#name_error").empty();
+	$("#content_error").empty();
+	$("#category_error").empty();
+	$("#condition_error").empty();
+	$("#shipping_error").empty();
+	$("#shipping_method_error").empty();
+	$("#shipping_area_error").empty();
+	$("#days_to_ship_error").empty();
+	$("#price_error").empty();
 
-	let nickname      =$(".main__box__contents__nickname__form").val();
-	let email         =$(".main__box__contents__email__form").val();
-	let password      =$(".main__box__contents__pass__form").val();
-	let repeat        =$(".main__box__contents__pass__repeat").val();
-	let nameseikanzi  =$(".main__box__contents__name__form__family").val();
-	let namemeikanzi  =$(".main__box__contents__name__form__last").val();
-	let nameseikana   =$(".main__box__contents__kana__form__j-family").val();
-	let namemeikana   =$(".main__box__contents__kana__form__j-last").val();
-	let b_year        =$(".main__box__contents__birth__middle__year__box").val();
-	let b_month       =$(".main__box__contents__birth__middle__month__box").val();
-	let b_day         =$(".main__box__contents__birth__middle__date__box").val();
+
+	let image      =$(".product-listings-page__main__contents__photo-box__drop-area__file").val();
+	let name         =$(".product-listings-page__main__contents__name-box__text-field").val();
+	let content      =$(".product-listings-page__main__contents__name-box__text-area").val();
+	let category1        =$(".product-listings-page__main__contents__detail-box__select-list__category-form--first__value").val();
+	let category2        =$(".product-listings-page__main__contents__detail-box__select-list__category-form--second__value").val();
+	let category3        =$(".product-listings-page__main__contents__detail-box__select-list__category-form--third__value").val();
+	let size        =$(".product-listings-page__main__contents__detail-box__select-list__size-form__value").val();
+	let condition  =$(".product-listings-page__main__contents__detail-box__select-list__condition-form__value").val();
+	let shipping  =$(".product-listings-page__main__contents__delivery-box__select-list__shipping-form__value").val();
+	let shipping_method  =$(".product-listings-page__main__contents__delivery-box__select-list__method-form__value").val();
+	let shipping_area  =$(".product-listings-page__main__contents__delivery-box__select-list__area-form__value").val();
+	let days_to_ship  =$(".product-listings-page__main__contents__delivery-box__select-list__days-form__value").val();
+	let price  =$(".product-listings-page__main__contents__price-box__form-box__lists-price-right__form").val();
+	
 
 	if(nickname == ""){
 		$("#nickname_error").html(" ニックネームを入力してください");
