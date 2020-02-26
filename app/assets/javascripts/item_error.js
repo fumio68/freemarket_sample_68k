@@ -119,7 +119,7 @@ function item_check(){
 		result = false;
   }
   
-  if(price == ""){
+  if(price == "" || price < 300 || price > 9999999){
 		$("#price_error").html("300以上9999999以下で入力してください");
 		$(".product-listings-page__main__contents__price-box__form-box__lists-price-right__form").addClass("inp_error");
 		result = false;
