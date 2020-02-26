@@ -8,11 +8,9 @@ class CardController < ApplicationController
   end
 
   def pay
-    # binding.pry
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
-      binding.pry
     else
       customer = Payjp::Customer.create(
       description: '登録テスト', 
