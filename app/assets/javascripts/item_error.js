@@ -123,20 +123,6 @@ function item_check(){
 		$("#price_error").html("300以上9999999以下で入力してください");
 		$(".product-listings-page__main__contents__price-box__form-box__lists-price-right__form").addClass("inp_error");
 		result = false;
-	}
-
+  }
+  return result;
 }
-
-// $(function(){
-// 	$('#password').on('change', function(){
-// 		let password = $('#user_password').val();
-// 		let check = $('#password').prop('checked');
-// 		if(check){
-// 		$('.main__box__contents__pass__display').html(password);
-// 		$('.main__box__contents__pass__display').addClass("pass-display");
-// 		}
-// 		else {
-// 			$('.main__box__contents__pass__display').text('')
-// 		}
-// 	});
-// });
