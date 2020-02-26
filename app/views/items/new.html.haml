@@ -11,15 +11,20 @@
             %h3.product-listings-page__main__contents__photo-box__title__left 出品画像
             %span.product-listings-page__main__contents__photo-box__title__right 必須
           %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
+          
+          
           = form.fields_for :item_images do |image|
-            -# 写真投稿フォーム表示のために一時的にコメントアウト
-            -# = image.label :image do
-            .product-listings-page__main__contents__photo-box__drop-area#image-box
-              %pre.product-listings-page__main__contents__photo-box__drop-area__text
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
-              .js-file_group{data: image.index}
-                = image.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file js-file"
+            #image-box
+              #preview-box
+              = image.label :image do
+                #file-box.js-file_group{data: {index: image.index}}
+                  = icon("fas", "camera", class: 'js-file_group__icon')
+                  %pre.js-file_group__text
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                  = image.file_field :image, class: 'js-file_group__hidden'
+
+
         .product-listings-page__main__contents__name-box
           .product-listings-page__main__contents__name-box__title
             .product-listings-page__main__contents__name-box__title__left 商品名
