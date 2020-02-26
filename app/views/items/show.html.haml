@@ -7,21 +7,27 @@
           .main__show__content__top__itemInfo__name
             = @item.name
           .main__show__content__top__itemInfo__image
-
             %ul.main__show__content__top__itemInfo__image__ul
               - objects = @item.item_images
               - objects.each do |object| 
                 %li.main__show__content__top__itemInfo__image__ul__li
-                  = image_tag object.image, class: "main__show__content__top__itemInfo__image__ul__li__img "
+                  = image_tag object.image.url, class: "main__show__content__top__itemInfo__image__ul__li__img "
+                  - if @item.status == 0
+                    .show-sold-cover
+                    %p.show-sold sold
             .custom-thumb
           .main__show__content__top__itemInfo__price
             %span.main__show__content__top__itemInfo__price__span
-              = @item.price
+              = "¥#{@item.price}"
             .main__show__content__top__itemInfo__price__detail
               %span.main__show__content__top__itemInfo__price__detail__span
                 (税込み)
               %span.main__show__content__top__itemInfo__price__detail__span
                 送料込み
+          - if @item.status == 1 && user_signed_in?
+            - unless current_user.id == @item.user_id
+              .main__show__content__top__itemInfo__purchase
+                = link_to '購入画面に進む', '#', class: "main__show__content__top__itemInfo__purchase__link"
           .main__show__content__top__itemInfo__detail
             = @item.name
           .main__show__content__top__itemInfo__table
@@ -73,7 +79,6 @@
                     発送日の目安
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
                     = @item.days_to_ship
-
           .main__show__content__top__itemInfo__other  
             %ul.main__show__content__top__itemInfo__other__left
               %li.main__show__content__top__itemInfo__other__left__btn
@@ -84,6 +89,12 @@
                 = link_to "#", class: "main__show__content__top__itemInfo__other__right__list__btn" do
                   = icon('fa','flag', class: "main__show__content__top__itemInfo__other__right__list__btn__icon")
                   不適切な商品の通報
+        - if user_signed_in? && current_user.id == @item.user_id
+          .main__show__content__top__itemUser
+            .main__show__content__top__itemUser__edit
+              = link_to "商品の編集", "#", class: "main__show__content__top__itemUser__edit__link"
+            .main__show__content__top__itemUser__destroy
+              = link_to "この商品を削除する", item_path(@item), method: :delete, class: "main__show__content__top__itemUser__destroy__link"
         .main__show__content__top__commentArea
           %form{action: "#", class: "main__show__content__top__commentArea__form"}
             %textarea.main__show__content__top__commentArea__form__textarea
@@ -110,6 +121,9 @@
     = render partial: "banner", locals: {title: "だれでもかんたん、人生を変えるフリマアプリ", sub: "今すぐ無料ダウンロード！"}
   .main__footer
     = render "shared/footer"
+
+.sellbtn
+  = render "shared/sellbtn"
  
 
   

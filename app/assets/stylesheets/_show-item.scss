@@ -53,6 +53,19 @@
               }
             }
           }
+          &__purchase{
+            text-align: center;
+            background-color: #3CCACE;
+            margin-bottom: 30px;
+            height: 60px;
+            &__link{
+              text-decoration: none;
+              line-height: 60px;
+              color: white;
+              font-size: 25px;
+              font-weight: bold;
+            }
+          }
           &__price{
             margin: 24px 0 24px;
             text-align: center;
@@ -159,6 +172,34 @@
             }
           }
         }
+        &__itemUser{
+          margin: 25px 0;
+          background-color: #fff;
+          padding: 20px;
+          &__edit{
+            height: 50px;
+            background-color: #3CCACE;
+            text-align: center;
+            margin-bottom: 20px;
+            &__link{
+              line-height: 50px;
+              color: #fff;
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+          &__destroy{
+            height: 50px;
+            background-color: #ea352d;
+            text-align: center;
+            &__link{
+              line-height: 50px;
+              color: #fff;
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+        }
         &__commentArea{
           padding: 24px;
           background-color: #fff;
@@ -215,4 +256,23 @@
     height: 80px;
     background-color: gray;
   }
+}
+
+.show-sold-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 80px solid #4FCFD3;
+  border-right: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid #4FCFD3;
+}
+.show-sold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 25px;
+  font-size: 48px;
+  color: white;
+  transform: rotate(315deg); 
 }

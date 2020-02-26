@@ -1,7 +1,7 @@
 .purchase{
   background-color: #F5F5F5;
   width: 100vw;
-  height: 1125px;
+  height: 1225px;
   &__inner{
     width: 700px;
     height: 1125px;
@@ -22,7 +22,31 @@
     }
     &__main{
       width: 700px;
-      height: 741px;
+      height: 841px;
+      &__alert {
+        width: 700px;
+        height: 100px;
+        background-color:#fff6de;
+        text-align: center;
+        &__top {
+          color: red;
+          height: 65px;
+          line-height: 75px;
+          display: flex;
+          justify-content: center; 
+          &__clock {
+            font-size: 30px;
+            padding-right: 10px;
+          }
+          &__sentence {
+            font-size: 20px;
+            font-weight: bold;
+          } 
+        }
+        &__sub {
+          height: 35px;
+        }
+      }
       &__confirmation{
         width: 700px;
         height:96px;
@@ -66,7 +90,7 @@
       }
       &__form{
         width: 343px;
-        height: 500px;
+        height: 395px;
         margin: 0 auto;
         &__cost{
           width: 343px;
@@ -86,108 +110,55 @@
               font-weight: bold;
             }
           }
-          &__usepoint{
-            display: flex;
-            &__button{
-              transform: scale(1.5);
-              margin-left: 5px;
-              margin-top: 25px;
-            }
-            &__text{
-              margin-left: 25px;
-              margin-top: 25px;
-              color: gray;
-            }
-          }
-        }
-        &__payment{
-          width: 343px;
-          height: auto;
-          border-bottom: 1px solid #F5F5F5;
-          font-size: 14px;
-          padding-top: 30px;
-          .register-button{
-            color: #0099e8;
-            padding-bottom: 5px;
-          }
         }
         &__shipping{
           width: 343px;
-          height: auto;
+          height: 129px;
+          border-bottom: 1px solid #F5F5F5;
           font-size: 14px;
           padding-top: 30px;
-          border-bottom: 1px solid #F5F5F5;
-          .register-button{
-            color: #0099e8;
-            padding-bottom: 5px;
+          &__title {
+            font-weight: bold;
           }
         }
-        &__buy{
+        &__pay {
           width: 343px;
-          height: 140px;
-          &__button{
-            margin-top: 33px;
-            width: 343px;
-            height: 50px;
-            background-color: gray;
-            color: white;
-            font-size: 16px;
+          height: 129px;
+          font-size: 14px;
+          padding-top: 30px;
+          &__title {
+            font-weight: bold;
           }
         }
       } 
-      
-    }
-    &__footer{
-      width: 700px;
-      height: 256px;
-      background-color: #F5F5F5;
-      &__list{
-        padding-top: 40px;
-        font-size: 12px;
-        display: flex;
-        justify-content: space-evenly;
-        color: #333;
-        &__privacy{
-          margin-left: 60px
-        }
-        &__disp{
-          margin-right: 60px;
-        }
-      }
-      &__logo{
-        width: 223.5px;
-        height: 90px;
-        margin: 0 auto;
+      &__after {
+        border-top: 1px solid #F5F5F5;
         text-align: center;
-        margin-top: 40px;
-        &__image{
-          height: 65px;
+        &__title {
+          font-weight: bold;
+          margin-top: 30px;
+        }
+        &__icons {
+          margin-top: 10px;
+          font-size: 24px;
+          .laugh {
+            color: rgb(247, 103, 187);
+          }
+          .meh {
+            color: rgb(255, 217, 0);
+          }
+          .frown {
+            color: rgb(0, 225, 255);
+          }
+        }
+        &__content {
+          margin-top: 10px;
+        }
+        &__link {
+          margin-top: 10px;
+          font-weight: bold;
         }
       }
     }
-  }
-}
-
-.data-exists__header{
-  display: flex;
-  justify-content: space-between;
-  &__modify{
-    color: #0099e8;
-  }
-}
-.residence-data{
-  font-size: 14px;
-  &__address{
-    display: flex;
-    &__item{
-      margin-right: 5px;
-    }
-  }
-  &__name{
-    display: flex;
-    &__item{
-      margin-right: 5px;
-    }
-    padding-bottom: 5px;
   }
 }
