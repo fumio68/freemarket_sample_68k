@@ -1,13 +1,21 @@
 $(function(){
   // function
-  function buildFileField(index){
-    var html = `<div data-index="${index}" class="js-file_group">
-
-                  <input class="js-file" type="file"
-                  name="item[item_images_attributes][${index}][image]"
-                  id="item_item_images_attributes_${index}_image">
-                  <div class="js-remove">削除</div>
-                </div>`;
+  function buildFileField(index, isDefault){
+    if (isDefault){
+      var html = `<div class="js-file_group" data-index="${index}">
+                    <i class="fas fa-camera js-file_group__icon"></i>
+                    <pre class="js-file_group__text>ドラッグアンドドロップ\nまたはクリックしてファイルをアップロード</pre>
+                    <input class="js-file" type="file"
+                    name="item[item_images_attributes][${index}][image]"
+                    id="item_item_images_attributes_${index}_image">
+                    <input name="item[item_images_attributes][${index}][_destroy]" type="hidden"
+                    value="${index}" class="__web-inspector-hide-shortcut__">
+                    
+                    <div class="js-remove">削除</div>
+                  </div>`;
+    } else {
+      var html = ``;
+    }
     return html;
   }
   function buildImg(index, url){
@@ -20,7 +28,7 @@ $(function(){
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
-  // $('.hidden-destroy').hide();
+  $('.js-file_group__destroy').hide();
 
   $('#image-box').on('change', '.js-file_group__hidden', function(e) {
     // 画像と削除ボタンを追加して、file-fieldの大きさを変更できるような処理にする。
@@ -40,10 +48,14 @@ $(function(){
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      // console.log('Hello.');
+      console.log('Hello.');
       $('#preview-box').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#file-box').empty();
+      var target = $('.js-file_group').children();
+      target[0].remove();
+      target[1].remove();
+      // $('.js-file_group').children()[0].remove();
+      // $('.js-file_group').children()[1].remove();
       $('#file-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する

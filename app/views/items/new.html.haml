@@ -23,6 +23,7 @@
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
                   = image.file_field :image, class: 'js-file_group__hidden'
+                  = image.check_box :_destroy, data: {index: image.index}, class: 'js-file_group__destroy'
 
 
         .product-listings-page__main__contents__name-box
