@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
 
   def get_purchase_modify
     @parents = Category.order("id ASC").limit(13)
-    @itemId = params[:item_id]
+    @itemId = params[:item_id].
     @user = current_user
     if current_user.residence.present?
       @residence = Residence.find_by(user_id: current_user.id)
@@ -46,5 +46,7 @@ class PurchasesController < ApplicationController
 
   def residence_exist?
     Residence.where(user_id: current_user.id).exists?
+  end
+  def done
   end
 end

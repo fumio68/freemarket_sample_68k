@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
-  resources :items, only: [:index,:new, :create, :show] do
+  resources :items, only: [:index,:new, :create, :show, :destroy] do
     # resources :purchases, only: [:index, :create, :show]
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
       collection do
         get 'get_purchase_modify'
         post 'post_purchase_modify'
+        get 'done'
       end
     end
   end
