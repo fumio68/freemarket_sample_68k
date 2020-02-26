@@ -21,7 +21,8 @@ document.addEventListener(
               $('<input type="hidden" name="payjp-token">').val(response.id)
             ); //取得したトークンを送信できる状態にします
             document.inputForm.submit();
-          } else {
+          } 
+          else {
             alert("カード情報が正しくありません。"); //確認用
           }
         });
@@ -34,9 +35,7 @@ document.addEventListener(
 // ? をクリックした時の動作
 $(function(){
   $('a.card-main__contents__body__security__bottom__note__question').click(function(){
-    $('a.card-main__contents__body__security__bottom__note__text').click(function(){
-      // リンクの #note** を取得
-      var targetNote = $(this).attr('href');
+    var targetNote = $(this).attr('href');
       $('p.card-main__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
     });
   
@@ -45,12 +44,11 @@ $(function(){
       $('p.card-main__contents__body__security__bottom__note__tooltip').removeClass('open');
     });
   });
-});
 
 
 // textをクリックした時の動作
 $(function(){
-  $('a.card-main__contents__body__security__bottom__note__question').click(function(){
+  $('a.card-main__contents__body__security__bottom__note__text').click(function(){
     var targetNote = $(this).attr('href');
     $('p.card-main__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
   });
@@ -62,5 +60,60 @@ $(function(){
 });
 
 
+
+// エラーハンドリング
+$(function(){
+	$(".card-main__contents__body__btn__box").on('click',function(e){
+    if(!card_input_check()){
+			e.preventDefault(); 
+		}
+	});
+});
+// 入力内容チェックのための関数
+function card_input_check(){
+	let result = true;
+	// エラー用装飾のためのクラスリセット
+	$('.card-main__contents__body__card__middle__box').removeClass("inp_error");
+  $('.card-main__contents__body__security__bottom__box').removeClass("inp_error");
+  $('.card-main__contents__body__effective__bottom__month__select').removeClass("inp_error");
+  $('.card-main__contents__body__effective__bottom__year__select').removeClass("inp_error");
+	// 入力エラー文をリセット
+  $("#card_error").empty();
+  $("#effective_error").empty();
+  $("#cvc_error").empty();
+	// 入力内容セット
+	let card   = $(".card-main__contents__body__card__middle__box").val();
+  let effective_month    = $(".card-main__contents__body__effective__bottom__month__select").val();
+  let effective_year    = $(".card-main__contents__body__effective__bottom__year__select").val();
+	let cvc    = $("#cvc").val();
+	// カード番号
+  if(card == ""){
+		$("#card_error").html(" 必須項目です");
+		$(".card-main__contents__body__card__middle__box").addClass("inp_error");
+		result = false;
+  }
+  // 有効期限
+  if(effective_month == ""){
+    $("#effective_error").html(" 必須項目です");
+    $(".card-main__contents__body__effective__bottom__month__select").addClass("inp_error");
+		result = false;
+  }
+  if(effective_year == ""){
+    $("#effective_error").html(" 必須項目です");
+		$(".card-main__contents__body__effective__bottom__year__select").addClass("inp_error");
+		result = false;
+  }
+	// cvc
+	if(cvc == ""){
+		$("#cvc_error").html(" 必須項目です");
+		$(".card-main__contents__body__security__bottom__box").addClass("inp_error");
+		result = false;
+	}else if(cvc.length < 3 ){
+		$("#cvc_error").html(" カード背面３桁から４桁の番号で入力してください");
+		$(".card-main__contents__body__security__bottom__box").addClass("inp_error");
+		result = false;
+	}
+	return result;
+}
 
 

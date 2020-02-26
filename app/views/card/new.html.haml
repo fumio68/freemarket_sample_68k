@@ -8,12 +8,15 @@
       = form_tag(pay_user_card_index_path(current_user.id), method: :post, id: 'charge-form',  name: "inputForm") do
         .card-main__contents__body__card
           .card-main__contents__body__card__top
-            .card-main__contents__body__card__top__left
-              カード番号
-            .card-main__contents__body__card__top__right
-              必須
+            #hold_error.error_m
+            .card-main__contents__body__card__top__line
+              .card-main__contents__body__card__top__line__left
+                カード番号
+              .card-main__contents__body__card__top__line__right
+                必須
           .card-main__contents__body__card__middle
             = text_field_tag "number", "", class: "card-main__contents__body__card__middle__box", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+            #card_error.error_m
           .card-main__contents__body__card__bottom
             = image_tag "/assets/material/logo/credit.png", class:"card-main__contents__body__card__bottom__icon__credit"
         .card-main__contents__body__effective
@@ -55,6 +58,8 @@
                 %option{value: "2028"}28
                 %option{value: "2029"}29
             %p.card-main__contents__body__effective__bottom__year__text 年
+          .card-main__contents__body__effective__bottom__line
+            #effective_error.error_m
         .card-main__contents__body__security
           .card-main__contents__body__security__top
             .card-main__contents__body__security__top__left
@@ -63,6 +68,7 @@
               必須
           .card-main__contents__body__security__bottom
             = text_field_tag "cvc", "", class: "card-main__contents__body__security__bottom__box", placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc"
+            #cvc_error.error_m
             .card-main__contents__body__security__bottom__note
               = link_to "#note1", class:"card-main__contents__body__security__bottom__note__question" do
                 ?
