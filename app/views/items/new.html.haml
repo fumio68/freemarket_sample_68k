@@ -16,8 +16,8 @@
           = form.fields_for :item_images do |image|
             #image-box
               #preview-box
-              = image.label :image do
-                #file-box.js-file_group{data: {index: image.index}}
+              = image.label :image ,id: 'file-box' do
+                .js-file_group{data: {index: image.index}}
                   = icon("fas", "camera", class: 'js-file_group__icon')
                   %pre.js-file_group__text
                     ドラッグアンドドロップ
