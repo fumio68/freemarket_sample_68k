@@ -1,5 +1,5 @@
 $(function(){
-	$(".main__box__contents__next__middle").on('click',function(e){
+	$(".product-listings-page__main__contents__send-box__btn").on('click',function(e){
     if(!input_check()){
 			e.preventDefault();
 			return false;
@@ -9,18 +9,20 @@ $(function(){
 
 function input_check(){
 	let result = true;
-	$('.main__box__contents__nickname__form').removeClass("inp_error");
-	$('.main__box__contents__email__form').removeClass("inp_error");
-	$('.main__box__contents__pass__form').removeClass("inp_error");
-	$('.main__box__contents__pass__repeat').removeClass("inp_error");
-	$('.main__box__contents__name__form__family').removeClass("inp_error");
-	$('.main__box__contents__name__form__last').removeClass("inp_error");
-	$('.main__box__contents__kana__form__j-family').removeClass("inp_error");
-	$('.main__box__contents__kana__form__j-last').removeClass("inp_error");
-	$('.main__box__contents__birth__middle__year__box').removeClass("inp_error");
-	$('.main__box__contents__birth__middle__month__box').removeClass("inp_error");
-	$('.main__box__contents__birth__middle__date__box').removeClass("inp_error");
-
+	$('.product-listings-page__main__contents__photo-box__drop-area__file').removeClass("inp_error");
+	$('.product-listings-page__main__contents__name-box__text-field').removeClass("inp_error");
+	$('.product-listings-page__main__contents__name-box__text-area').removeClass("inp_error");
+	$('.product-listings-page__main__contents__detail-box__select-list__category-form--first__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__detail-box__select-list__category-form--second__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__detail-box__select-list__category-form--third__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__detail-box__select-list__size-form__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__detail-box__select-list__condition-form__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__delivery-box__select-list__shipping-form__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__delivery-box__select-list__method-form__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__delivery-box__select-list__area-form__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__delivery-box__select-list__days-form__value').removeClass("inp_error");
+	$('.product-listings-page__main__contents__price-box__form-box__lists-price-right__form').removeClass("inp_error");
+  
 	$("#nickname_error").empty();
 	$("#email_error").empty();
 	$("#password_error").empty();
@@ -48,7 +50,7 @@ function input_check(){
 		$(".main__box__contents__nickname__form").addClass("inp_error");
 		result = false;
 	}
-
+	
 	if(email == ""){
 		$("#email_error").html(" メールアドレスを入力してください。");
 		$(".main__box__contents__email__form").addClass("inp_error");
@@ -154,16 +156,16 @@ function input_check(){
 	return result;
 }
 
-$(function(){
-	$('#password').on('change', function(){
-		let password = $('#user_password').val();
-		let check = $('#password').prop('checked');
-		if(check){
-		$('.main__box__contents__pass__display').html(password);
-		$('.main__box__contents__pass__display').addClass("pass-display");
-		}
-		else {
-			$('.main__box__contents__pass__display').text('')
-		}
-	});
-});
+// $(function(){
+// 	$('#password').on('change', function(){
+// 		let password = $('#user_password').val();
+// 		let check = $('#password').prop('checked');
+// 		if(check){
+// 		$('.main__box__contents__pass__display').html(password);
+// 		$('.main__box__contents__pass__display').addClass("pass-display");
+// 		}
+// 		else {
+// 			$('.main__box__contents__pass__display').text('')
+// 		}
+// 	});
+// });

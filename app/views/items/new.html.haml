@@ -20,6 +20,7 @@
                 またはクリックしてファイルをアップロード
               .js-file_group{data: image.index}
                 = image.file_field :image, class: "product-listings-page__main__contents__photo-box__drop-area__file js-file"
+            %span#photo_error.error_m
         .product-listings-page__main__contents__name-box
           .product-listings-page__main__contents__name-box__title
             .product-listings-page__main__contents__name-box__title__left 商品名
@@ -39,19 +40,6 @@
               .product-listings-page__main__contents__detail-box__select-list__category-form--first
                 = form.select :category_id_1, {"---":0, "レディース":1, "メンズ":2, "ベビー・キッズ":3, "インテリア・住まい・小物":4, "本・音楽・ゲーム":5, "おもちゃ・ホビー・グッズ":6, "コスメ・香水・美容":7, "家電・スマホ・カメラ":8, "スポーツ・レジャー":9, "ハンドメイド":10, "チケット":11, "自転車・オートバイ":12, "その他":13}, {}, {class: 'product-listings-page__main__contents__detail-box__select-list__category-form--first__value', id: 'parent_category'}
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--first__icon")
-              -# 商品編集機能実装時に使用する可能性があるためにコメントアウトを残しています
-              -# .product-listings-page__main__contents__detail-box__select-list__category-form--second
-              -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value'
-              -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
-              -# .product-listings-page__main__contents__detail-box__select-list__category-form--third
-              -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value'
-              -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
-            -# .product-listings-page__main__contents__detail-box__select-list__title
-            -#   .product-listings-page__main__contents__detail-box__select-list__title__left サイズ
-            -#   %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
-            -# .product-listings-page__main__contents__detail-box__select-list__size-form
-            -#   =form.select :category_id, {"---":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__size-form__value'
-            -#   = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__size-form__icon")
             .product-listings-page__main__contents__detail-box__select-list__title
               .product-listings-page__main__contents__detail-box__select-list__title__left ブランド
               %span.product-listings-page__main__contents__detail-box__select-list__title__right--not-required 任意
@@ -106,7 +94,7 @@
                   %span.product-listings-page__main__contents__price-box__form-box__lists-price-left__title-right 必須
                 .product-listings-page__main__contents__price-box__form-box__lists-price-right
                   .product-listings-page__main__contents__price-box__form-box__lists-price-right__text ¥
-                  =form.text_field :price, class:"product-listings-page__main__contents__price-box__form-box__lists-price-right__form ", placeholder:"例）300"
+                  =form.text_field :price, class:"product-listings-page__main__contents__price-box__form-box__lists-price-right__form", placeholder:"例）300"
               %li.product-listings-page__main__contents__price-box__form-box__lists-fee
                 .product-listings-page__main__contents__price-box__form-box__lists-fee-left 販売手数料(10%)
                 .product-listings-page__main__contents__price-box__form-box__lists-fee-right -
