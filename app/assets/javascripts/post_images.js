@@ -8,7 +8,7 @@ $(function(){
                       </svg>
                       <input class="js-file" type="file"
                       name="item[images_attributes][${num}][src]"
-                      id="item_item_images_attributes_${num}_src">
+                      id="item_item_images_attributes_${num}_src"><br>
                     </label>
                     <span class="js-remove">削除</div>
                   </div>`;
@@ -16,7 +16,7 @@ $(function(){
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img id = "image-${index}" class="item_images" data-index="${index}" src="${url}" width="118px" height="118px">`;
+    const html = `<img id = "image-${index}" data-index="${index}" src="${url}" width="118px" height="118px">`;
     return html;
   }
 
@@ -58,18 +58,6 @@ $(function(){
     $(id_str).remove();
 
     // 画像入力欄が0個にならないようにしておく
-    // if ($('.js-file').length == 0) $('#file-box').append(buildFileField(fileIndex[0]));
-
-    // $('.js-file').length == 1になった時に自動的にデフォルトの表示に切り替える。
-    var image_count = $('.js-file').length-1;
-    insertInputForm(image_count);
+    if ($('.js-file').length == 0) $('#file-box').append(buildFileField(fileIndex[0]));
   });
 });
-
-function insertInputForm(image_count){
-  var insertHtml = '';
-  if(image_count == 0){
-    console.log('Hello World!');
-  }
-  return insertHtml;
-}
