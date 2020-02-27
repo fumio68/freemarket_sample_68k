@@ -12,18 +12,22 @@
             %span.product-listings-page__main__contents__photo-box__title__right 必須
           %p.product-listings-page__main__contents__photo-box__text 最大10枚までアップロードできます
           
-          
-          = form.fields_for :item_images do |image|
-            #image-box
-              #preview-box
-              = image.label :image ,id: 'file-box' do
+          #image-box
+            #previews
+              - if @item.persisted?
+                - @item.item_images.each_with_index do |image, i|
+                  = image_tag image.src.url, data: {index: i}, width: '100', height: '100'
+              = form.fields_for :item_images do |image|
                 .js-file_group{data: {index: image.index}}
-                  = icon("fas", "camera", class: 'js-file_group__icon')
-                  %pre.js-file_group__text
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
-                  = image.file_field :image, class: 'js-file_group__hidden'
-                  = image.check_box :_destroy, data: {index: image.index}, class: 'js-file_group__destroy'
+                  = image.file_field :src, class: 'js-file'
+                  %br/
+                  %span.js-remove 削除
+                - if @item.persisted?
+                  = image.check_box :_destroy, data: {index: image.index}, class: 'hidden-destroy'
+              - if @item.persisted?
+                .js-file_group{"data-index" => "#{@item.item_images.count}"}
+                  = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                  .js-remove 削除
 
 
         .product-listings-page__main__contents__name-box
