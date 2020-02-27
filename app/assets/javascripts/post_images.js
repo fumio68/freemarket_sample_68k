@@ -38,7 +38,7 @@ $(function(){
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
 
-      $('#image-box').append(buildFileField(fileIndex[0]));
+      $('#file-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
@@ -51,13 +51,13 @@ $(function(){
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-    
+
     var id_str = '#image-' + targetIndex;
     var isExist = $(id_str).length;
     if(isExist) $(this).parent().remove();
     $(id_str).remove();
 
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    if ($('.js-file').length == 0) $('#file-box').append(buildFileField(fileIndex[0]));
   });
 });

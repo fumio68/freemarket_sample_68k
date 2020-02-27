@@ -477,16 +477,19 @@ a {
   #previews{
 
   }
-  .js-file_group{
-    // display: flex;
-    .js-file{
-      display: none;
-    }
-    js-remove{
+  #file-box{
+    display: flex;
+    .js-file_group{
+      width: 118px;
+      .js-file{
+        display: none;
+      }
+      .js-remove{
 
-    }
-    .hidden-destroy{
-      display: none;
+      }
+      .hidden-destroy{
+        display: none;
+      }
     }
   }
 }
