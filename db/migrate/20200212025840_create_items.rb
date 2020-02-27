@@ -16,7 +16,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer     :category_id_1,   null: false
       t.integer     :category_id_2,   null: false
       t.integer     :category_id_3,   null: false
-      t.integer     :size_id,         null: false
+      t.integer     :size_id
       t.timestamps
     end
   end
