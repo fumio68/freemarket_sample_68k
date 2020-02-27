@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function(){
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', ()=> {
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="118px" height="118px">`;
     return html;
   }
 
@@ -21,21 +21,15 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
-
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
-    console.log('targetIndex ', targetIndex);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
-    // console.log('file ', file);
     const blobUrl = window.URL.createObjectURL(file);
-    // console.log('blobUrl ', blobUrl);
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
-      console.log('bind(1)');
     } else {  // 新規画像追加の処理
-      console.log('bind(2)');
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFileField(fileIndex[0]));

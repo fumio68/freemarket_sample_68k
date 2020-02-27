@@ -474,26 +474,18 @@ a {
   height: 162px;
   border: 1px dashed #ccc;
   background: #f5f5f5;
+  #previews{
 
+  }
   .js-file_group{
-    width: 620px;
-    height: 162px;
-    text-align: center;
-    position: relative;
-    &__icon{
-      font-size: 22px;
-      width: 620px;
-      position: absolute;
-      top: 50px;
-      display: block;
+    display: flex;
+    .js-file{
+
     }
-    &__text{
-      font-size: 13px;
-      position: absolute;
-      top: 90px;
-      left: 180px;
+    js-remove{
+
     }
-    &__hidden{
+    .hidden-destroy{
       display: none;
     }
   }
