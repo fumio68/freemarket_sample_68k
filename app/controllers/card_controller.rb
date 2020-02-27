@@ -8,13 +8,11 @@ class CardController < ApplicationController
   end
 
   def pay
-    # binding.pry
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト', 
       email: current_user.email,
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}

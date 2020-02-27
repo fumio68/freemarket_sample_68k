@@ -34,8 +34,13 @@
           %p #{@residence.family_name}#{@residence.last_name}
         .purchase__inner__main__form__pay
           %h2.purchase__inner__main__form__pay__title 支払い方法
-          %p ************1234
-          %p 12/20
+          = "**** **** **** " + @default_card_information.last4 
+          %br
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+          %br
+          = image_tag "/assets/material/credit/#{@default_card_src}", width: '40', height: '25', alt: @default_card_brand, id: "card_image"
       .purchase__inner__main__after
         .purchase__inner__main__after__title
           発送通知後の流れ

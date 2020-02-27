@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
-require 'payjp'
+  require 'payjp'
+
   def index
     @item = Item.find(params[:item_id])
     @itemId = params[:item_id]
@@ -9,33 +10,42 @@ require 'payjp'
     else
       @residence = Residence.new
     end
-    
-    # card = set_card.first
-    # if card.present?
-    #   Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    #   customer = Payjp::Customer.retrieve(card.customer_id)
-    #   @default_card_information = customer.cards.retrieve(card.card_id)
-    #   @default_card_brand = @default_card_information.brand      
-    #   case @default_card_brand
-    #   when "Visa"
-    #     @default_card_src = "visa.png"
-    #   when "JCB"
-    #     @default_card_src = "jcb.png"
-    #   when "MasterCard"
-    #     @default_card_src = "master.png"
-    #   when "American Express"
-    #     @default_card_src = "american.png"
-    #   when "Diners Club"
-    #     @default_card_src = "dinersclub.png"
-    #   when "Discover"
-    #     @default_card_src = "discover.png"
-    #   end
-    # else
-    #   redirect_to action: "done" 
-    # end
+
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to controller: "card", action: "new"
+    else
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+      @default_card_brand = @default_card_information.brand      
+      case @default_card_brand
+      when "Visa"
+        @default_card_src = "visa.png"
+      when "JCB"
+        @default_card_src = "jcb.png"
+      when "MasterCard"
+        @default_card_src = "master.png"
+      when "American Express"
+        @default_card_src = "american.png"
+      when "Diners Club"
+        @default_card_src = "dinersclub.png"
+      when "Discover"
+        @default_card_src = "discover.png"
+      end
+    end
   end
- 
-  def create
+  
+  def pay
+    @item = Item.find(params[:item_id])
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(
+    amount: @item.price, 
+    customer: card.customer_id, 
+    currency: 'jpy', 
+    )
+    redirect_to action: 'done'
   end
 
   def get_purchase_modify
@@ -67,10 +77,25 @@ require 'payjp'
     @itemId = params[:item_id]
     @residence = Residence.find_by(user_id: current_user.id)
     @item.update(status: 0)
-  end
-
-  def set_card
-    Card.where(user_id: current_user.id)
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    @default_card_information = customer.cards.retrieve(card.card_id)
+    @default_card_brand = @default_card_information.brand      
+    case @default_card_brand
+    when "Visa"
+      @default_card_src = "visa.png"
+    when "JCB"
+      @default_card_src = "jcb.png"
+    when "MasterCard"
+      @default_card_src = "master.png"
+    when "American Express"
+      @default_card_src = "american.png"
+    when "Diners Club"
+      @default_card_src = "dinersclub.png"
+    when "Discover"
+      @default_card_src = "discover.png"
+    end
   end
 
   private

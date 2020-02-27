@@ -7,11 +7,12 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_size', defaults: { format: 'json' }
     end
-    resources :purchases, only: [:index, :create] do
+    resources :purchases, only: [:index] do
       collection do
+        post 'pay'
+        get 'done'
         get 'get_purchase_modify'
         post 'post_purchase_modify'
-        post 'done'
       end
     end
   end
