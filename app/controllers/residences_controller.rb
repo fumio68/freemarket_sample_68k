@@ -2,13 +2,21 @@ class ResidencesController < ApplicationController
 
   def create
     if Residence.where(user_id: current_user.id).exists?
-      target = Residence.where(user_id: current_uesr.id)
+      target = Residence.where(user_id: current_user.id)
       target.update(residence_params)
-      redirect_back(fallback_location: root_path)
+      if session[:item_id].nil?
+        redirect_to user_residences_path(current_user.id)
+      else
+        redirect_to item_purchases_path(item_id: session[:item_id])
+      end
     else
       @residence = Residence.new(residence_params)
       @residence.save!
-      redirect_back(fallback_location: root_path)
+      if session[:item_id].nil?
+        redirect_to user_residences_path(current_user.id)
+      else
+        residect_to item_purchases_path(item_id: session[:item_id])
+      end
     end
   end
 

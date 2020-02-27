@@ -61,7 +61,7 @@
           = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
             %li プロフィール
             = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
-          = link_to '#', class: 'mypage__main__mask__left__nav-list__item' do
+          = link_to user_residences_path(current_user.id), class: 'mypage__main__mask__left__nav-list__item' do
             %li 発送元・お届け先情報変更
             = icon("fa", "angle-right", class: 'mypage__main__mask__left__nav-list__item__arrow')
           = link_to new_user_card_path(current_user.id),method: :get, class: 'mypage__main__mask__left__nav-list__item' do
