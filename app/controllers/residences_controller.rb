@@ -13,7 +13,7 @@ class ResidencesController < ApplicationController
   end
 
   def index
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
 
     @user = current_user
     if Residence.where(user_id: current_user.id).exists?

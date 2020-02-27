@@ -1,19 +1,16 @@
 @import "modules/mixin";
 .mypage{
   width: 100vw;
-  
   background-color: white;
   &__header{
     width: 100%;
     height: 150px;
     margin: 0 auto;
-    // background-color: white;
     &__mask{
       width: 1020px;
       margin: 0 auto;
       &__menu{
         height: 100px;
-        // background-color: white;
         &__top{
           padding-top: 8px;
           height: 40px;

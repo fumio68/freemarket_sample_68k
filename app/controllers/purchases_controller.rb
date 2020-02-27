@@ -16,7 +16,7 @@ class PurchasesController < ApplicationController
   end
 
   def get_purchase_modify
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
     @itemId = params[:item_id]
     @user = current_user
     if current_user.residence.present?
