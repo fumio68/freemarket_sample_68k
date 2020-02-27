@@ -18,7 +18,7 @@
             = text_field_tag "number", "", class: "card-main__contents__body__card__middle__box", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
             #card_error.error_m
           .card-main__contents__body__card__bottom
-            = image_tag "/assets/material/logo/credit.png", class:"card-main__contents__body__card__bottom__icon__credit"
+            = image_tag "material/logo/credit.png", class:"card-main__contents__body__card__bottom__icon__credit"
         .card-main__contents__body__effective
           .card-main__contents__body__effective__top
             .card-main__contents__body__effective__top__left
@@ -76,7 +76,7 @@
                 カード裏面の番号とは？
               %p{class:'card-main__contents__body__security__bottom__note__tooltip',id:'note1'}
                 カードの裏面をご参照ください。
-                = image_tag "/assets/material/credit/note.png", width: '240', height: '105'
+                = image_tag "material/credit/note.png", width: '240', height: '105'
         .card-main__contents__body__btn
           #card_token
           = submit_tag "登録する", id: "token_submit", class:"card-main__contents__body__btn__box"
