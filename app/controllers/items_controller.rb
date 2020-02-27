@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:destroy, :show]
+  before_action :set_item, only:[:destroy, :show, :edit, :update]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -38,6 +38,21 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @parents = Category.order("id ASC").limit(13)
+  end
+
+  def edit
+    @category_2 = Category.find(@item. category_id_2) if @item.category_id_2
+    @category_3 = Category.find(@item. category_id_3) if @item.category_id_3
+    @size = Category.find(@item.size_id) if @item.size_id
+  end
+
+  def update
+    # binding.pry
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
