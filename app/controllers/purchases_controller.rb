@@ -2,7 +2,9 @@ class PurchasesController < ApplicationController
   require 'payjp'
 
   def index
-    session[:item_id] = params[:item_id]
+    @item = Item.find(params[:item_id])
+    @itemId = params[:item_id]
+    @purchaseId = params[:id]
     if current_user.residence.present?
       @residence = Residence.find_by(user_id: current_user.id)
     else
@@ -37,13 +39,37 @@ class PurchasesController < ApplicationController
   def pay
     @item = Item.find(params[:item_id])
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
     amount: @item.price, 
     customer: card.customer_id, 
     currency: 'jpy', 
     )
     redirect_to action: 'done'
+  end
+
+  def get_purchase_modify
+    @parents = Category.order("id ASC").limit(13)
+    @itemId = params[:item_id]
+    @user = current_user
+    if current_user.residence.present?
+      @residence = Residence.find_by(user_id: current_user.id)
+    else
+      @residence = Residence.new()
+    end
+  end
+
+  def post_purchase_modify
+    if current_user.residence.present?
+      target = Residence.where(user_id: current_user.id)
+      current_user.update(residence_id: target[0].id)
+      redirect_to item_purchases_path(item_id: params[:item_id])
+    else
+      @residence = Residence.new(residence_params)
+      @residence.save!
+      current_user.update(residence_id: @residence.id)
+      redirect_to item_purchases_path(item_id: params[:item_id])
+    end
   end
 
   def done
