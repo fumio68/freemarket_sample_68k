@@ -21,5 +21,7 @@
           %button.card-main__contents__content__menu__delete__btn 削除する
       .card-main__contents__content__info
         = link_to "#", class: "card-main__contents__content__info__text" do
-          支払い方法について ＞
+          支払い方法について　＞
+  .card-main__link
+    = link_to 'マイページへもどる', user_path(current_user.id)
 = render "/shared/sub_footer"

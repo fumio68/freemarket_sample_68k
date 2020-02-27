@@ -102,10 +102,13 @@ a {
       }
       &__name-box{
         height: 355px;
-        padding: 40px;
+        padding: 30px 40px;
         border-top: 1px solid #eee;
         &__title{
           padding-bottom: 8px;
+          &-2{
+            margin-top: 30px;
+          }
           &__left{
             display: inline;
             font-size: 14px;
@@ -124,7 +127,6 @@ a {
           border: 1px solid #ccc;
           background: #fff;
           font-size: 16px;
-          margin-bottom: 40px;
         }
         &__text-area{
           display: block;
@@ -152,6 +154,12 @@ a {
           margin: 0;
           &__title{
             padding-bottom: 8px;
+            &-brand{
+              margin-top: 28px;
+            }
+            &-condition{
+              margin-top: 28px;
+            }
             &__left{
               display: inline;
               font-size: 14px;
@@ -172,7 +180,6 @@ a {
           }
           &__category-form{
             width: 100%;
-            margin-bottom: 32px;
             &--first{
               position: relative;
               &__value{
@@ -216,12 +223,11 @@ a {
               }
             }
             &--fourth{
-              margin-top: 32px;
+              margin-top: 28px;
             }
           }
           &__size-form{
             width: 100%;
-            margin-bottom: 32px;
             position: relative;
             &__value{
               @include form-value();
@@ -237,7 +243,6 @@ a {
           }
           &__brand-form{
             width: 100%;
-            margin-bottom: 32px;
             &__value{
               height: 48px;
               width: 100%;
@@ -252,7 +257,6 @@ a {
           }
           &__condition-form{
             width: 100%;
-            margin-bottom: 32px;
             position: relative;
             &__value{
               @include form-value();
@@ -269,7 +273,7 @@ a {
         }
       }
       &__delivery-box{
-        height: 510px;
+        height: 550px;
         padding: 40px;
         border-top: 1px solid #eee;
         &__title{
@@ -295,6 +299,15 @@ a {
           margin: 0;
           &__title{
             padding-bottom: 8px;
+            &-method{
+              margin-top: 28px;
+            }
+            &-area{
+              margin-top: 28px;
+            }
+            &-days{
+              margin-top: 28px;
+            }
             &__left{
               display: inline;
               font-size: 14px;
@@ -306,7 +319,6 @@ a {
           }
           &__shipping-form{
             width: 100%;
-            margin-bottom: 32px;
             position: relative;
             &__value{
               @include form-value();
@@ -322,7 +334,6 @@ a {
           }
           &__method-form{
             width: 100%;
-            margin-bottom: 32px;
             position: relative;
             &__value{
               @include form-value();
@@ -338,7 +349,6 @@ a {
           }
           &__area-form{
             width: 100%;
-            margin-bottom: 32px;
             position: relative;
             &__value{
               @include form-value();
@@ -354,7 +364,6 @@ a {
           }
           &__days-form{
             width: 100%;
-            margin-bottom: 32px;
             position: relative;
             &__value{
               @include form-value();
@@ -398,7 +407,6 @@ a {
           &__lists{
             &-price{
               padding: 0 0 24px;
-              border-bottom: 1px solid #eee;
               display: flex;
               justify-content: space-between;
               &-left{
@@ -437,6 +445,7 @@ a {
             }
             &-fee{
               padding: 24px 0;
+              border-top: 1px solid #eee;
               border-bottom: 1px solid #eee;
               display: flex;
               justify-content: space-between;
@@ -475,4 +484,7 @@ a {
       }
     }
   }
+}
+#price_error{
+  text-align-last: right;
 }

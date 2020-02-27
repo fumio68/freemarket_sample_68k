@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :items, only: [:index,:new, :create, :show, :destroy] do
-    # resources :purchases, only: [:index, :create, :show]
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
@@ -11,8 +10,6 @@ Rails.application.routes.draw do
       collection do
         post 'pay'
         get 'done'
-        get 'get_purchase_modify'
-        post 'post_purchase_modify'
       end
     end
   end

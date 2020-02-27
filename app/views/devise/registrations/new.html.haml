@@ -15,7 +15,7 @@
             .main__box__contents__nickname__top__right
               必須
           = f.text_field  :nickname, autocomplete: "new-nickname", class:"main__box__contents__nickname__form", placeholder:'例）メルカリ太郎'
-          %span#nickname_error.error_m   
+          %span#nickname_error.error_m
 
         .main__box__contents__email
           .main__box__contents__email__top
@@ -25,10 +25,6 @@
               必須
           = f.email_field :email, autocomplete: "email", placeholder:'PC・携帯どちらでも可',class:'main__box__contents__email__form'
           %span#email_error.error_m
-            -# - current_user.errors.full_messages_for(:email).each do |message|
-            -#   %span#email_error__color
-            -#     = "この#{message}"
-
         .main__box__contents__pass
           .main__box__contents__pass__top
             .main__box__contents__pass__top__left
@@ -86,7 +82,7 @@
             .main__box__contents__birth__middle__year
               = f.select :b_year,{},{},{class: "main__box__contents__birth__middle__year__box"} do
                 - year_array = []
-                - for cnt in 1..100 do year_array[cnt] = cnt+1919 end 
+                - for cnt in 1..100 do year_array[cnt] = 2020-cnt end 
                 = options_for_select(year_array)
               = icon('fas', 'chevron-down', class: "main__box__contents__birth__middle__year__chevron")
               %p 年
