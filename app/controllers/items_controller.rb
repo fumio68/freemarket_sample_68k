@@ -38,6 +38,10 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @parents = Category.order("id ASC").limit(13)
+    @category_1 = Category.find_by(id: @item.category_id_1)
+    @category_2 = Category.find_by(id: @item.category_id_2)
+    @category_3 = Category.find_by(id: @item.category_id_3)
+    @size = Category.find_by(id: @item.size_id)
   end
 
   def destroy
