@@ -207,7 +207,7 @@
           &__item{
             line-height: 16px;
             padding: 16px;
-            background-color: #FAFAFA;
+            background-color: #FFFFFF;
             margin-bottom: 1px;
             font-size: 14px;
             display: flex;
@@ -221,12 +221,6 @@
           &__item:hover &__item__arrow{
             transform: translateX(8px);
             transition: 0.3s;
-          }
-          &__item--active{
-            background-color: #EEEEEE;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
           }
         }
       }

@@ -110,7 +110,7 @@ function card_input_check(){
 		result = false;
 	}else if(cvc.length < 3 ){
 		$("#cvc_error").html(" カード背面３桁から４桁の番号で入力してください");
-		$(".card__card-main__mask__contents__body__security__bottom__box").addClass("inp_error");
+		$("card__card-main__mask__contents__body__security__bottom__note").addClass("inp_error");
 		result = false;
 	}
 	return result;
