@@ -1,7 +1,6 @@
 .purchase
+  = render "/shared/sub_header"
   .purchase__inner
-    .purchase__inner__top
-      = image_tag("material/logo/logo.png", class: 'purchase__inner__top__logo')
     .purchase__inner__main
       %h1.purchase__inner__main__confirmation
         購入内容の確認
@@ -59,17 +58,4 @@
         .purchase__inner__main__form__buy
           = f.button '購入する', class: 'purchase__inner__main__form__buy__button'
     .purchase__inner__footer
-      %ul.purchase__inner__footer__list
-        %li.purchase__inner__footer__list__privacy
-          = link_to "#" do
-            プライバシーポリシー
-        %li
-          = link_to "#" do
-            メルカリ利用規約
-        %li.purchase__inner__footer__list__disp
-          = link_to "#" do
-            特定商取引に関する表記
-      .purchase__inner__footer__logo
-        = link_to root_path do
-          = image_tag("material/logo/logo.png", class: 'purchase__inner__footer__logo__image')
-        %p ©︎ FURIMA
+      = render "/shared/sub_footer"
