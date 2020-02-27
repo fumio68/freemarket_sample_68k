@@ -1,8 +1,8 @@
 $(function(){
 	$(".main__box__contents__next__middle").on('click',function(e){
-    if(!input_check()){    
-			e.preventDefault();                     
-			return false;                           
+    if(!input_check()){
+			e.preventDefault();
+			return false;
 		}
 	});
 });
@@ -20,7 +20,7 @@ function input_check(){
 	$('.main__box__contents__birth__middle__year__box').removeClass("inp_error");
 	$('.main__box__contents__birth__middle__month__box').removeClass("inp_error");
 	$('.main__box__contents__birth__middle__date__box').removeClass("inp_error");
-  
+
 	$("#nickname_error").empty();
 	$("#email_error").empty();
 	$("#password_error").empty();
@@ -48,7 +48,7 @@ function input_check(){
 		$(".main__box__contents__nickname__form").addClass("inp_error");
 		result = false;
 	}
-	
+
 	if(email == ""){
 		$("#email_error").html(" メールアドレスを入力してください。");
 		$(".main__box__contents__email__form").addClass("inp_error");
