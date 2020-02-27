@@ -17,7 +17,7 @@
               - if @item.persisted?
                 - @item.item_images.each_with_index do |image, i|
                   - id_str = 'image-' + (i).to_s
-                  = image_tag image.src.url, id: id_str ,data: {index: i}, width: '118', height: '118'
+                  = image_tag image.src.url, id: id_str, class: 'item_images' ,data: {index: i}, width: '118', height: '118'
             #file-box
               = form.fields_for :item_images do |image|
                 .js-file_group{data: {index: image.index}}
