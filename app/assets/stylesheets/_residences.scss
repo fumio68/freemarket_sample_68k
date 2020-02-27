@@ -236,12 +236,13 @@
         background-color: white;
         &__head{
           height: 51px;
-          border-bottom: 1px solid #CCC;
+          border-bottom: 1px solid #f5f5f5;
           text-align: center;
           padding-top: 8px;
           padding-bottom: 8px;
           line-height: 34px;
           font-size: 24px;
+          color: #333333;
           font-weight: bold;
         }
         &__form{
@@ -252,6 +253,7 @@
             padding-top: 40px;
             padding-bottom: 64px;
             margin: 0 auto;
+            color: #333333;
             &__name{
               height: 126px;
               margin: 0 auto;
@@ -272,6 +274,7 @@
               height: 70px;
               margin: 0 auto;
               margin-top: 32px;
+              background-color: #FFFFFF;
             }
             &__city{
               height: 70px;
