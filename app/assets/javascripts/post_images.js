@@ -51,14 +51,9 @@ $(function(){
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-
-    console.log(targetIndex);
+    
     var id_str = '#image-' + targetIndex;
-    console.log($(id_str));
     var isExist = $(id_str).length;
-    console.log(isExist);
-    if(isExist) console.log('true')
-    else console.log('false');
     if(isExist) $(this).parent().remove();
     $(id_str).remove();
 
