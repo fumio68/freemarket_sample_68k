@@ -15,7 +15,7 @@ class ResidencesController < ApplicationController
       if session[:item_id].nil?
         redirect_to user_residences_path(current_user.id)
       else
-        residect_to item_purchases_path(item_id: session[:item_id])
+        redirect_to item_purchases_path(item_id: session[:item_id])
       end
     end
   end

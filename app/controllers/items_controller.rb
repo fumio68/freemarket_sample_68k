@@ -7,8 +7,12 @@ class ItemsController < ApplicationController
     @parents = Category.order("id ASC").limit(13)
   end
   def new
-    @item = Item.new
-    @item.item_images.new
+    if user_signed_in?
+      @item = Item.new
+      @item.item_images.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def get_category_children
