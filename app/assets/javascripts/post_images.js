@@ -7,8 +7,8 @@ $(function(){
                         <path d="M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"></path>
                       </svg>
                       <input class="js-file" type="file"
-                      name="item[images_attributes][${num}][image]"
-                      id="item_item_images_attributes_${num}_image"><br>
+                      name="item[item_images_attributes][${num}][image]"
+                      id="item_item_images_attributes_${num}_image">
                     </label>
                     <span class="js-remove">削除</div>
                   </div>`;
