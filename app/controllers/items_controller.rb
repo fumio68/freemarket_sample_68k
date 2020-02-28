@@ -84,7 +84,7 @@ class ItemsController < ApplicationController
   end
 
   def item_edit_params
-    params.require(:item).permit(:id, :category_id, :name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image, :id]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
+    params.require(:item).permit(:id, :category_id, :name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
   end
 
 
