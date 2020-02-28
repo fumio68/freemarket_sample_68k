@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_051303) do
     t.integer "category_id_1", null: false
     t.integer "category_id_2", null: false
     t.integer "category_id_3", null: false
-    t.integer "size_id", null: false
+    t.integer "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
