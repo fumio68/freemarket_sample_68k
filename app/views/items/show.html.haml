@@ -58,7 +58,8 @@
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     商品のサイズ
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    = @size.name
+                    - unless @size.nil?
+                      = @size.name
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     商品の状態
@@ -92,7 +93,7 @@
         - if user_signed_in? && current_user.id == @item.user_id
           .main__show__content__top__itemUser
             .main__show__content__top__itemUser__edit
-              = link_to "商品の編集", "#", class: "main__show__content__top__itemUser__edit__link"
+              = link_to "商品の編集", edit_item_path(@item), class: "main__show__content__top__itemUser__edit__link"
             .main__show__content__top__itemUser__destroy
               = link_to "この商品を削除する", item_path(@item), method: :delete, class: "main__show__content__top__itemUser__destroy__link"
         .main__show__content__top__commentArea

@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :items, only: [:index,:new, :create, :show, :destroy] do
+  resources :items do
+    # resources :purchases, only: [:index, :create, :show]
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_size', defaults: { format: 'json' }
     end
-    resources :purchases, only: [:index] do
+    member do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_size', defaults: { format: 'json' }
+    end
+    resources :purchases, only: [:index, :create] do
       collection do
         post 'pay'
         get 'done'

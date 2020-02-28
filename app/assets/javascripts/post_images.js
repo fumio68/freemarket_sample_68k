@@ -25,7 +25,9 @@ $(function(){
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
+
   $('.hidden-destroy').hide();
+
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
@@ -48,9 +50,13 @@ $(function(){
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    var targetCheckBox = "#destroy-" + targetIndex;
+    const hiddenCheck = $(targetCheckBox);
+    // const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
+    if (hiddenCheck.length) {
+      hiddenCheck.prop('checked', true);
+    }
 
     var id_str = '#image-' + targetIndex;
     var isExist = $(id_str).length;
