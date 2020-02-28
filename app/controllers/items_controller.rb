@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order("created_at DESC")
     @item_images = ItemImage.all
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
   end
   def new
     if user_signed_in?
@@ -46,10 +46,11 @@ class ItemsController < ApplicationController
     @category_2 = Category.find_by(id: @item.category_id_2)
     @category_3 = Category.find_by(id: @item.category_id_3)
     @size = Category.find_by(id: @item.size_id)
+
   end
 
   def destroy
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
     @item.destroy
     render :delete unless @item.user_id == current_user.id && @item.destroy
   end
