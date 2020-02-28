@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     @category_1 = Category.find(@item.category_id_1)
     @category_2 = Category.find(@item.category_id_2)
     @category_3 = Category.find(@item.category_id_3)
-    if Category.find(@item.size_id).present?
+    unless @item.size_id.nil?
       @size = Category.find(@item.size_id)
     end
 
