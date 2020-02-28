@@ -16,6 +16,7 @@
 }
 
 .popup--mypage{
+  border: solid 0.5px rgb(228, 222, 222);
   &__iconimage{
     width: 315px;
     height: 155px;
@@ -73,7 +74,7 @@
         line-height: 40px;
         background-color: #F5F5F5;
         border: 1px solid;
-        border-color: gray;
+        border-color: rgb(228, 222, 222);
         font-size: 13px;
         text-decoration: none;
         color: black;
@@ -93,7 +94,7 @@
         border: 1px solid;
         border-top: 0px;
         background-color: #F5F5F5;
-        border-color: gray;
+        border-color: rgb(228, 222, 222);
         font-size: 13px;
         text-decoration: none;
         color: black;
@@ -116,7 +117,7 @@
       border-right: 0px;
       border-left: 0px;
       background-color: white;
-      border-color: gray;
+      border-color: rgb(228, 222, 222);
       text-decoration: none;
       color: black;
       &__arrow{
@@ -141,7 +142,7 @@
       border-left: 0px;
       border-right: 0px;
       background-color: white;
-      border-color: gray;
+      border-color: rgb(228, 222, 222);
       text-decoration: none;
       color: black;
       &__arrow{

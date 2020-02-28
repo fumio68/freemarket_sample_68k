@@ -2,7 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :basic_auth, if: :production?
+  before_action :set_category
 
+  def set_category 
+    @parents = Category.order("id ASC").limit(13)
+  end
+  
   private
 
   def production?

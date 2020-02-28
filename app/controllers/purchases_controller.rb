@@ -79,4 +79,5 @@ class PurchasesController < ApplicationController
   def residence_params
     params.require(:residence).permit(:family_name, :last_name, :j_family_name, :j_last_name, :postcode, :prefecture, :city, :block).merge(user_id: current_user.id)
   end
+
 end
