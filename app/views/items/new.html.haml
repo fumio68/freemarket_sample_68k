@@ -131,6 +131,8 @@
               加盟店規約
             に同意したことになります。
           =form.submit "出品する", class: "product-listings-page__main__contents__send-box__btn"
-          .product-listings-page__main__contents__send-box__return-btn もどる
+          .product-listings-page__main__contents__send-box__return-btn
+            = link_to root_path do
+              もどる
 
 = render "/shared/sub_footer"

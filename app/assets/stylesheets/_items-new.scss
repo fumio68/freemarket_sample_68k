@@ -479,7 +479,9 @@ a {
           background: #aaa;
           text-align: center;
           line-height: 50px;
-          color: #fff;
+          a{
+            color: #fff;
+          }
         }
       }
     }
