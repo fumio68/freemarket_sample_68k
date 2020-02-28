@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:destroy, :show]
+  before_action :set_item, only:[:destroy, :show, :edit, :update]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -42,16 +42,30 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @parents = Category.order("id ASC").limit(13)
-    @category_1 = Category.find_by(id: @item.category_id_1)
-    @category_2 = Category.find_by(id: @item.category_id_2)
-    @category_3 = Category.find_by(id: @item.category_id_3)
-    unless Category.find_by(id: @item.size_id).nil?
-      @size = Category.find_by(id: @item.size_id)
+    @category_1 = Category.find(@item.category_id_1)
+    @category_2 = Category.find(@item.category_id_2)
+    @category_3 = Category.find(@item.category_id_3)
+    if Category.find(@item.size_id).present?
+      @size = Category.find(@item.size_id)
+    end
+
+  end
+
+  def edit
+    @category_2 = Category.find(@item.category_id_2) if @item.category_id_2
+    @category_3 = Category.find(@item.category_id_3) if @item.category_id_3
+    @size = Category.find(@item.size_id) if @item.size_id
+  end
+
+  def update
+    if @item.update(item_edit_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
     end
   end
 
   def destroy
-    # @parents = Category.order("id ASC").limit(13)
     @item.destroy
     render :delete unless @item.user_id == current_user.id && @item.destroy
   end
@@ -62,7 +76,12 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id, item_images_attributes: [:image]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
+    params.require(:item).permit(:name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
   end
+
+  def item_edit_params
+    params.require(:item).permit(:id, :category_id, :name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
+  end
+
 
 end
