@@ -1,13 +1,13 @@
 $(function(){
 	$(".product-listings-page__main__contents__send-box__btn").on('click',function(e){
-    if(!item_check()){
+    if(!item_edit_check()){
 			e.preventDefault();
 			return false;
 		}
 	});
 });
 
-function item_check(){
+function item_edit_check(){
 	let result = true;
 	$('#image-box').removeClass("inp_error");
 	$('.product-listings-page__main__contents__name-box__text-field').removeClass("inp_error");
