@@ -31,7 +31,8 @@
                   %span.js-remove 削除
                   
                 - if @item.persisted?
-                  = image.check_box :_destroy, data: {index: image.index}, class: 'hidden-destroy'
+                  - destroy_id_str = 'destroy-' + (image.index).to_s
+                  = image.check_box :_destroy, data: {index: image.index}, class: 'hidden-destroy', id: destroy_id_str
                   
               - if @item.persisted?
                 - lastIndex = @item.item_images.count
