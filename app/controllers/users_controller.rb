@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   def index
   end
   def show
-    # @parents = Category.order("id ASC").limit(13)
+
+    session[:item_id] = nil
+    
   end
 end
