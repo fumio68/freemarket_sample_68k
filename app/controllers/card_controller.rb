@@ -2,6 +2,8 @@ class CardController < ApplicationController
 
   require "payjp"
 
+  before_action :set_card
+
   def new
     card = set_card
     redirect_to action: "index" if card.exists?
@@ -63,8 +65,11 @@ class CardController < ApplicationController
       end
     end
   end
-def set_card
-  Card.where(user_id: current_user.id)
-end
+
+  private
+
+  def set_card
+    Card.where(user_id: current_user.id)
+  end
 
 end
