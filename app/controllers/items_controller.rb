@@ -44,17 +44,18 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @parents = Category.order("id ASC").limit(13)
-    @category_1 = Category.find_by(id: @item.category_id_1)
-    @category_2 = Category.find_by(id: @item.category_id_2)
-    @category_3 = Category.find_by(id: @item.category_id_3)
-    @size = Category.find_by(id: @item.size_id)
+    @category_1 = Category.find(@item.category_id_1)
+    @category_2 = Category.find(@item.category_id_2)
+    @category_3 = Category.find(@item.category_id_3)
+    if Category.find(@item.size_id).present?
+      @size = Category.find(@item.size_id)
+    end
 
   end
 
   def edit
-    # binding.pry
-    @category_2 = Category.find(@item. category_id_2) if @item.category_id_2
-    @category_3 = Category.find(@item. category_id_3) if @item.category_id_3
+    @category_2 = Category.find(@item.category_id_2) if @item.category_id_2
+    @category_3 = Category.find(@item.category_id_3) if @item.category_id_3
     @size = Category.find(@item.size_id) if @item.size_id
   end
 
