@@ -4,11 +4,15 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order("created_at DESC")
     @item_images = ItemImage.all
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
   end
   def new
-    @item = Item.new
-    @item.item_images.new
+    if user_signed_in?
+      @item = Item.new
+      @item.item_images.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def get_category_children
@@ -40,6 +44,11 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @parents = Category.order("id ASC").limit(13)
+    @category_1 = Category.find_by(id: @item.category_id_1)
+    @category_2 = Category.find_by(id: @item.category_id_2)
+    @category_3 = Category.find_by(id: @item.category_id_3)
+    @size = Category.find_by(id: @item.size_id)
+
   end
 
   def edit
@@ -58,7 +67,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
     @item.destroy
     render :delete unless @item.user_id == current_user.id && @item.destroy
   end

@@ -18,7 +18,7 @@
             .custom-thumb
           .main__show__content__top__itemInfo__price
             %span.main__show__content__top__itemInfo__price__span
-              = "¥#{@item.price}"
+              = "¥#{@item.price.to_s(:delimited)}"
             .main__show__content__top__itemInfo__price__detail
               %span.main__show__content__top__itemInfo__price__detail__span
                 (税込み)
@@ -27,7 +27,7 @@
           - if @item.status == 1 && user_signed_in?
             - unless current_user.id == @item.user_id
               .main__show__content__top__itemInfo__purchase
-                = link_to '購入画面に進む', '#', class: "main__show__content__top__itemInfo__purchase__link"
+                = link_to '購入画面に進む', item_purchases_path(@item), class: "main__show__content__top__itemInfo__purchase__link"
           .main__show__content__top__itemInfo__detail
             = @item.name
           .main__show__content__top__itemInfo__table
@@ -44,11 +44,11 @@
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
                     %ul
                       %li
-                        = link_to "メンズ", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                        = link_to "#{@category_1.name}", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
                       %li
-                        = link_to "ジャケット/アウター", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                        = link_to "#{@category_2.name}", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
                       %li
-                        = link_to "ノーカラージャケット", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
+                        = link_to "#{@category_3.name}", "#", class: "main__show__content__top__itemInfo__table__table__tbody__tr__td__link" 
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     ブランド
@@ -58,7 +58,7 @@
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     商品のサイズ
                   %td.main__show__content__top__itemInfo__table__table__tbody__tr__td
-                    M
+                    = @size.name
                 %tr.main__show__content__top__itemInfo__table__table__tbody__tr
                   %th.main__show__content__top__itemInfo__table__table__tbody__tr__th
                     商品の状態
