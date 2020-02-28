@@ -60,8 +60,8 @@ class ItemsController < ApplicationController
   end
 
   def update
+    # binding.pry
     if @item.update(item_edit_params)
-      # binding.pry
       redirect_to item_path(@item.id)
     else
       render :edit
@@ -69,7 +69,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # @parents = Category.order("id ASC").limit(13)
     @item.destroy
     render :delete unless @item.user_id == current_user.id && @item.destroy
   end
