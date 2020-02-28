@@ -27,7 +27,9 @@ class ItemsController < ApplicationController
   end
 
   def create
+    
     @item = Item.new(item_params)
+    # binding.pry
     if @item.save
       redirect_to root_path
     else
@@ -47,9 +49,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    if @item.update(item_params)
-      redirect_to item_path(@item)
+    if @item.update(item_edit_params)
+      # binding.pry
+      redirect_to item_path(@item.id)
     else
       render :edit
     end
@@ -67,7 +69,12 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id, item_images_attributes: [:image]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
+    params.require(:item).permit(:name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
   end
+
+  def item_edit_params
+    params.require(:item).permit(:id, :category_id, :name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image, :id]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
+  end
+
 
 end
