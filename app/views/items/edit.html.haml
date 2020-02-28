@@ -1,6 +1,6 @@
 .product-listings-page
   .product-listings-page__header
-    = image_tag "material/logo/logo.png", class:"product-listings-page__header__logo"
+    = render "/shared/sub_header"
   .product-listings-page__main
     .product-listings-page__main__contents
       .product-listings-page__main__contents__head
@@ -168,7 +168,9 @@
               加盟店規約
             に同意したことになります。
           =form.submit "変更する", class: "product-listings-page__main__contents__send-box__btn"
-          .product-listings-page__main__contents__send-box__return-btn キャンセル
+          .product-listings-page__main__contents__send-box__return-btn
+            = link_to root_path do
+              キャンセル
 
 = render "/shared/sub_footer"
 
