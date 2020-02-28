@@ -53,6 +53,7 @@ function item_edit_check(){
 	if(image == ""){
 		$("#image_error").html("画像がありません");
 		$("#image-box").addClass("inp_error");
+		$("#file-box").addClass("error_margin_top");
 		result = false;
 	}
 	
