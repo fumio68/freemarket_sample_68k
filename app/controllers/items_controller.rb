@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order("created_at DESC")
     @item_images = ItemImage.all
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
   end
   def new
     @item = Item.new
@@ -37,11 +37,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
   end
 
   def destroy
-    @parents = Category.order("id ASC").limit(13)
+    # @parents = Category.order("id ASC").limit(13)
     @item.destroy
     render :delete unless @item.user_id == current_user.id && @item.destroy
   end
