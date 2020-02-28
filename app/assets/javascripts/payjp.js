@@ -34,7 +34,8 @@ document.addEventListener(
 
 // ? をクリックした時の動作
 $(function(){
-  $('a.card__card-main__mask__contents__body__security__bottom__note__question').click(function(){
+  $('a.card__card-main__mask__contents__body__security__bottom__note__question').click(function(e){
+    e.preventDefault(); 
     var targetNote = $(this).attr('href');
       $('p.card__card-main__mask__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
     });
@@ -48,7 +49,8 @@ $(function(){
 
 // textをクリックした時の動作
 $(function(){
-  $('a.card__card-main__mask__contents__body__security__bottom__note__text').click(function(){
+  $('a.card__card-main__mask__contents__body__security__bottom__note__text').click(function(e){
+    e.preventDefault(); 
     var targetNote = $(this).attr('href');
     $('p.card__card-main__mask__contents__body__security__bottom__note__tooltip'+targetNote).addClass('open');
   });
