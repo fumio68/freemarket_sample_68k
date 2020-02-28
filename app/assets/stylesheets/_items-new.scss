@@ -437,7 +437,12 @@ a {
               display: flex;
               justify-content: space-between;
               font-weight: bold;
-              font-size: 16px;
+              &-left{
+                font-size: 16px;
+              }
+              &-right{
+                font-size: 34px;
+              }
             }
           }
         }
@@ -487,7 +492,7 @@ a {
         display: none;
       }
       .js-remove{
-
+        cursor: pointer;
       }
       .hidden-destroy{
         display: none;

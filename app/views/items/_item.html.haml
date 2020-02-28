@@ -11,7 +11,7 @@
           = item.name
         .item__body--middle
           .item__body--middle__price
-            = item.price
+            = "¥#{item.price.to_s(:delimited)}"
           .item__body--middle__favorite
             = link_to "#" do
               %i.fa.fa-star
@@ -33,7 +33,7 @@
           = item.name
         .item__body--middle
           .item__body--middle__price
-            = item.price
+            = "¥#{item.price.to_s(:delimited)}"
           .item__body--middle__favorite
             = link_to "#" do
               %i.fa.fa-star
