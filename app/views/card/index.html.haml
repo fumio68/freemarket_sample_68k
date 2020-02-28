@@ -10,7 +10,7 @@
           .card__card-main__mask__contents__content__theme
             登録クレジットカード情報
           .card__card-main__mask__contents__content__menu
-            = image_tag "/assets/material/credit/#{@default_card_src}", width: '40', height: '25', alt: @default_card_brand, id: "card_image",class:"card__card-main__mask__contents__content__menu__brand"
+            = image_tag "material/credit/#{@default_card_src}", width: '40', height: '25', alt: @default_card_brand, id: "card_image",class:"card__card-main__mask__contents__content__menu__brand"
             .card__card-main__mask__contents__content__menu__number
             = "**** **** **** " + @default_card_information.last4
             .card__card-main__mask__contents__content__menu__date
