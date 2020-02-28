@@ -68,16 +68,16 @@
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--first__icon")
               %span#category_error.error_m
               .product-listings-page__main__contents__detail-box__select-list__category-form--second
-                =form.select :category_id_2, {"#{@category_2.name}":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value',id: 'parent_category_second'
+                =form.select :category_id_2, {"#{@category_2.name}": "#{@category_2.id}"}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--second__value',id: 'parent_category_second'
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--second__icon")
               .product-listings-page__main__contents__detail-box__select-list__category-form--third
-                =form.select :category_id_3, {"#{@category_3.name}":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value', id: 'parent_category_third'
+                =form.select :category_id_3, {"#{@category_3.name}": "#{@category_3.id}"}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__category-form--third__value', id: 'parent_category_third'
                 = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__category-form--third__icon")
             .product-listings-page__main__contents__detail-box__select-list__title
               .product-listings-page__main__contents__detail-box__select-list__title__left サイズ
               %span.product-listings-page__main__contents__detail-box__select-list__title__right 必須
             .product-listings-page__main__contents__detail-box__select-list__size-form
-              =form.select :size_id, {"#{@size.name}":0}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__size-form__value', id: 'size_select'
+              =form.select :size_id, {"#{@size.name}": "#{@size.id}"}, {},  class: 'product-listings-page__main__contents__detail-box__select-list__size-form__value', id: 'size_select'
               = icon('fas', 'chevron-down', class: "product-listings-page__main__contents__detail-box__select-list__size-form__icon")
             .product-listings-page__main__contents__detail-box__select-list__title
               .product-listings-page__main__contents__detail-box__select-list__title__left ブランド
