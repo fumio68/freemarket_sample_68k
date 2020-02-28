@@ -81,24 +81,6 @@ a {
         &__text{
           padding: 0 0 16px 0;
         }
-        &__drop-area{
-          width: 620px;
-          height: 162px;
-          border: 1px dashed #ccc;
-          background: #f5f5f5;
-          display: flex;
-          flex-wrap: wrap;
-        // 写真投稿フォーム表示のために一時的にコメントアウト
-          // align-items: center;
-          // justify-content: center;
-          &__file{
-        // 写真投稿フォーム表示のために一時的にコメントアウト
-            // display: none;
-          }
-          &__text{
-            text-align: center;
-          }
-        }
       }
       &__name-box{
         height: 355px;
@@ -483,6 +465,32 @@ a {
             color: #fff;
           }
         }
+      }
+    }
+  }
+}
+
+// image uploader
+#image-box{
+  width: 620px;
+  height: 162px;
+  border: 1px dashed #ccc;
+  background: #f5f5f5;
+  #previews{
+    height: 118px;
+  }
+  #file-box{
+    display: flex;
+    .js-file_group{
+      width: 118px;
+      .js-file{
+        display: none;
+      }
+      .js-remove{
+
+      }
+      .hidden-destroy{
+        display: none;
       }
     }
   }
