@@ -14,6 +14,7 @@
             %ul.purchase__inner__main__item__description__money
               %li.purchase__inner__main__item__description__money__money ¥#{@item.price}（税込）
               %li.purchase__inner__main__item__description__money__text 送料込み
+
       = form_with(url: pay_item_purchases_path(item_id: @itemId), action: :pay, method: :post, model: @purchase, class: 'purchase__inner__main__form', local: true) do |f|
         .purchase__inner__main__form__cost
           %ul.purchase__inner__main__form__cost__box
@@ -24,18 +25,26 @@
             %p.purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P0)
 
         .purchase__inner__main__form__payment
-          %ul.data-exists__header
-            %li.card-title 支払い方法
-            %li.data-exists__header__modify
-              = link_to  new_user_card_path(user_id: current_user.id) do
-                変更する
-          = "**** **** **** " + @default_card_information.last4 
-          %br
-          - exp_month = @default_card_information.exp_month.to_s
-          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-          = exp_month + " / " + exp_year
-          %br
-          = image_tag "/assets/material/credit/#{@default_card_src}", width: '40', height: '25', alt: @default_card_brand, id: "card_image"
+          - if @default_card_information.blank?
+            %ul
+              %li.residence-title 支払い方法
+              %li.register-button
+                = icon("fas", "plus-circle")
+                = link_to new_user_card_path(user_id: current_user.id) do
+                  登録してください
+          - else
+            %ul.data-exists__header
+              %li.card-title 支払い方法
+              %li.data-exists__header__modify
+                = link_to  new_user_card_path(user_id: current_user.id) do
+                  変更する
+            = "**** **** **** " + @default_card_information.last4 
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            %br
+            = image_tag "/assets/material/credit/#{@default_card_src}", width: '40', height: '25', alt: @default_card_brand, id: "card_image"
 
         .purchase__inner__main__form__shipping
           - if @residence.new_record?
@@ -65,6 +74,11 @@
                   %li.residence-data__name__item #{@residence.last_name}
 
         .purchase__inner__main__form__buy
-          = f.button '購入する', class: 'purchase__inner__main__form__buy__button'
+          - if @default_card_information && @residence
+            = f.button '購入する', class: 'purchase__inner__main__form__buy__button'
+          -else
+            .purchase__inner__main__form__buy__button__not
+              必要な情報を入力してください
+            
     .purchase__inner__footer
       = render "/shared/sub_footer"

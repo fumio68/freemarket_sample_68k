@@ -21,7 +21,7 @@ ticket = Category.create(name: "チケット")
 bicycle = Category.create(name: "自転車・オートバイ")
 others = Category.create(name: "その他")
 
-# 第二階層目 レディース
+# 第二階層目レディース
 lady_tops = lady.children.create(name: "トップス")
 lady_jacket = lady.children.create(name: "ジャケット/アウター")
 lady_pants = lady.children.create(name: "パンツ")
@@ -54,7 +54,7 @@ lady_tops_kinds = lady_tops.children.create([
                   {name: "ベスト/ジレ"},
                   {name: "パーカー"}
                 ])
-# 第三階層目 レディース
+# 第三階層目レディース
 lady_tops.children.create([
   {name: "Tシャツ/カットソー(半袖/袖なし)"}, 
   {name: "Tシャツ/カットソー(七分/長袖)"},

@@ -8,9 +8,15 @@ class CardController < ApplicationController
   end
 
   def pay
+    card = set_card
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     if params['payjp-token'].blank?
-      redirect_to action: "new"
+      # redirect_to action: "new"
+      if session[:item_id].nil?
+        redirect_to user_card_index_path(current_user.id)
+      else
+        redirect_to item_purchases_path(item_id: session[:item_id])
+      end
     else
       customer = Payjp::Customer.create(
       email: current_user.email,
@@ -18,10 +24,12 @@ class CardController < ApplicationController
       metadata: {user_id: current_user.id}
       ) 
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
-        redirect_to action: "index"
+      # @card.update(card_params)
+      @card.save
+      if session[:item_id].nil?
+        redirect_to new_user_card_path(current_user.id)
       else
-        redirect_to action: "pay"
+        redirect_to item_purchases_path(item_id: session[:item_id])
       end
     end
   end
@@ -65,5 +73,11 @@ class CardController < ApplicationController
 def set_card
   Card.where(user_id: current_user.id)
 end
+
+private
+
+# def card_params
+#   params.require(:card).permit(:customer_id, :card_id).merge(user_id: current_user.id)
+# end
 
 end

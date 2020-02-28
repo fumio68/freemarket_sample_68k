@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_111610) do
+ActiveRecord::Schema.define(version: 2020_02_20_051303) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -57,23 +57,23 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.bigint "user_id", null: false
+    t.integer "status", null: false
     t.integer "price", null: false
     t.text "content", null: false
     t.string "brand"
     t.string "condition", null: false
+    t.string "shipping", null: false
     t.string "shipping_area", null: false
     t.string "days_to_ship", null: false
     t.string "shipping_method", null: false
-    t.integer "status", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "category_id", null: false
     t.integer "category_id_1", null: false
     t.integer "category_id_2", null: false
     t.integer "category_id_3", null: false
-    t.integer "size_id", null: false
-    t.string "shipping", null: false
-    t.bigint "category_id"
+    t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
   end
 
   create_table "residences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "family_name", null: false
     t.string "last_name", null: false
     t.string "j_family_name", null: false
@@ -104,7 +105,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
     t.string "block", null: false
     t.string "building"
     t.string "phone_number"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_residences_on_user_id"
@@ -116,8 +116,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "nickname", null: false
     t.string "family_name", null: false
     t.string "last_name", null: false
@@ -127,6 +125,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_111610) do
     t.integer "b_month", null: false
     t.integer "b_date", null: false
     t.string "user_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "residence_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
