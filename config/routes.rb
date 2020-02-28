@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
     resources :purchases, only: [:index, :create] do
       collection do
+        post 'pay'
         get 'done'
       end
     end
