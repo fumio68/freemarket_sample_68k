@@ -7,6 +7,7 @@ class PurchasesController < ApplicationController
   def index
     @itemId = params[:item_id]
     session[:item_id] = params[:item_id]
+    @purchaseId = params[:id]
     if current_user.residence.present?
       @residence = Residence.find_by(user_id: current_user.id)
     else
