@@ -14,7 +14,7 @@ class PurchasesController < ApplicationController
 
     card = Card.where(user_id: current_user.id).first
     if card.blank?
-      # redirect_to controller: "card", action: "new"
+
     else
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(card.customer_id)
