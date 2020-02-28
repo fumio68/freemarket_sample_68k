@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # binding.pry
     @category_2 = Category.find(@item. category_id_2) if @item.category_id_2
     @category_3 = Category.find(@item. category_id_3) if @item.category_id_3
     @size = Category.find(@item.size_id) if @item.size_id
