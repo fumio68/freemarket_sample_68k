@@ -1,13 +1,10 @@
 $(function(){
-  
-  
   // ここからカテゴリーボックスの生成
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
-  
   // 親カテゴリー選択後のイベント
   $('#parent_category_first').on('change', function(){
     var parentCategory = document.getElementById('parent_category_first').value; //選択された親カテゴリーの名前を取得
@@ -36,7 +33,6 @@ $(function(){
       $('#brand_wrapper').remove();
     }
   });
-
   // 子カテゴリー選択後のイベント
   $('#parent_category_second').on('change', function(){
     var childId = document.getElementById('parent_category_second').value;
@@ -88,35 +84,6 @@ $(function(){
       })
     }
   });
-
-  //孫カテゴリーから選ぶ時の処理
-  // $('#parent_category_third').on('click', function(e){
-  //   e.preventDefault();
-  //   // console.log('hello');
-  //   var childId = document.getElementById('parent_category_second').value;
-  //   console.log(childId);
-  //    //子カテゴリーが初期値でないことを確認
-  //     $.ajax({
-  //       url: 'get_category_grandchildren',
-  //       type: 'GET',
-  //       data: { child_id: childId },
-  //       dataType: 'json'
-  //     })
-  //     .done(function(grandchildren){
-  //       // $('.product-listings-page__main__contents__detail-box__select-list__category-form--third__value').empty();
-  //       if (grandchildren.length != 0) {
-  //         var insertHTML = '';
-  //         grandchildren.forEach(function(grandchild){
-  //           insertHTML += appendOption(grandchild);
-  //         });
-  //         $('#parent_category_third').append(insertHTML);
-  //       }
-  //     })
-  //     .fail(function(){
-  //       alert('カテゴリー取得に失敗しました');
-  //     })
-    
-  // });
 });
 
 //エラーハンドリング
