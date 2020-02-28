@@ -31,9 +31,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     @item = Item.new(item_params)
-    # binding.pry
     if @item.save
       redirect_to root_path
     else
@@ -60,7 +58,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
     if @item.update(item_edit_params)
       redirect_to item_path(@item.id)
     else
