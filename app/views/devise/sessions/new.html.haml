@@ -13,7 +13,7 @@
           = icon('fab', 'facebook-f', class: "main__case__contents__sns__fcbk__icon")
           = label_tag '', 'Facebookでログイン', {class: 'main__case__contents__sns__fcbk__label'}
         = button_tag '', class:"main__case__contents__sns__ggl" do
-          = image_tag "/assets/material/logo/google-icon.png", class:"main__case__contents__sns__ggl__icon"
+          = image_tag "material/logo/google-icon.png", class:"main__case__contents__sns__ggl__icon"
           = label_tag '', 'googleでログイン', {class: 'main__case__contents__sns__ggl__label'}
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .main__case__contents__form
@@ -29,7 +29,7 @@
             .main__case__contents__form__info__center
               =label_tag '', "私はロボットではありません", {class: "main__case__contents__form__info__center__label"}
             .main__case__contents__form__info__right
-              = image_tag "/assets/material/logo/reCAPTCHA.png", class:"main__case__contents__form__info__right__icon"
+              = image_tag "material/logo/reCAPTCHA.png", class:"main__case__contents__form__info__right__icon"
             .main__case__contents__form__info__bottom
               = link_to "#" do
                 プライバシー                
