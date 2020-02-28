@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:show] do
     resources :residences, only: [:create, :index]
     resources :card, only: [:new, :index] do
       collection do
