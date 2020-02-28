@@ -61,7 +61,6 @@ $(function(){
   // // 孫カテゴリー選択後のイベント
   $('#parent_category_third').on('change', function(){
     var grandChildId = document.getElementById('parent_category_third').value; //選択された子カテゴリーのidを取得
-    // console.log(grandChildId );
     if (grandChildId != 0){ //子カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_size',

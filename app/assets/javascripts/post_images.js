@@ -52,12 +52,9 @@ $(function(){
     // 該当indexを振られているチェックボックスを取得する
     var targetCheckBox = "#destroy-" + targetIndex;
     const hiddenCheck = $(targetCheckBox);
-    console.log(hiddenCheck);
     // const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
-    console.log(hiddenCheck.length);
     if (hiddenCheck.length) {
-      console.log("click");
       hiddenCheck.prop('checked', true);
     }
 
