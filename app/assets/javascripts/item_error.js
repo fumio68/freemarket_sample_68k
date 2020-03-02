@@ -35,7 +35,7 @@ function item_check(){
 	$("#price_error").empty();
 
 
-	let image      =$(".product-listings-page__main__contents__photo-box__drop-area__file").val();
+	let image      =$(".js-file_group").length;
 	let name         =$(".product-listings-page__main__contents__name-box__text-field").val();
 	let content      =$(".product-listings-page__main__contents__name-box__text-area").val();
 	let category1        =$(".product-listings-page__main__contents__detail-box__select-list__category-form--first__value").val();
@@ -50,7 +50,7 @@ function item_check(){
 	let price  =$(".product-listings-page__main__contents__price-box__form-box__lists-price-right__form").val();
 	
 
-	if(image == ""){
+	if(image == 1){
 		$("#image_error").html("画像がありません");
 		$("#image-box").addClass("inp_error");
 		result = false;
