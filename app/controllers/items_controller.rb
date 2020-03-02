@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:destroy, :show, :edit, :update]
+  before_action :move_to_login, only:[:new, :create, :edit, :update, :destroy]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -81,6 +82,10 @@ class ItemsController < ApplicationController
 
   def item_edit_params
     params.require(:item).permit(:id, :category_id, :name, :price, :content, :brand, :condition, :shipping, :shipping_area, :days_to_ship, :shipping_method, :status,:category_id_1,:category_id_2, :category_id_3, :size_id,  item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id).merge(status: 1).merge(category_id: params[:item][:category_id_3])
+  end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 
