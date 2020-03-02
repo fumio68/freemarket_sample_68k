@@ -11,11 +11,15 @@ class ResidencesController < ApplicationController
       end
     else
       @residence = Residence.new(residence_params)
-      @residence.save!
-      if session[:item_id].nil?
-        redirect_to user_residences_path(current_user.id)
-      else
-        redirect_to item_purchases_path(item_id: session[:item_id])
+      begin
+        @residence.save!
+        if session[:item_id].nil?
+          redirect_to user_residences_path(current_user.id)
+        else
+          redirect_to item_purchases_path(item_id: session[:item_id])
+        end
+      rescue
+        render :index
       end
     end
   end
