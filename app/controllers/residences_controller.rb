@@ -4,7 +4,7 @@ class ResidencesController < ApplicationController
     if Residence.where(user_id: current_user.id).exists?
       target = Residence.where(user_id: current_user.id)
       begin  
-        target.update!(residence_params)
+        target.update(residence_params)
       rescue ActiveRecord::RecordInvalid => e
         render :index
       end
