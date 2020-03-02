@@ -3,6 +3,7 @@ class PurchasesController < ApplicationController
 
   before_action :set_item
   before_action :set_card
+  before_action :move_to_login, only:[:index, :pay, :done, ]
 
   def index
     @itemId = params[:item_id]
@@ -86,6 +87,10 @@ class PurchasesController < ApplicationController
 
   def set_card
     Card.where(user_id: current_user.id).first
+  end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end

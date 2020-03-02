@@ -1,4 +1,5 @@
 class ResidencesController < ApplicationController
+  before_action :move_to_login, only:[:create, :index]
 
   def create
     if Residence.where(user_id: current_user.id).exists?
@@ -43,4 +44,9 @@ class ResidencesController < ApplicationController
   def residence_params
     params.require(:residence).permit(:family_name, :last_name, :j_family_name, :j_last_name, :postcode, :prefecture, :city, :block).merge(user_id: current_user.id)
   end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
 end
