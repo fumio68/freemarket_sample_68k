@@ -63,6 +63,24 @@ describe Item do
       expect(item.errors[:status]).to include("can't be blank")
     end 
 
+    it "is invalid without category_id_1" do
+      item = build(:item, category_id_1: "")
+      item.valid?
+      expect(item.errors[:category_id_1]).to include("can't be blank")
+    end 
+
+    it "is invalid without category_id_2" do
+      item = build(:item, category_id_2: "")
+      item.valid?
+      expect(item.errors[:category_id_2]).to include("can't be blank")
+    end 
+
+    it "is invalid without category_id_3" do
+      item = build(:item, category_id_3: "")
+      item.valid?
+      expect(item.errors[:category_id_3]).to include("can't be blank")
+    end 
+
     
     # max length
     it "is invalid with a name that has more than 41 characters " do
