@@ -10,6 +10,11 @@ FactoryBot.define do
     days_to_ship          {"2日"}
     shipping_method       {"メルカリ便"}
     status                {"0"}
-    user           
+    user
+    category
+    category_id_1         {"1"}
+    category_id_2         {"10"}
+    category_id_3         {"100"}
+
   end
 end
