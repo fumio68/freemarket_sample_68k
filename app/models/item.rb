@@ -18,4 +18,7 @@ class Item < ApplicationRecord
   validates :days_to_ship,     presence: true
   validates :shipping_method,  presence: true
   validates :status,           presence: true
+  validates :category_id_1,    presence: true
+  validates :category_id_2,    presence: true
+  validates :category_id_3,    presence: true
 end
