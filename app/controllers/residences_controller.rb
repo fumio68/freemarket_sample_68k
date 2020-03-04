@@ -1,9 +1,14 @@
 class ResidencesController < ApplicationController
+  before_action :move_to_login, only:[:create, :index]
 
   def create
     if Residence.where(user_id: current_user.id).exists?
       target = Residence.where(user_id: current_user.id)
-      target.update(residence_params)
+      begin  
+        target.update(residence_params)
+      rescue ActiveRecord::RecordInvalid => e
+        render :index
+      end
       if session[:item_id].nil?
         redirect_to user_residences_path(current_user.id)
       else
@@ -11,11 +16,15 @@ class ResidencesController < ApplicationController
       end
     else
       @residence = Residence.new(residence_params)
-      @residence.save!
-      if session[:item_id].nil?
-        redirect_to user_residences_path(current_user.id)
-      else
-        redirect_to item_purchases_path(item_id: session[:item_id])
+      begin
+        @residence.save!
+        if session[:item_id].nil?
+          redirect_to user_residences_path(current_user.id)
+        else
+          redirect_to item_purchases_path(item_id: session[:item_id])
+        end
+      rescue ActiveRecord::RecordInvalid => e
+        render :index
       end
     end
   end
@@ -35,4 +44,9 @@ class ResidencesController < ApplicationController
   def residence_params
     params.require(:residence).permit(:family_name, :last_name, :j_family_name, :j_last_name, :postcode, :prefecture, :city, :block).merge(user_id: current_user.id)
   end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
 end
