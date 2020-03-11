@@ -1,10 +1,43 @@
 # README
 
+## アプリ概要
+
+プログラミングスクールTECH CAMPのチーム開発で作成した、フリーマーケットサイトのコピーサイトです。
+
+### 接続先情報
+ - URL 
+   http://18.178.119.194//
+ - ID/Pass(Basic認証用)
+   - ID: admin
+   - Pass: 2222
+ - テスト用アカウント等
+   - 購入者用
+     - メールアドレス: buyer_user@gmail.com
+     - パスワード: buyer_user68k
+    - 購入用カード情報
+      - 番号：4242424242424242
+      - 期限：4/24
+      - セキュリティコード：123
+   - 出品者用
+     - メールアドレス名: seller_user@gmail.com
+     - パスワード: seller_user68k
+
+### 開発状況
+ - 開発環境
+   - Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+ - 開発期間と平均作業時間
+   - 開発期間：約4週間
+   - 1日あたりの平均作業時間：約9時間
+ - 開発体制
+   - 人数：5名
+   - アジャイル型開発（スクラム）
+   - Trelloによるタスク管理
 
 
 
-# freemarket_sample_68k DB設計
-## usersテーブル
+
+## freemarket_sample_68k DB設計
+### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -24,7 +57,7 @@
 - has_many :purchases
 - has_one :residence
 
-## itemsテーブル
+### itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -49,7 +82,7 @@
 - belongs_to :category
 - has_one :purchase
 
-## categoriesテーブル
+### categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -58,7 +91,7 @@
 - has_many :items
 - has_ancestry
 
-## item_imagesテーブル
+### item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -66,7 +99,7 @@
 ### Association
 - belongs_to :item
 
-## purchasesテーブル
+### purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -81,7 +114,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## residencesテーブル
+### residencesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
@@ -98,7 +131,7 @@
 ### Association
 - belongs_to :user
 
-## cardsテーブル
+### cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
