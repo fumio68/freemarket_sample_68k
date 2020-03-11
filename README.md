@@ -1,27 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 # freemarket_sample_68k DB設計
 ## usersテーブル
@@ -40,10 +20,8 @@ Things you may want to cover:
 |user_image|string||
 ### Association
 - has_many :items
-- has_many :credits
+- has_many :cards
 - has_many :purchases
-- has_many :comments
-- has_many :favorites
 - has_one :residence
 
 ## itemsテーブル
@@ -60,14 +38,13 @@ Things you may want to cover:
 |shipping_method|string|null: false|
 |status|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|category_id_1|references|null: false, foreign_key: true|
-|category_id_2|references|null: false, foreign_key: true|
-|category_id_3|references|null: false, foreign_key: true|
-|size_id|references||
+|category_id_1|integer|null: false|
+|category_id_2|integer|null: false|
+|category_id_3|integer|null: false|
+|size_id|integer||
+|category_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :item_images
-- has_many :comments
-- has_many :favorites
 - belongs_to :user
 - belongs_to :category
 - has_one :purchase
@@ -120,25 +97,6 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
-
-## favoritesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
 
 ## cardsテーブル
 |Column|Type|Options|
