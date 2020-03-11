@@ -4,6 +4,9 @@
 
 プログラミングスクールTECH CAMPのチーム開発で作成した、フリーマーケットサイトのコピーサイトです。
 
+<img width="700" alt="スクリーンショット 2020-03-11 12 06 26" src="https://user-images.githubusercontent.com/59637985/76380265-a9e73400-6395-11ea-9d21-9bbf5ee14a3d.png">
+
+
 ### 接続先情報
  - URL 
    http://18.178.119.194//
