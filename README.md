@@ -4,7 +4,8 @@
 
 プログラミングスクールTECH CAMPのチーム開発で作成した、フリーマーケットサイトのコピーサイトです。
 
-<img width="700" alt="スクリーンショット 2020-03-11 12 06 26" src="https://user-images.githubusercontent.com/59637985/76380265-a9e73400-6395-11ea-9d21-9bbf5ee14a3d.png">
+![スクリーンショット 2020-03-11 12 06 26](https://user-images.githubusercontent.com/59637985/76704261-11490f00-671b-11ea-8c7d-a293d8faff56.png)
+
 
 
 ### 接続先情報
@@ -45,12 +46,12 @@
         - 商品写真は、fields_forを使って別テーブルに保存するように設定
         - カテゴリー欄はAjax通信を活用し、選択された親カテゴリーに対応した子カテゴリーの選択欄が動的に生成されるように作成（カテゴリー一覧は、gem‘ancestry’を使用して作成しています。現時点では、レディース→トップス→Tシャツ/カットソー(半袖/袖なし)のみサイズ選択まで入力していただけます）
         - gem’active hash’を導入し、発送元地域の都道府県一覧を作成
-        <img width="700" alt="スクリーンショット 2020-03-02 18 48 21" src="https://user-images.githubusercontent.com/59637985/76386689-77930200-63a8-11ea-831e-6c4950e8e7e0.png">
+        ![スクリーンショット 2020-03-02 18 48 21](https://user-images.githubusercontent.com/59637985/76704270-26be3900-671b-11ea-98cc-37f676375646.png)
  
  - 商品出品機能エラーハンドリング(バックエンド)
     - jQueryを使用し、入力必須項目が入力されていない場合には、エラーメッセージを表示する機能を実装
-    <img width="700" alt="スクリーンショット 2020-03-02 18 45 22" src="https://user-images.githubusercontent.com/59637985/76386756-a1e4bf80-63a8-11ea-80dc-96dfa35ae6bf.png">
-
+    ![スクリーンショット 2020-03-02 18 45 22](https://user-images.githubusercontent.com/59637985/76704274-2aea5680-671b-11ea-9eb5-c71eb5fd6fb0.png)
+    
 ### チーム開発を通じて得られたこと
  - チームとして工夫を行った点
    
